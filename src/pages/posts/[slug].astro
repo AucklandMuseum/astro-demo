@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { contentfulClient } from "../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { BLOCKS } from '@contentful/rich-text-types';
+import type { blogPost } from "../../lib/contentful";
+
+let post;
+const { slug } = Astro.params;
+try {
+  const data = await contentfulClient.getEntries<blogPost>({
+    content_type: "blogPost",
+    "fields.slug": slug,
+  });
+  const { title, publishDate, content } = data.items[0].fields;
+
+  const options = {
+  renderNode: {
+    [BLOCKS.EMBEDDED_ASSET]: (node:any ) => `<img src="${node.data.target.fields.file.url}" style="width:90vw"/>`
+  }
+};
+
+post = {
+    title,
+    publishDate: new Date(publishDate).toLocaleDateString(),
+    content: documentToHtmlString(content,options)
+  };
+} catch (error) {
+  return Astro.redirect("/404");
+}
+---
+<Layout title={post?.title}>
+    <h1>{post?.title}</h1>
+    <time>{post?.publishDate}</time>
+    <article set:html={post?.content} />
+</Layout>
