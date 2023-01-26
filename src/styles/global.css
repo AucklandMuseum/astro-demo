@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'Gotham Narrow';
+	src: url(/fonts/gotham-narrow-500.eot?#iefix) format("embedded-opentype"), url(/fonts/gotham-narrow-500.woff) format("woff");
+	font-weight: 500;
+	font-style: normal;
+  }
+  @font-face {
+	font-family: 'Gotham Narrow';
+	src: url(/fonts/gotham-narrow-700.eot?#iefix) format("embedded-opentype"), url(/fonts/gotham-narrow-700.woff) format("woff");
+	font-weight: 700;
+	font-style: normal;
+  }
+  @font-face {
+	font-family: 'Gotham Narrow';
+	src: url(/fonts/gotham-narrow-ssm-400.eot?#iefix) format("embedded-opentype"), url(/fonts/gotham-narrow-ssm-400.woff) format("woff");
+	font-weight: 400;
+	font-style: normal;
+  }
+  @font-face {
+	font-family: 'Gotham Narrow';
+	src: url(/fonts/gotham-narrow-ssm-700.eot?#iefix) format("embedded-opentype"), url(/fonts/gotham-narrow-ssm-700.woff) format("woff");
+	font-weight: 700;
+	font-style: normal;
+  }
+  body {
+	  padding: 1em;
+	color: #000;
+	font-family: 'Gotham Narrow'; }

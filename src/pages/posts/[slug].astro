@@ -16,7 +16,7 @@ try {
 
   const options = {
   renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node:any ) => `<img src="${node.data.target.fields.file.url}" style="width:90vw"/>`
+    [BLOCKS.EMBEDDED_ASSET]: (node:any ) => `<img src="${node.data.target.fields.file.url}"/>`
   }
 };
 
@@ -30,7 +30,7 @@ post = {
 }
 ---
 <Layout title={post?.title}>
-    <h1>{post?.title}</h1>
+    <h1 class="text-4xl mb-10">{post?.title}</h1>
     <time>{post?.publishDate}</time>
     <article set:html={post?.content} />
 </Layout>
