@@ -1,5 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
 import { contentfulClient } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS } from '@contentful/rich-text-types';
@@ -29,8 +30,8 @@ post = {
   return Astro.redirect("/404");
 }
 ---
-<Layout title={post?.title}>
-    <h1 class="text-4xl mb-10">{post?.title}</h1>
+<BaseLayout title={post?.title}>
+    <h1>{post?.title}</h1>
     <time>{post?.publishDate}</time>
     <article set:html={post?.content} />
-</Layout>
+</BaseLayout>
