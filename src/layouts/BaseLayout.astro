@@ -16,19 +16,9 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.prop
     <BaseHead title={title} description={description} image={image} />
   </head>
   <body>
-    <div class="bg-base-100 drawer drawer-mobile">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col bg-base-100">
+
         <Meganav></Meganav>
-        <div class="md:flex md:justify-center">
-          <main class="prose">
-            <slot />
-          </main>
-        </div>
-        <Footer />
-      </div>
-      <SideBar />
-    </div>
+<slot></slot>
     <script is:inline src="./node_modules/preline/dist/preline.js"></script>
   </body>
 </html>
