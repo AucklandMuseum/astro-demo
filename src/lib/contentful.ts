@@ -1,12 +1,10 @@
 import contentful from "contentful";
 import type { Document } from "@contentful/rich-text-types";
 
-export interface blogPost {
+export interface menuGroup {
+  name: string;
   title: string;
-  publishDate: Date;
-  description: string;
-  content: Document;
-  slug: string;
+  secondaryTitle: string;
 }
 
 export const contentfulClient = contentful.createClient({

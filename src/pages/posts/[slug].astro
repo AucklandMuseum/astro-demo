@@ -32,6 +32,7 @@ post = {
 ---
 <BaseLayout title={post?.title}>
     <h1>{post?.title}</h1>
-    <time>{post?.publishDate}</time>
+    <time>{post?.publishDate}</time><br>
+	<a class="btn">Click here</a>
     <article set:html={post?.content} />
 </BaseLayout>

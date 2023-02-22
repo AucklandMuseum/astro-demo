@@ -1,3 +1,5 @@
+
+
 @font-face {
 	font-family: 'Gotham Narrow';
 	src: url(/fonts/gotham-narrow-500.eot?#iefix) format("embedded-opentype"), url(/fonts/gotham-narrow-500.woff) format("woff");
@@ -24,3 +26,12 @@
   }
   body {
 	font-family: 'Gotham Narrow'; }
+	.btn {
+		@apply rounded-none;
+		@apply btn-outline;
+		@apply border-2;
+		@apply lg:border-[3px];
+		@apply pl-[48px] pr-[48px];
+	  }
+
+	  
