@@ -22,8 +22,8 @@ const menu = entries.items.map((item) => {
 });
 ---
 <BaseLayout>
+	<Hero slot=""></Hero>
 	<Hero></Hero>
-  
 	  {
 		menu.map((menu) => (
 		  <HorizontalCard
@@ -34,5 +34,6 @@ const menu = entries.items.map((item) => {
 		  <div class="divider my-0"></div>
 		))
 	  }
+
 
 </BaseLayout>

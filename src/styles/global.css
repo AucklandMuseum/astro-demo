@@ -1,4 +1,5 @@
 @tailwind base;
+@tailwind utility;
 
 @font-face {
   font-family: 'Gotham Narrow';
@@ -28,5 +29,17 @@
   }  
   h3{
     @apply text-3xl md:text-[28px] lg:text-[40px] lg:leading-tight mb-2 md:mb-2 lg:mb-1
+  }
+
+  .reverse{
+    @apply bg-black text-white border-white
+  }
+
+  .btn.akm{
+    @apply pl-[48px] pr-[48px] pt-[12px] pb-[12px] text-[16px] mt-10 bg-transparent border-2 xl:border-[3px]
+  }
+
+  .reverse .btn{
+    @apply border-white
   }
 }

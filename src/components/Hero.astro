@@ -1,28 +1,28 @@
 <section class="">
-  <div class="bg-black md:flex md:flex-row">
+  <div class="reverse md:flex md:flex-row">
     <div class="w-full md:flex-grow md:-mr-[50%]">
-        <img
+        <img slot="image"
           class="w-full"
           src="https://ajrctguoxo.cloudimg.io/v7/https%3A%2F%2Fwww.aucklandmuseum.com%2Fgetmedia%2Fd3403c58-c000-4d6f-900d-82039ce572db%2FAM_Secrets_of_Stonehenge_WEB_1348x759px.jpg?w=1500&h=833&org_if_sml=1&ci_url_encoded=1&force_format=webp%2Cjpeg&func=cropfit&gravity=face"
         />
     </div>
 
     <div
-      class="bg-gray-900 pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 text-white md:bg-opacity-50 md:w-6/12"
+      class="pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 bg-gray-900 md:bg-opacity-50 md:w-6/12 "
     >
       <div class="h-full flex flex-col justify-center ">
-        <div class="mb-10 font-bold">NOW OPEN</div>
-        <h3
+        <div slot="status" class="mb-10 font-bold">NOW OPEN</div>
+        <h3 slot="subtitle"
           class="max-w-full font-thin text-gray-400"
         >
           Ancient mysteries. Recent discoveries.
         </h3>
         <div class="">
-          <h2 class="font-light">
+          <h2 slot="title" class="font-light">
             Secrets of Stonehenge
           </h2>
 
-          <div class="text-white">
+          <div slot="content" class="text-white">
             <p>
               Delve into the science, history and mythology of Stonehenge -
               discover the secrets of what it meant to the people who built it,
@@ -31,7 +31,7 @@
 
             <p>
               <a
-                class="btn mt-10"
+                class="btn akm"
                 href="/Visit/Exhibitions/Secrets-of-Stonehenge"
                 target="_self">Learn more</a
               >
