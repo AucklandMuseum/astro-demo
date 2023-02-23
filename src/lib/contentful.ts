@@ -1,10 +1,13 @@
 import contentful from "contentful";
 import type { Document } from "@contentful/rich-text-types";
 
-export interface menuGroup {
+export interface marketingPanel {
   name: string;
   title: string;
-  secondaryTitle: string;
+  content: string;
+  subtitle: string;
+  boldsubtitle: string;
+  image: string;
 }
 
 export const contentfulClient = contentful.createClient({

@@ -1,5 +1,7 @@
 @tailwind base;
+@tailwind components
 @tailwind utility;
+
 
 @font-face {
   font-family: 'Gotham Narrow';
@@ -23,7 +25,6 @@
   body {
 	  font-family: 'Gotham Narrow'; 
   }
-
   h2{
     @apply text-4xl md:text-4xl lg:text-[64px] lg:leading-[75px] mb-10 md:mb-12 lg:mb-20
   }  
@@ -42,4 +43,5 @@
   .reverse .btn{
     @apply border-white
   }
+
 }
