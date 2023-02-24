@@ -25,23 +25,13 @@
   body {
 	  font-family: 'Gotham Narrow'; 
   }
-  h2{
-    @apply text-4xl md:text-4xl lg:text-[64px] lg:leading-[75px] mb-10 md:mb-12 lg:mb-20
-  }  
-  h3{
-    @apply text-3xl md:text-[28px] lg:text-[40px] lg:leading-tight mb-2 md:mb-2 lg:mb-1
+
+
+  .btn {
+    @apply text-black border-black pl-[48px] pr-[48px] pt-[12px] pb-[12px] text-[16px] mt-10 bg-transparent border-2 xl:border-[3px]
   }
 
-  .reverse{
-    @apply bg-black text-white border-white
-  }
-
-  .btn.akm{
-    @apply pl-[48px] pr-[48px] pt-[12px] pb-[12px] text-[16px] mt-10 bg-transparent border-2 xl:border-[3px]
-  }
-
-  .reverse .btn{
-    @apply border-white
-  }
-
+   .reverse.btn {
+    @apply text-white border-white 
+  } 
 }
