@@ -1,23 +1,31 @@
 ---
+export interface Props{
+  image: string;
+  title: string;
+  subtitle: string;
+  boldSubtitle: string;
+  content: string;
+  contentBehaviour: string;
+}
 
-const {Image,		Title,		Subtitle,		BoldSubtitle,		Content,		ContentBehaviour,} = Astro.props
+const { image, title, subtitle, boldSubtitle, content, contentBehaviour } = Astro.props;
 ---
 
 
 <section class="">
-  <div class={'hero-' + ContentBehaviour + '-wrapper'}>
-    <div class={'hero-' + ContentBehaviour + '-image'}>
+  <div class={'hero-' + contentBehaviour + '-wrapper'}>
+    <div class={'hero-' + contentBehaviour + '-image'}>
       <figure>
-        <img class="w-full" src={Image} />
+        <img class="w-full" src={image} />
       </figure>
     </div>
-    <div class={'hero-' + ContentBehaviour + '-text'}>
+    <div class={'hero-' + contentBehaviour + '-text'}>
       <div class="h-full flex flex-col justify-center ">
-        <div class="text-white mb-10 font-bold uppercase" set:html={BoldSubtitle} ></div>
-        <h3 class="max-w-full font-thin text-gray-400" set:html={Subtitle}></h3>
+        <div class="text-white mb-10 font-bold uppercase" set:html={boldSubtitle} ></div>
+        <h3 class="max-w-full font-thin text-gray-400" set:html={subtitle}></h3>
         <div class="text-white">
-          <h2 class="font-light" set:html={Title} ></h2>
-          <div set:html={Content} ></div>
+          <h2 class="font-light" set:html={title} ></h2>
+          <div set:html={content} ></div>
         </div>
       </div>
     </div>

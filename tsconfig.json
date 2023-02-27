@@ -1,8 +1,9 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "react",
-    "allowJs": true
+    "allowJs": true,
+    "types": ["vite/client"]
   }
 }
