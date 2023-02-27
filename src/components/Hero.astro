@@ -1,44 +1,54 @@
+---
+
+const {Image,		Title,		Subtitle,		BoldSubtitle,		Content,		ContentBehaviour,} = Astro.props
+---
+
+
 <section class="">
-  <div class="reverse md:flex md:flex-row">
-    <div class="w-full md:flex-grow md:-mr-[50%]">
-        <img slot="image"
-          class="w-full"
-          src="https://ajrctguoxo.cloudimg.io/v7/https%3A%2F%2Fwww.aucklandmuseum.com%2Fgetmedia%2Fd3403c58-c000-4d6f-900d-82039ce572db%2FAM_Secrets_of_Stonehenge_WEB_1348x759px.jpg?w=1500&h=833&org_if_sml=1&ci_url_encoded=1&force_format=webp%2Cjpeg&func=cropfit&gravity=face"
-        />
+  <div class={'hero-' + ContentBehaviour + '-wrapper'}>
+    <div class={'hero-' + ContentBehaviour + '-image'}>
+      <figure>
+        <img class="w-full" src={Image} />
+      </figure>
     </div>
-
-    <div
-      class="pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 bg-gray-900 md:bg-opacity-50 md:w-6/12 "
-    >
+    <div class={'hero-' + ContentBehaviour + '-text'}>
       <div class="h-full flex flex-col justify-center ">
-        <div slot="status" class="mb-10 font-bold">NOW OPEN</div>
-        <h3 slot="subtitle"
-          class="max-w-full font-thin text-gray-400"
-        >
-          Ancient mysteries. Recent discoveries.
-        </h3>
-        <div class="">
-          <h2 slot="title" class="font-light">
-            Secrets of Stonehenge
-          </h2>
-
-          <div slot="content" class="text-white">
-            <p>
-              Delve into the science, history and mythology of Stonehenge -
-              discover the secrets of what it meant to the people who built it,
-              and what it means to the world today.
-            </p>
-
-            <p>
-              <a
-                class="btn akm"
-                href="/Visit/Exhibitions/Secrets-of-Stonehenge"
-                target="_self">Learn more</a
-              >
-            </p>
-          </div>
+        <div class="text-white mb-10 font-bold uppercase" set:html={BoldSubtitle} ></div>
+        <h3 class="max-w-full font-thin text-gray-400" set:html={Subtitle}></h3>
+        <div class="text-white">
+          <h2 class="font-light" set:html={Title} ></h2>
+          <div set:html={Content} ></div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  h2 {
+    @apply text-4xl md:text-4xl lg:text-[64px] lg:leading-[75px] mb-10 md:mb-12 lg:mb-20
+  }
+  
+  h3 {
+    @apply text-3xl md:text-[28px] lg:text-[40px] lg:leading-tight mb-2 md:mb-2 lg:mb-1
+  }
+  
+  .hero-left-image{
+    @apply w-full md:flex-grow order-2 z-0
+  }
+  .hero-left-text{
+    @apply pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 bg-gray-900 md:bg-opacity-50 md:w-6/12 md:-mr-[50%] order-1 z-10
+  }
+  .hero-left-wrapper{
+    @apply bg-black md:flex md:flex-row
+  }
+  .hero-right-image{
+    @apply w-full md:flex-grow md:-mr-[50%] z-0
+  }
+  .hero-right-text{
+    @apply pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 bg-gray-900 md:bg-opacity-50 md:w-6/12 z-10
+  }
+  .hero-right-wrapper{
+    @apply bg-black md:flex md:flex-row
+  }
+  </style>

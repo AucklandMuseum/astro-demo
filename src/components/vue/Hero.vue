@@ -22,7 +22,7 @@ export default {
 			</div>
 			<div :class="'hero-' + ContentBehaviour + '-text'">
 				<div class="h-full flex flex-col justify-center ">
-					<div class="text-white mb-10 font-bold uppercase" v-html="BoldSubtitle"></div>
+					<div class="text-white mb-10 font-bold uppercase" v-html=BoldSubtitle"></div>
 					<h3 class="max-w-full font-thin text-gray-400" v-html="Subtitle"></h3>
 					<div class="text-white">
 						<h2 class="font-light" v-html="Title"></h2>
