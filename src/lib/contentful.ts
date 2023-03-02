@@ -1,17 +1,18 @@
 import contentful from "contentful";
-import type { Document } from "@contentful/rich-text-types";
 
-export interface marketingPanel {
-  name: string;
-  title: string;
-  content: string;
-  subtitle: string;
-  boldsubtitle: string;
-  image: string;
-}
-
-export const contentfulClient = contentful.createClient({
-  space: import.meta.env.CONTENTFUL_SPACE_ID,
+const client = contentful.createClient({
+  host: "preview.contentful.com" ,
   accessToken: import.meta.env.CONTENTFUL_PREVIEW_TOKEN,
-  host: "preview.contentful.com" 
-});
+  space: import.meta.env.CONTENTFUL_SPACE_ID,
+  resolveLinks: true,
+})
+
+export function getContentBySlug<T>(
+  contentfulLocale: string, 
+  contentType: string,
+  contentfulSlug: string
+): Promise<contentful.Entry<T>> {
+  return client
+    .getEntries({ content_type: contentType, locale: contentfulLocale, "fields.slug": contentfulSlug })
+    .then((response: contentful.EntryCollection<T>) => response.items[0])
+}
