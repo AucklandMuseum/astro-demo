@@ -1,15 +1,20 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import { TypePage } from '@types/TypePage';
 import '../styles/global.css';
+import * as Contentful from "contentful";
+import { TypeContentSection } from '@types/TypeContentSection';
 
 export interface Props {
-	title: string;
-	description: string;
-	image?: string;
+	page:Contentful.Entry<TypePage>,
+	section:Contentful.Entry<TypeContentSection>
 }
 
-const { title, description, image = '/social_img.png' } = Astro.props;
+const { page, section } = Astro.props;
+
+let metaTitle = page.fields.metaTitle !== '' && page.fields.metaTitle ? page.fields.metaTitle : page.fields.title;
+let metaDescription = page.fields.metaDescription !== '' && page.fields.metaDescription ? page.fields.metaDescription : page.fields.description;
 ---
 
 <!-- Global Metadata -->
@@ -19,20 +24,20 @@ const { title, description, image = '/social_img.png' } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<title>{metaTitle}</title>
+<meta name="title" content={metaTitle} />
+<meta name="description" content={metaDescription} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:title" content={metaTitle} />
+<meta property="og:description" content={metaDescription} />
+<meta property="og:image" content={new URL("", Astro.url)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:title" content={metaTitle} />
+<meta property="twitter:description" content={metaDescription} />
+<meta property="twitter:image" content={new URL("", Astro.url)} />

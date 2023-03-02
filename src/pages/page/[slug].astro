@@ -1,20 +1,18 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
-import { getContentBySlug } from "../../lib/contentful";
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import type { TypePage } from "../../types";
-import type { TypePageFields } from "../../types";
-import type { Entry } from "contentful";
+import { getEntryBySlug, getEntryByID } from "@lib/contentful";
+import type { TypePage, TypeContentSection } from "@types";
 
 const { slug } = Astro.params;
 
-  let page = await getContentBySlug<TypePage>("en-NZ", "page", slug);
-  ---
+let page = await getEntryBySlug<TypePage>("en-NZ", "page", slug);
+let section = await getEntryByID<TypeContentSection>(
+  page.fields.parentSiteSection.sys.id
+);
+---
 
-<BaseLayout title={page?.fields.metaTitle}>
+<BaseLayout page={page} section={section}>
   <h1>{page?.fields.title}</h1>
-  <time>{page?.fields.publishDate}</time><br />
-  <a class="btn">Click here</a>
-  <article set:html={page?.fields.title} />
+  <article set:html={JSON.stringify(page?.fields.contentSections)} />
 </BaseLayout>
