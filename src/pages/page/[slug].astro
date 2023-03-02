@@ -3,20 +3,16 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 import { getContentBySlug } from "../../lib/contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import type { TypePage } from "../../types";
+import type { TypePageFields } from "../../types";
 import type { Entry } from "contentful";
 
 const { slug } = Astro.params;
-let page:Entry<TypePage>;
-try {
-  page = await getContentBySlug<TypePage>("en-NZ", "page", slug);
-} catch (error) {
-  return Astro.redirect("/404");
-}
 
+  let page = await getContentBySlug<TypePage>("en-NZ", "page", slug);
+  ---
 
----
-
-<BaseLayout title={page?.fields.title}>
+<BaseLayout title={page?.fields.metaTitle}>
   <h1>{page?.fields.title}</h1>
   <time>{page?.fields.publishDate}</time><br />
   <a class="btn">Click here</a>
