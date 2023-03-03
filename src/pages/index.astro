@@ -1,13 +1,13 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "layouts/BaseLayout.astro";
 /*import Hero from "../components/vue/Hero.vue";*/
-import Hero from "../components/Hero.astro";
-import { getEntryByID, getEntryBySlug } from "@lib/contentful";
-import { TypePage } from "@types/TypePage";
-import { TypeContentSection } from "@types/TypeContentSection";
+import Hero from "components/Hero.astro";
+import { getEntryByID, getEntryBySlug } from "lib/contentful";
+import type { TypePage, TypeContentSection } from "types/index";
+import type { Entry } from "contentful";
 
-let page = await getEntryBySlug<TypePage>("en-NZ", "page", "home");
-let section;
+let page: Entry<TypePage> = await getEntryBySlug<TypePage>("en-NZ", "page", "home");
+let section: Entry<TypeContentSection>;
 if (page.fields.parentSiteSection) {
   section = await getEntryByID<TypeContentSection>(
     page.fields.parentSiteSection.sys.id

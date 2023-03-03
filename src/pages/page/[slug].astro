@@ -1,13 +1,13 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
+import BaseLayout from "layouts/BaseLayout.astro";
 
-import { getEntryBySlug, getEntryByID } from "@lib/contentful";
-import type { TypePage, TypeContentSection } from "@types";
+import { getEntryBySlug, getEntryByID } from "lib/contentful";
+import type { TypePage, TypeContentSection } from "types/index";
 
 const { slug } = Astro.params;
 
-let page = await getEntryBySlug<TypePage>("en-NZ", "page", slug);
-let section = await getEntryByID<TypeContentSection>(
+var page = await getEntryBySlug<TypePage>("en-NZ", "page", slug);
+var section = await getEntryByID<TypeContentSection>(
   page.fields.parentSiteSection.sys.id
 );
 ---

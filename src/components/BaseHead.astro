@@ -1,20 +1,27 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import { TypePage } from '@types/TypePage';
-import '../styles/global.css';
-import * as Contentful from "contentful";
-import { TypeContentSection } from '@types/TypeContentSection';
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { htmlToText } from 'html-to-text';
+import type { TypePage, TypeContentSection } from "types/index";
+import "styles/global.css";
 
 export interface Props {
-	page:Contentful.Entry<TypePage>,
-	section:Contentful.Entry<TypeContentSection>
+	page: TypePage;
+	section: TypeContentSection;
 }
 
 const { page, section } = Astro.props;
 
-let metaTitle = page.fields.metaTitle !== '' && page.fields.metaTitle ? page.fields.metaTitle : page.fields.title;
-let metaDescription = page.fields.metaDescription !== '' && page.fields.metaDescription ? page.fields.metaDescription : page.fields.description;
+let metaTitle =
+	page.fields.metaTitle !== "" && page.fields.metaTitle
+		? page.fields.metaTitle
+		: page.fields.title;
+
+let metaDescription =
+	page.fields.metaDescription !== "" && page.fields.metaDescription
+		? page.fields.metaDescription
+		: htmlToText(documentToHtmlString(page.fields.displaySummary));
 ---
 
 <!-- Global Metadata -->
