@@ -1,0 +1,19 @@
+---
+import BaseLayout from "layouts/BaseLayout.astro";
+
+import { getPageByAltURL, getPageBySlug, getSectionByID } from "lib/contentful";
+import type { TypePage, TypeContentSection } from "types/index";
+
+const { slug } = Astro.params;
+
+let page = await getPageByAltURL(slug.toLocaleLowerCase())
+
+var section = await getSectionByID(
+  page.fields.parentSiteSection.sys.id
+);
+---
+
+<BaseLayout page={page} section={section}>
+  <h1>{page?.fields.title}</h1>
+  <article set:html={JSON.stringify(page?.fields.contentSections)} />
+</BaseLayout>

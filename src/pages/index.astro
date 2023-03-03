@@ -2,14 +2,14 @@
 import BaseLayout from "layouts/BaseLayout.astro";
 /*import Hero from "../components/vue/Hero.vue";*/
 import Hero from "components/Hero.astro";
-import { getEntryByID, getEntryBySlug } from "lib/contentful";
+import { getPageByAltURL, getPageBySlug, getSectionByID } from "lib/contentful";
 import type { TypePage, TypeContentSection } from "types/index";
 import type { Entry } from "contentful";
 
-let page: Entry<TypePage> = await getEntryBySlug<TypePage>("en-NZ", "page", "home");
+let page: Entry<TypePage> = await getPageBySlug("home");
 let section: Entry<TypeContentSection>;
 if (page.fields.parentSiteSection) {
-  section = await getEntryByID<TypeContentSection>(
+  section = await getSectionByID(
     page.fields.parentSiteSection.sys.id
   );
 }

@@ -1,32 +1,38 @@
 import contentful from "contentful";
+import { TypeContentSection } from "types/TypeContentSection";
+import { TypePage } from "types/TypePage";
 
-const client = contentful.createClient({
+const baseClient = contentful.createClient({
   host: "preview.contentful.com",
   accessToken: import.meta.env.CONTENTFUL_PREVIEW_TOKEN,
   space: import.meta.env.CONTENTFUL_SPACE_ID,
   resolveLinks: true,
 })
 
-export function getEntryBySlug<T>(
-  contentfulLocale: string,
-  contentType: string,
-  contentfulSlug: string
-): Promise<contentful.Entry<T>> {
+const client = baseClient;
+
+export function getPageBySlug(
+  contentfulSlug: string,
+): Promise<contentful.Entry<TypePage>> {
   return client
-    .getEntries({
-      content_type: contentType,
-      locale: contentfulLocale,
-      "fields.slug": contentfulSlug
-    })
-    .then((response: contentful.EntryCollection<T>) => response.items[0])
+    .getEntries({"locale":"en-NZ","content_type":"page", "fields.slug":contentfulSlug})
+    .then((response: contentful.EntryCollection<TypePage>) => response.items[0])
 }
 
-export function getEntryByID<T>(
+export function getPageByAltURL(
+  altURL: string
+): Promise<contentful.Entry<TypePage>> {
+  return client
+    .getEntries({"locale":"en-NZ","content_type":"page", "fields.alternateUrls[exists]":altURL})
+    .then((response: contentful.EntryCollection<TypePage>) => response.items[0])
+}
+
+export function getSectionByID(
   contentfulID: string
-): Promise<contentful.Entry<T>> {
+): Promise<contentful.Entry<TypeContentSection>> {
   return client
     .getEntries(
-      contentfulID
+      {"locale":"en-NZ","content_type":"contentSection", "sys.id": contentfulID}
     )
-    .then((response: contentful.EntryCollection<T>) => response.items[0])
+    .then((response: contentful.EntryCollection<TypeContentSection>) => response.items[0])
 }

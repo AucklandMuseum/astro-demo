@@ -1,13 +1,15 @@
 ---
 import BaseLayout from "layouts/BaseLayout.astro";
 
-import { getEntryBySlug, getEntryByID } from "lib/contentful";
+import { getPageByAltURL, getPageBySlug, getSectionByID } from "lib/contentful";
 import type { TypePage, TypeContentSection } from "types/index";
 
 const { slug } = Astro.params;
+console.log(slug.toLowerCase());
 
-var page = await getEntryBySlug<TypePage>("en-NZ", "page", slug);
-var section = await getEntryByID<TypeContentSection>(
+var page = await getPageBySlug(slug);
+
+var section = await getSectionByID(
   page.fields.parentSiteSection.sys.id
 );
 ---
