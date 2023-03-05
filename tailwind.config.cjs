@@ -26,7 +26,7 @@ module.exports = {
 		themes: ["lofi"],
 		base: true,
 		utils: true,
-		logs: true,
+		logs: false,
 		rtl: false,
 		prefix: "",
 		darkTheme: "dark",

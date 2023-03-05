@@ -32,7 +32,7 @@ export function getSectionByID(
 ): Promise<contentful.Entry<TypeContentSection>> {
   return client
     .getEntries(
-      {"locale":"en-NZ","content_type":"contentSection", "sys.id": contentfulID}
+      {"locale":"en-NZ","content_type":"section", "sys.id": contentfulID}
     )
     .then((response: contentful.EntryCollection<TypeContentSection>) => response.items[0])
 }

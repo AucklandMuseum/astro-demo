@@ -2,7 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { htmlToText } from 'html-to-text';
+import { htmlToText } from "html-to-text";
 import type { TypePage, TypeContentSection } from "types/index";
 import "styles/global.css";
 
@@ -12,6 +12,19 @@ export interface Props {
 }
 
 const { page, section } = Astro.props;
+
+let sectionMetaTitle, sectionMetaDescription;
+
+if (section !== null && section) {
+	sectionMetaTitle =
+		section.fields.metaTitle != ""
+			? section.fields.metaTitle
+			: section.fields.title;
+	sectionMetaDescription = section.fields.metaDescription;
+
+	if(sectionMetaTitle !== "")
+		sectionMetaTitle = " - " + sectionMetaTitle;
+}
 
 let metaTitle =
 	page.fields.metaTitle !== "" && page.fields.metaTitle
@@ -28,10 +41,14 @@ let metaDescription =
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link
+	rel="canonical"
+	href={"https://www.aucklandmuseum.com/page/" + page.fields.slug}
+/>
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
-<title>{metaTitle}</title>
+<title>{metaTitle}{sectionMetaTitle}- Auckland War Memorial Museum</title>
 <meta name="title" content={metaTitle} />
 <meta name="description" content={metaDescription} />
 
