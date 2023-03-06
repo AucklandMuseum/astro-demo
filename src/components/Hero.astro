@@ -1,31 +1,24 @@
 ---
-export interface Props{
-  image: string;
-  title: string;
-  subtitle: string;
-  boldSubtitle: string;
-  content: string;
-  contentBehaviour: string;
-}
-
-const { image, title, subtitle, boldSubtitle, content, contentBehaviour } = Astro.props;
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import ContentfulComponent from 'contentful-astro/ContentfulComponent.astro';
+//console.log(Astro.props)
+const { imageMetadata, title, subtitle, boldSubtitle, content, contentAlignment } = Astro.props;
 ---
 
 
-<section class="">
-  <div class={'hero-' + contentBehaviour + '-wrapper'}>
-    <div class={'hero-' + contentBehaviour + '-image'}>
-      <figure>
-        <img class="w-full" src={image} />
-      </figure>
+<section class="hero">
+  <div class={'hero-' + contentAlignment + '-wrapper'}>
+    <div class={'hero-' + contentAlignment + '-image'}>
+      <ContentfulComponent type={imageMetadata.sys.contentType.sys.id} {...imageMetadata.fields} />
     </div>
-    <div class={'hero-' + contentBehaviour + '-text'}>
+    <div class={'hero-' + contentAlignment + '-text'}>
       <div class="h-full flex flex-col justify-center ">
-        <div class="text-white mb-10 font-bold uppercase" set:html={boldSubtitle} ></div>
-        <h3 class="max-w-full font-thin text-gray-400" set:html={subtitle}></h3>
-        <div class="text-white">
-          <h2 class="font-light" set:html={title} ></h2>
-          <div set:html={content} ></div>
+       <div class="text-white">
+          <>
+          {content?.map((comp: ContentType) => {
+            return <ContentfulComponent type={comp.sys.contentType.sys.id} {...comp.fields} />
+          })}
+          </>
         </div>
       </div>
     </div>
@@ -41,22 +34,22 @@ const { image, title, subtitle, boldSubtitle, content, contentBehaviour } = Astr
     @apply text-3xl md:text-[28px] lg:text-[40px] lg:leading-tight mb-2 md:mb-2 lg:mb-1
   }
   
-  .hero-left-image{
+  .hero-Left-image{
     @apply w-full md:flex-grow order-2 z-0
   }
-  .hero-left-text{
+  .hero-Left-text{
     @apply pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 bg-gray-900 md:bg-opacity-50 md:w-6/12 md:-mr-[50%] order-1 z-10
   }
-  .hero-left-wrapper{
+  .hero-Left-wrapper{
     @apply bg-black md:flex md:flex-row
   }
-  .hero-right-image{
+  .hero-Right-image{
     @apply w-full md:flex-grow md:-mr-[50%] z-0 
   }
-  .hero-right-text{
+  .hero-Right-text{
     @apply pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 bg-gray-900 md:bg-opacity-50 md:w-6/12 z-10
   }
-  .hero-right-wrapper{
+  .hero-Right-wrapper{
     @apply bg-black md:flex md:flex-row
   }
   </style>

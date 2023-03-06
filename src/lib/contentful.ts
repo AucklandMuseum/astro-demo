@@ -15,7 +15,7 @@ export function getPageBySlug(
   contentfulSlug: string,
 ): Promise<contentful.Entry<TypePage>> {
   return client
-    .getEntries({"locale":"en-NZ","content_type":"page", "fields.slug":contentfulSlug})
+    .getEntries({"locale":"en-NZ","content_type":"page", "fields.slug":contentfulSlug, "include":10})
     .then((response: contentful.EntryCollection<TypePage>) => response.items[0])
 }
 
@@ -36,3 +36,14 @@ export function getSectionByID(
     )
     .then((response: contentful.EntryCollection<TypeContentSection>) => response.items[0])
 }
+
+export function getEntryByID(
+  contentfulID: string
+): Promise<contentful.Entry> {
+  return client
+    .getEntry(contentfulID)
+    .then((response: contentful.Entry) => response)
+}
+
+
+

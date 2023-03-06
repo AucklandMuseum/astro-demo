@@ -1,0 +1,23 @@
+---
+import type { ContentType } from 'contentful';
+import ContentfulComponent from 'contentful-astro/ContentfulComponent.astro';
+import { getEntryByID } from "lib/contentful";
+
+const { leftContentBlock,rightContentBlock } = Astro.props;
+
+---
+<div>
+  <>
+  {leftContentBlock?.map((comp: ContentType) => {
+    return <ContentfulComponent type={comp.sys.contentType.sys.id} {...comp.fields} />
+  })}
+  </>
+</div>
+
+<div>
+  <>
+{rightContentBlock?.map((comp: ContentType) => {
+  return <ContentfulComponent type={comp.sys.contentType.sys.id} {...comp.fields} />
+})}
+</>
+</div>

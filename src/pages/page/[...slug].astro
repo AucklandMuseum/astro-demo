@@ -2,6 +2,9 @@
 import BaseLayout from "layouts/BaseLayout.astro";
 
 import { getPageBySlug, getSectionByID } from "lib/contentful";
+import type { ContentType } from 'contentful';
+import ContentfulComponent from 'contentful-astro/ContentfulComponent.astro';
+
 
 const { slug } = Astro.params;
 
@@ -16,7 +19,12 @@ let section = await getSectionByID(
 <BaseLayout page={page} section={section}>
   <h3>{section.fields.title}</h3>
   <h1>{page?.fields.title}</h1>
-  <article set:html={JSON.stringify(page?.fields.contentSections)} />
+
+  <>
+  {page?.fields.contentSections?.map((comp: ContentType) => {
+    return <ContentfulComponent type={comp.sys.contentType.sys.id} {...comp.fields} />
+  })}
+</>
 </BaseLayout>
 
 <style>

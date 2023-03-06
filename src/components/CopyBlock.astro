@@ -1,0 +1,6 @@
+---
+import * as contentful from 'contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+
+---
+<div set:html={documentToHtmlString(Astro.props.content)}></div>
