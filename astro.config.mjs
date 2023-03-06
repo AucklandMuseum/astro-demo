@@ -1,6 +1,10 @@
 import { defineConfig } from 'astro/config';
+import dotenv from 'dotenv'
 import tailwind from "@astrojs/tailwind";
 import contentful from "contentful-astro";
+
+const spaceID = process.env.CONTENTFUL_SPACE_ID;
+const CMA = process.env.CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN;
 
 // https://astro.build/config
 import netlify from "@astrojs/netlify/functions";
@@ -16,8 +20,8 @@ export default defineConfig({
   output: 'server',
   integrations: [tailwind(), react(), vue(),
     contentful({
-      space: import.meta.env.CONTENTFUL_SPACE_ID,
-      accessToken: import.meta.env.CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN,
+      space: spaceID,
+      accessToken: CMA,
       components: {
         contentSection: "components/ContentSection",
         copyBlock:"components/CopyBlock",
