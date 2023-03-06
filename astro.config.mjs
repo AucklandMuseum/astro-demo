@@ -16,8 +16,8 @@ export default defineConfig({
   output: 'server',
   integrations: [tailwind(), react(), vue(),
     contentful({
-      space: 'ocrj77v5idm0',
-      accessToken: 'CFPAT-MGcwVDgPKXjFyHuOxVrKoulJkFabIh0bL6dKO_lRrfM',
+      space: import.meta.env.CONTENTFUL_SPACE_ID,
+      accessToken: import.meta.env.CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN,
       components: {
         contentSection: "components/ContentSection",
         copyBlock:"components/CopyBlock",
