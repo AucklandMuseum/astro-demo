@@ -5,7 +5,7 @@ import { getPageByAltURL, getSectionByID } from "lib/contentful";
 
 const { slug } = Astro.params;
 
-let page = await getPageByAltURL(slug.toLocaleLowerCase())
+let page = await getPageByAltURL(slug.toLowerCase())
 
 let section = await getSectionByID(
   page.fields.parentSiteSection.sys.id
