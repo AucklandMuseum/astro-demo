@@ -1,29 +1,38 @@
 ---
 import BaseLayout from "layouts/BaseLayout.astro";
-
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 import { getPageByAltURL, getSectionByID } from "lib/contentful";
 
 const { slug } = Astro.params;
 
-let page = await getPageByAltURL(slug.toLowerCase())
+const page = await getPageByAltURL(slug.toLowerCase())
+if (!page) return Astro.redirect("/404");
 
-let section = await getSectionByID(
-  page.fields.parentSiteSection.sys.id
+const section = await getSectionByID(
+  page.fields.parentSiteSection?.sys.id
 );
+
+
+const titleProps = {
+  title: page?.fields.title,
+  subtitle: section?.fields.title,
+  size: "Large",
+  style: "Light",
+};
 ---
 
 <BaseLayout page={page} section={section}>
-  <h3>{section.fields.title}</h3>
-  <h1>{page?.fields.title}</h1>
-  <article set:html={JSON.stringify(page?.fields.contentSections)} />
+  <ContentfulComponent type="title" {...titleProps} />
+  <>
+    {
+      page?.fields.contentSections?.map((comp: ContentType) => {
+        return (
+          <ContentfulComponent
+            type={comp.sys.contentType.sys.id}
+            {...comp.fields}
+          />
+        );
+      })
+    }
+  </>
 </BaseLayout>
-
-
-<style>
-  h1{
-    @apply font-normal text-6xl mt-2 
-  }
-  h3{
-    @apply font-thin text-5xl opacity-60
-  }
-</style>

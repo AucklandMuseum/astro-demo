@@ -1,0 +1,32 @@
+---
+import BaseLayout from "layouts/BaseLayout.astro";
+
+import { getPageBySlug } from "lib/contentful";
+import type { ContentType } from "contentful";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
+
+let page = await getPageBySlug("home");
+if (!page) return Astro.redirect("/404");
+
+const titleProps = {
+  title: page?.fields.title,
+  subtitle: "",
+  size: "Large",
+  style: "Light",
+};
+---
+
+<BaseLayout page={page}>
+  <>
+    {
+      page?.fields.contentSections?.map((comp: ContentType) => {
+        return (
+          <ContentfulComponent
+            type={comp.sys.contentType.sys.id}
+            {...comp.fields}
+          />
+        );
+      })
+    }
+  </>
+</BaseLayout>

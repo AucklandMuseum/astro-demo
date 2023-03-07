@@ -2,36 +2,36 @@
 import BaseLayout from "layouts/BaseLayout.astro";
 
 import { getPageBySlug, getSectionByID } from "lib/contentful";
-import type { ContentType } from 'contentful';
-import ContentfulComponent from 'contentful-astro/ContentfulComponent.astro';
-
+import type { ContentType } from "contentful";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 
 const { slug } = Astro.params;
 
 let page = await getPageBySlug(slug);
+if (!page) return Astro.redirect("/404");
 
-let section = await getSectionByID(
-  page.fields.parentSiteSection.sys.id
-);
+let section = await getSectionByID(page.fields.parentSiteSection.sys.id);
 
+const titleProps = {
+  title: page?.fields.title,
+  subtitle: section?.fields.title,
+  size: "Large",
+  style: "Light",
+};
 ---
 
 <BaseLayout page={page} section={section}>
-  <h3>{section.fields.title}</h3>
-  <h1>{page?.fields.title}</h1>
-
+  <ContentfulComponent type="title" {...titleProps} />
   <>
-  {page?.fields.contentSections?.map((comp: ContentType) => {
-    return <ContentfulComponent type={comp.sys.contentType.sys.id} {...comp.fields} />
-  })}
-</>
+    {
+      page?.fields.contentSections?.map((comp: ContentType) => {
+        return (
+          <ContentfulComponent
+            type={comp.sys.contentType.sys.id}
+            {...comp.fields}
+          />
+        );
+      })
+    }
+  </>
 </BaseLayout>
-
-<style>
-  h1{
-    @apply font-normal text-6xl mt-2 
-  }
-  h3{
-    @apply font-thin text-5xl opacity-60
-  }
-</style>
