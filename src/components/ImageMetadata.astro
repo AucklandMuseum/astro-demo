@@ -1,10 +1,16 @@
 ---
-import * as contentful from 'contentful';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import * as contentful from "contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-const {imageTitle, imageCaption, imageMedia} = Astro.props;
-
+const { imageTitle, imageCaption, imageMedia, size } = Astro.props;
 ---
+
 <figure>
-	<img class="w-full" src={imageMedia.fields.file.url} alt={imageCaption} />
-  </figure>
+	<img class={"image" + size} src={imageMedia.fields.file.url} alt={imageCaption} />
+</figure>
+
+<style>
+	img {
+		@apply h-full w-auto overflow-hidden
+	}
+</style>

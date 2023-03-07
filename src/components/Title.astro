@@ -1,23 +1,44 @@
 ---
+const {
+  title,
+  subtitle,
+  boldSubtitle,
+  size,
+  style,
+} = Astro.props;
 ---
 
-<div
-  class="mb-10 font-bold uppercase"
-  set:html={Astro.props.boldSubtitle}
-/>
-<h3 set:html={Astro.props.subtitle}
-/>
-<div>
-  <h2 set:html={Astro.props.title} />
+<div class:list={["title","title" + style, "title" + size]}>
+  <div class="mb-10 font-bold uppercase" set:html={Astro.props.boldSubtitle} />
+  <h3 set:html={Astro.props.subtitle} />
+  <div>
+    <h2 set:html={Astro.props.title} />
+  </div>
 </div>
-
-
 <style>
-  h2 {
-    @apply text-4xl md:text-4xl lg:text-[64px] lg:leading-[75px] mb-10 md:mb-12 lg:mb-20;
+  .title, h2, h3{
+    @apply text-inherit
+  }
+  .titleLight {
+    @apply text-black
+  }
+  .titleDark {
+    @apply text-white
   }
 
-  h3 {
-    @apply max-w-full font-thin text-gray-400 text-3xl md:text-[28px] lg:text-[40px] lg:leading-tight mb-2 md:mb-2 lg:mb-1;
+  .titleLarge h2 {
+    @apply  text-inherit text-4xl md:text-4xl lg:text-6xl lg:leading-tight mb-10 md:mb-12 lg:mb-20;
+  }
+
+  .titleLarge h3 {
+    @apply max-w-full font-thin text-gray-400 text-3xl md:text-3xl lg:text-[40px] lg:leading-tight mb-2 md:mb-2 lg:mb-1;
+  }
+
+  .titleMedium h2 {
+    @apply  text-inherit font-thin text-3xl md:text-4xl lg:leading-tight mb-10 md:mb-12 lg:mb-20;
+  }
+
+  .titleMedium h3 {
+    @apply max-w-full font-thin text-gray-400 text-2xl lg:text-3xl lg:leading-tight mb-2 md:mb-2 lg:mb-1;
   }
 </style>

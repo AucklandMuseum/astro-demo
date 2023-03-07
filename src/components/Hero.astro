@@ -1,23 +1,49 @@
 ---
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import ContentfulComponent from 'contentful-astro/ContentfulComponent.astro';
-//console.log(Astro.props)
-const { imageMetadata, title, subtitle, boldSubtitle, content, contentAlignment } = Astro.props;
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
+//console.log(Astro.props);
+let {
+  imageMetadata,
+  title,
+  subtitle,
+  boldSubtitle,
+  content,
+  contentAlignment,
+  size,
+  style,
+} = Astro.props;
+//style = "Light";
+size = "Medium";
+
+imageMetadata.fields["size"] = size;
 ---
 
-
-<section class="hero">
-  <div class={'hero-' + contentAlignment + '-wrapper'}>
-    <div class={'hero-' + contentAlignment + '-image'}>
-      <ContentfulComponent type={imageMetadata.sys.contentType.sys.id} {...imageMetadata.fields} />
+<section class:list={["hero","hero" + style, "hero" + size, "hero" + contentAlignment]}>
+  <div class:list={["wrapper"]}>
+    <div class={"image"}>
+      <ContentfulComponent
+        type={imageMetadata.sys.contentType.sys.id}
+        {...imageMetadata.fields}
+      />
     </div>
-    <div class={'hero-' + contentAlignment + '-text'}>
-      <div class="h-full flex flex-col justify-center ">
-       <div class="text-white">
+    <div
+      class:list={["content"]}
+    >
+      <div class="h-full flex flex-col justify-center">
+        <div>
           <>
-          {content?.map((comp: ContentType) => {
-            return <ContentfulComponent type={comp.sys.contentType.sys.id} {...comp.fields} />
-          })}
+            {
+              content?.map((comp: ContentType) => {
+                comp.fields["size"] = size;
+                comp.fields["style"] = style;
+                return (
+                  <ContentfulComponent
+                    type={comp.sys.contentType.sys.id}
+                    {...comp.fields}
+                  />
+                );
+              })
+            }
           </>
         </div>
       </div>
@@ -26,30 +52,44 @@ const { imageMetadata, title, subtitle, boldSubtitle, content, contentAlignment 
 </section>
 
 <style>
-  h2 {
-    @apply text-4xl md:text-4xl lg:text-[64px] lg:leading-[75px] mb-10 md:mb-12 lg:mb-20
+  .heroDark, .heroDark .content  {
+    @apply bg-black text-white;
   }
-  
-  h3 {
-    @apply text-3xl md:text-[28px] lg:text-[40px] lg:leading-tight mb-2 md:mb-2 lg:mb-1
+
+  .heroLight, .heroLight .content  {
+    @apply bg-gray-200 text-black;
   }
-  
-  .hero-Left-image{
-    @apply w-full md:flex-grow order-2 z-0
+
+  .hero .wrapper {
+    @apply md:flex md:flex-row;
   }
-  .hero-Left-text{
-    @apply pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 bg-gray-900 md:bg-opacity-50 md:w-6/12 md:-mr-[50%] order-1 z-10
+
+  .heroLarge.heroLeft .image {
+    @apply w-full md:flex-grow order-2 z-0;
   }
-  .hero-Left-wrapper{
-    @apply bg-black md:flex md:flex-row
+  .heroLarge.heroRight .image {
+    @apply w-full md:flex-grow md:-mr-[50%] z-0;
   }
-  .hero-Right-image{
-    @apply w-full md:flex-grow md:-mr-[50%] z-0 
+
+  .heroLarge .content {
+    @apply pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 md:bg-opacity-50 md:w-6/12 ;
   }
-  .hero-Right-text{
-    @apply pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 bg-gray-900 md:bg-opacity-50 md:w-6/12 z-10
+  .heroLarge.heroLeft .content {
+    @apply z-10;
   }
-  .hero-Right-wrapper{
-    @apply bg-black md:flex md:flex-row
+  .heroLarge.heroRight .content {
+    @apply z-10;
   }
-  </style>
+
+  .heroMedium .content {
+    @apply pt-10 pb-10 pl-5 pr-5 lg:pl-16 lg:pr-16 md:bg-opacity-50 md:w-6/12;
+  }
+  .heroMedium .image {
+    @apply md:w-6/12;
+  }
+
+  .heroMedium.heroLeft .image {
+    @apply order-1;
+  }
+
+</style>

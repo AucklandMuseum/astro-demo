@@ -1,23 +1,48 @@
 ---
-import type { ContentType } from 'contentful';
-import ContentfulComponent from 'contentful-astro/ContentfulComponent.astro';
+import type { ContentType } from "contentful";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 import { getEntryByID } from "lib/contentful";
 
-const { leftContentBlock,rightContentBlock } = Astro.props;
-
+const { leftContentBlock, rightContentBlock } = Astro.props;
 ---
-<div>
-  <>
-  {leftContentBlock?.map((comp: ContentType) => {
-    return <ContentfulComponent type={comp.sys.contentType.sys.id} {...comp.fields} />
-  })}
-  </>
+
+<div class:list={["wrapper"]}>
+  <div class="leftPanel">
+    <>
+      {
+        leftContentBlock?.map((comp: ContentType) => {
+          return (
+            <ContentfulComponent
+              type={comp.sys.contentType.sys.id}
+              {...comp.fields}
+            />
+          );
+        })
+      }
+    </>
+  </div>
+
+  <div class="rightPanel">
+    <>
+      {
+        rightContentBlock?.map((comp: ContentType) => {
+          return (
+            <ContentfulComponent
+              type={comp.sys.contentType.sys.id}
+              {...comp.fields}
+            />
+          );
+        })
+      }
+    </>
+  </div>
 </div>
 
-<div>
-  <>
-{rightContentBlock?.map((comp: ContentType) => {
-  return <ContentfulComponent type={comp.sys.contentType.sys.id} {...comp.fields} />
-})}
-</>
-</div>
+<style>
+  .wrapper {
+    @apply md:flex md:flex-row;
+  }
+  .leftPanel, .rightPanel{
+    @apply md:w-6/12
+  }
+</style>
