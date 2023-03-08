@@ -1,23 +1,18 @@
 ---
-import 'styles/global.css';
+import "styles/global.css";
 
 import BaseHead from "components/BaseHead.astro";
 import Meganav from "components/Meganav.astro";
-import { TypePage } from 'types/TypePage';
-import { TypeContentSection } from 'types/TypeContentSection';
-import { FieldsType } from 'contentful';
+import { TypePage } from "types/TypePage";
+import { TypeContentSection } from "types/TypeContentSection";
+import { FieldsType } from "contentful";
 
 interface Props {
-  page:FieldsType,
-  section?: FieldsType
+  page: FieldsType;
+  section?: FieldsType;
 }
 
-const {
-  page,
-  section
-} = Astro.props;
-
-
+const { page, section } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -29,5 +24,16 @@ const {
     <div class="container"><Meganav /></div>
     <slot />
     <script src="../../node_modules/preline/dist/preline.js"></script>
+    <!-- Add lazyload library -->
+    <script
+      src="https://cdn.scaleflex.it/filerobot/js-cloudimage-responsive/lazysizes.min.js"
+    ></script>
+
+    <!-- Add js-cloudimage-responsiv library -->
+    <script
+      src="https://cdn.scaleflex.it/plugins/js-cloudimage-responsive/latest/js-cloudimage-responsive.min.js"
+    ></script>
+
+
   </body>
 </html>

@@ -6,11 +6,20 @@ const { imageTitle, imageCaption, imageMedia, size } = Astro.props;
 ---
 
 <figure>
-	<img class={"image" + size} src={imageMedia.fields.file.url} alt={imageCaption} />
+	<img class:list={["image" + size,"lazy"]} ci-src={imageMedia.fields.file.url} alt={imageCaption} />
 </figure>
-
+    <!-- Initialize cloudimage responsive -->
+    <script>
+		const ciResponsive = new window.CIResponsive({
+		  token: "ajrctguoxo",
+		  lazyLoading: true, // optional
+		  
+		});
+  
+		window.lazySizes.init();
+	  </script>
 <style>
 	img {
-		@apply h-full w-auto overflow-hidden
+		@apply max-w-full
 	}
 </style>

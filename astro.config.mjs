@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import dotenv from 'dotenv'
 import tailwind from "@astrojs/tailwind";
 import contentful from "contentful-astro";
 
@@ -18,7 +17,7 @@ import vue from "@astrojs/vue";
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  integrations: [tailwind(), react(), vue(),
+  integrations: [tailwind(), react(), vue({ appEntrypoint: '/src/pages/_app' }),
     contentful({
       space: spaceID,
       accessToken: CMA,
