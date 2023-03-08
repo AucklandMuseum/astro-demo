@@ -1,4 +1,5 @@
 ---
+import Cloudimage from "./react/Cloudimage";
 import * as contentful from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
@@ -6,20 +7,10 @@ const { imageTitle, imageCaption, imageMedia, size } = Astro.props;
 ---
 
 <figure>
-	<img class:list={["image" + size,"lazy"]} ci-src={imageMedia.fields.file.url} alt={imageCaption} />
+	<Cloudimage client:only="react" src={imageMedia.fields.file.url} />
 </figure>
-    <!-- Initialize cloudimage responsive -->
-    <script>
-		const ciResponsive = new window.CIResponsive({
-		  token: "ajrctguoxo",
-		  lazyLoading: true, // optional
-		  
-		});
-  
-		window.lazySizes.init();
-	  </script>
 <style>
-	img {
-		@apply max-w-full
+	Cloudimage {
+		@apply max-w-full;
 	}
 </style>
