@@ -25,7 +25,7 @@ export default defineConfig({
     space: spaceID,
     accessToken: CMA,
     components: {
-      contentSection: "components/ContentSection",
+      contentItems: "components/ContentItems",
       copyBlock: "components/CopyBlock",
       marketingPanel: "components/Hero",
       leftAndRightPanels: "components/LeftAndRightPanels",

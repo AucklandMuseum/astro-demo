@@ -3,6 +3,9 @@ import * as contentful from 'contentful';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 ---
-<div class="prose text-inherit" set:html={documentToHtmlString(Astro.props.content)}></div>
+<div class="prose text-inherit max-w-full" set:html={documentToHtmlString(Astro.props.content)}></div>
+
+<style>
+
 
 </style>

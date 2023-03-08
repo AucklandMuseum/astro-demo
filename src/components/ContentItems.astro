@@ -1,0 +1,55 @@
+---
+import type { ContentType } from "contentful";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
+
+const { sectionWidth, sectionStyle, contentWidth, contentBlocks } = Astro.props;
+
+/*
+sectionWidth: [ 'Standard' ],
+  sectionStyle: [ 'Standard' ],
+  contentWidth: [ 'Standard' ],
+  */
+---
+<section class:list={["section"+sectionWidth, "section"+sectionStyle]}>
+  <div class:list={["container","container"+contentWidth]}>
+<>
+  {
+    contentBlocks?.map((comp: ContentType) => {
+      return (
+        <ContentfulComponent
+          type={comp.sys.contentType.sys.id}
+          {...comp.fields}
+        />
+      );
+    })
+  }
+  </div>
+</section>
+
+<style>
+  section{
+    @apply w-full antialiased m-0
+  }
+  .sectionStandard{
+    
+  }
+  .sectionFullwidth{
+    @apply mx-0 px-0 max-w-full
+  }
+  .sectionLight {
+    @apply bg-gray-200 text-black
+  }
+  .sectionDark {
+    @apply bg-black text-white
+  }
+  .container{
+    @apply mx-auto 
+  }
+  .containerStandard{
+    @apply max-w-7xl
+  }
+  .containerFullwidth{
+    @apply w-full max-w-full mx-0
+  }
+
+</style>
