@@ -11,7 +11,7 @@ sectionWidth: [ 'Standard' ],
   */
 ---
 <section class:list={["section"+sectionWidth, "section"+sectionStyle]}>
-  <div class:list={["container","container"+contentWidth]}>
+  <div class:list={["content","content"+contentWidth]}>
 <>
   {
     contentBlocks?.map((comp: ContentType) => {
@@ -31,7 +31,7 @@ sectionWidth: [ 'Standard' ],
     @apply w-full antialiased m-0
   }
   .sectionStandard{
-    
+    @apply mx-auto px-5 lg:px-16 2xl:px-0 max-w-7xl
   }
   .sectionFullwidth{
     @apply mx-0 px-0 max-w-full
@@ -42,14 +42,14 @@ sectionWidth: [ 'Standard' ],
   .sectionDark {
     @apply bg-black text-white
   }
-  .container{
-    @apply mx-auto 
+  .content{
+    @apply mx-auto w-full max-w-full 
   }
-  .containerStandard{
+  .contentStandard{
     @apply max-w-7xl
   }
-  .containerFullwidth{
-    @apply w-full max-w-full mx-0
+  .contentFullwidth{
+    @apply max-w-full 
   }
 
 </style>
