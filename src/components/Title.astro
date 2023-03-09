@@ -14,10 +14,10 @@ const { title, subtitle, boldSubtitle, parent, parentStyle } = Astro.props;
   .title {
     @apply mx-auto px-5 lg:px-16 2xl:px-0 max-w-7xl;
   }
-  .titleHeroLarge{
+  .title.titleHeroLarge {
     @apply px-0;
   }
-  .titleHeroMedium{
+  .title.titleHeroMedium {
     @apply px-0;
   }
   
@@ -27,6 +27,7 @@ const { title, subtitle, boldSubtitle, parent, parentStyle } = Astro.props;
   h3 {
     @apply font-thin text-gray-400 text-3xl md:text-4xl lg:text-5xl lg:leading-tight;
   }
+  
   .titleLight {
     @apply text-black;
   }
