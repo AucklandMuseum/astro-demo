@@ -1,8 +1,9 @@
 ---
-const { title, subtitle, boldSubtitle, parent, style } = Astro.props;
+const { title, subtitle, boldSubtitle, parent, parentStyle } = Astro.props;
+console.log(parent)
 ---
 <div class="max-w-full">
-<div class:list={["title", "title" + style, "title" + parent ? "" : parent]}>
+<div class:list={["title", "title" + parentStyle, "title" + parent]}>
   <div class="mb-10 font-bold uppercase" set:html={Astro.props.boldSubtitle} />
   <h3 set:html={subtitle} />
   <div>
@@ -14,8 +15,15 @@ const { title, subtitle, boldSubtitle, parent, style } = Astro.props;
   .title {
     @apply mx-auto px-5 lg:px-16 2xl:px-0 max-w-7xl;
   }
+  .titleHeroLarge{
+    @apply px-0;
+  }
+  .titleHeroMedium{
+    @apply px-0;
+  }
+  
   h2 {
-    @apply text-inherit font-normal text-4xl md:text-5xl lg:text-6xl lg:leading-tight;
+    @apply text-inherit font-normal lg:font-thin text-4xl md:text-5xl lg:text-6xl lg:leading-tight;
   }
   h3 {
     @apply font-thin text-gray-400 text-3xl md:text-4xl lg:text-5xl lg:leading-tight;

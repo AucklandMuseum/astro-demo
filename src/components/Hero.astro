@@ -11,54 +11,64 @@ let {
   contentAlignment,
   size,
   style,
+  parent,
+  parentStyle
 } = Astro.props;
 
+console.log("test"+parentStyle)
 imageMetadata.fields["size"] = size;
 ---
 
-<section class:list={["hero","hero" + style, "hero" + size, "hero" + contentAlignment]}>
-  <div class:list={["wrapper"]}>
-    <div class={"image"}>
-      <ContentfulComponent
-        type={imageMetadata.sys.contentType.sys.id}
-        {...imageMetadata.fields}
-      />
-    </div>
-    <div
-      class:list={["content"]}
-    >
-      <div class="h-full flex flex-col justify-center">
-        <div>
-          <>
-            {
-              content?.map((comp: ContentType) => {
-                comp.fields["parent"] = "Hero" + size;
-                comp.fields["style"] = style;
-                return (
-                  <ContentfulComponent
-                    type={comp.sys.contentType.sys.id}
-                    {...comp.fields}
-                  />
-                );
-              })
-            }
-          </>
-        </div>
+<div
+  class:list={[
+    "wrapper",
+    "hero" + style,
+    "hero" + size,
+    "hero" + contentAlignment,
+  ]}
+>
+  <div class={"image"}>
+    <ContentfulComponent
+      type={imageMetadata.sys.contentType.sys.id}
+      {...imageMetadata.fields}
+    />
+  </div>
+  <div class:list={["content"]}>
+    <div class="h-full flex flex-col justify-center">
+      <div>
+        <>
+          {
+            content?.map((comp: ContentType) => {
+              comp.fields["parent"] = "Hero" + size;
+              comp.fields["parentStyle"] = style;
+              return (
+                <ContentfulComponent
+                  type={comp.sys.contentType.sys.id}
+                  {...comp.fields}
+                />
+              );
+            })
+          }
+        </>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <style>
-  .heroDark .content, .heroDark .content, .heroDark  {
+  .heroDark .content,
+  .heroDark .content,
+  .heroDark {
     @apply bg-black text-white;
   }
 
-  .heroLight  .content, .heroLight .content, .heroLight  {
+  .heroLight .content,
+  .heroLight .content,
+  .heroLight {
     @apply bg-gray-200 text-black;
   }
 
-  .hero .wrapper {
+  .wrapper {
     @apply md:flex md:flex-row w-full;
   }
 
@@ -70,7 +80,7 @@ imageMetadata.fields["size"] = size;
   }
 
   .heroLarge .content {
-    @apply pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 md:bg-opacity-50 md:w-6/12 ;
+    @apply pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 md:bg-opacity-50 md:w-6/12;
   }
   .heroLarge.heroLeft .content {
     @apply z-10;
@@ -89,5 +99,4 @@ imageMetadata.fields["size"] = size;
   .heroMedium.heroLeft .image {
     @apply order-1;
   }
-
 </style>

@@ -22,7 +22,6 @@ export function getPageBySlug(
 export function getPageByAltURL(
   altURL: string
 ): Promise<contentful.Entry<TypePage>> {
-  console.log(altURL)
   return client
     .getEntries({"locale":"en-NZ","content_type":"page", "fields.alternateUrls[in]":"/"+altURL, "include":10})
     .then((response: contentful.EntryCollection<TypePage>) => response.items[0])

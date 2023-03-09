@@ -3,14 +3,29 @@ import type { ContentType } from "contentful";
 import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 import { getEntryByID } from "lib/contentful";
 
-const { leftContentBlock, rightContentBlock } = Astro.props;
+const {
+  leftContentBlock,
+  rightContentBlock,
+  verticalAlignment,
+  leftPanelWidth,
+  leftPanelAlignment,
+  leftPanelBackground,
+  rightPanelAlignment,
+  rightPanelBackground,
+  leftContentBlockMargin,
+  rightContentBlockMargin,
+  parent,
+  parentStyle
+} = Astro.props;
 ---
 
-<div class:list={["wrapper"]}>
-  <div class="leftPanel">
+<div class"md:flex md:flex-row">
+  <div class:list={["leftPanel", "width" + leftPanelWidth, "margin" + leftContentBlockMargin]}>
     <>
       {
         leftContentBlock?.map((comp: ContentType) => {
+          comp.fields["parent"] = "LeftPanel";
+          
           return (
             <ContentfulComponent
               type={comp.sys.contentType.sys.id}
@@ -22,10 +37,12 @@ const { leftContentBlock, rightContentBlock } = Astro.props;
     </>
   </div>
 
-  <div class="rightPanel">
+  <div class:list={["rightPanel", "width" + (100-leftPanelWidth), "margin" + rightContentBlockMargin]}>
     <>
       {
         rightContentBlock?.map((comp: ContentType) => {
+          comp.fields["parent"] = "RightPanel";
+          comp.fields["parentStyle"] = parentStyle;
           return (
             <ContentfulComponent
               type={comp.sys.contentType.sys.id}
@@ -39,10 +56,23 @@ const { leftContentBlock, rightContentBlock } = Astro.props;
 </div>
 
 <style>
-  .wrapper {
-    @apply md:flex md:flex-row;
+  .width25{
+    @apply w-1/4
   }
-  .leftPanel, .rightPanel{
-    @apply md:w-6/12
+  .width50{
+    @apply w-1/2
+  }
+  .width66{
+    @apply w-2/3
+  }
+  .width33{
+    @apply w-1/3
+  }
+  .width75{
+    @apply w-3/4
+  }  
+  .leftPanel,
+  .rightPanel {
+    @apply md:flex  m-0 p-0
   }
 </style>

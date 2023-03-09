@@ -2,14 +2,17 @@
 import type { ContentType } from "contentful";
 import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 
-const {
+let  {
   sectionWidth,
   sectionStyle,
   sectionMarginTop,
   sectionMarginBottom,
   contentWidth,
   contentBlocks,
+  parent,
+  parentStyle,
 } = Astro.props;
+
 ---
 
 <section
@@ -24,6 +27,8 @@ const {
     <>
       {
         contentBlocks?.map((comp: ContentType) => {
+          comp.fields["parent"] = parent;
+          comp.fields["parentStyle"] = parentStyle;
           return (
             <ContentfulComponent
               type={comp.sys.contentType.sys.id}

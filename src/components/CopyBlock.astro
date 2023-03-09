@@ -2,19 +2,35 @@
 import * as contentful from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-const { content, contentStyle } = Astro.props;
+let { content, contentStyle, parent, parentStyle } = Astro.props;
 ---
 
 <div
-	class:list={["prose", "copy", "copy" + contentStyle]}
+	class:list={[
+		"prose",
+		"copy" + contentStyle,
+		"copy" + parent,
+		"copy" + parentStyle,
+	]}
 	set:html={documentToHtmlString(content)}
-></div>
+/>
 
 <style>
 	.copy {
-		@apply text-inherit
+	}
+	.copyLight {
+		@apply text-black;
+	}
+	.copyDark {
+		@apply text-white;
 	}
 	.copyLarge {
 		@apply prose-2xl max-w-full leading-tight;
+	}
+	.copyHeroLarge {
+		@apply mt-14;
+	}
+	.copyRightPanel {
+		@apply m-auto;
 	}
 </style>

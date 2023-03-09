@@ -18,6 +18,8 @@ const titleProps = {
   subtitle: section?.fields.title,
   size: "Large",
   style: "Light",
+  parent: "Page",
+  parentStyle: page?.fields.behaviour,  
 };
 ---
 
@@ -26,6 +28,8 @@ const titleProps = {
   <>
     {
       page?.fields.contentSections?.map((comp: ContentType) => {
+        comp.fields["parent"] = titleProps.parent;
+        comp.fields["parentStyle"] = titleProps.parentStyle;
         return (
           <ContentfulComponent
             type={comp.sys.contentType.sys.id}
