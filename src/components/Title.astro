@@ -1,7 +1,7 @@
 ---
 const { title, subtitle, boldSubtitle, parent, style } = Astro.props;
 ---
-
+<div class="max-w-full">
 <div class:list={["title", "title" + style, "title" + parent ? "" : parent]}>
   <div class="mb-10 font-bold uppercase" set:html={Astro.props.boldSubtitle} />
   <h3 set:html={subtitle} />
@@ -9,12 +9,16 @@ const { title, subtitle, boldSubtitle, parent, style } = Astro.props;
     <h2 set:html={title} />
   </div>
 </div>
+</div>
 <style>
+  .title {
+    @apply mx-auto px-5 lg:px-16 2xl:px-0 max-w-7xl;
+  }
   h2 {
-    @apply text-inherit font-normal text-4xl md:text-4xl lg:text-6xl lg:leading-tight mb-10 md:mb-5 lg:mb-20;
+    @apply text-inherit font-normal text-4xl md:text-5xl lg:text-6xl lg:leading-tight;
   }
   h3 {
-    @apply max-w-full font-thin text-gray-400 text-3xl md:text-4xl lg:leading-tight mb-2 md:mb-4 lg:mb-0;
+    @apply font-thin text-gray-400 text-3xl md:text-4xl lg:text-5xl lg:leading-tight;
   }
   .titleLight {
     @apply text-black;
@@ -28,7 +32,7 @@ const { title, subtitle, boldSubtitle, parent, style } = Astro.props;
   }
 
   .titleHeroLarge h3 {
-    @apply max-w-full font-thin text-gray-400 text-3xl md:text-3xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-0;
+    @apply font-thin text-gray-400 text-3xl md:text-3xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-0;
   }
 
   .titleHeroMedium h2 {
@@ -36,6 +40,6 @@ const { title, subtitle, boldSubtitle, parent, style } = Astro.props;
   }
 
   .titleHeroMedium h3 {
-    @apply max-w-full font-thin text-gray-400 text-2xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-1;
+    @apply font-thin text-gray-400 text-2xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-1;
   }
 </style>
