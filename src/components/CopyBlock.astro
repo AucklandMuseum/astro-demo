@@ -1,11 +1,20 @@
 ---
-import * as contentful from 'contentful';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import * as contentful from "contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
+const { content, contentStyle } = Astro.props;
 ---
-<div class="prose text-inherit max-w-full" set:html={documentToHtmlString(Astro.props.content)}></div>
+
+<div
+	class:list={["prose", "copy", "copy" + contentStyle]}
+	set:html={documentToHtmlString(content)}
+></div>
 
 <style>
-
-
+	.copy {
+		@apply text-inherit
+	}
+	.copyLarge {
+		@apply prose-2xl max-w-full leading-tight;
+	}
 </style>

@@ -2,54 +2,96 @@
 import type { ContentType } from "contentful";
 import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 
-const { sectionWidth, sectionStyle, contentWidth, contentBlocks } = Astro.props;
-
-/*
-sectionWidth: [ 'Standard' ],
-  sectionStyle: [ 'Standard' ],
-  contentWidth: [ 'Standard' ],
-  */
+const {
+  sectionWidth,
+  sectionStyle,
+  sectionMarginTop,
+  sectionMarginBottom,
+  contentWidth,
+  contentBlocks,
+} = Astro.props;
 ---
-<section class:list={["section"+sectionWidth, "section"+sectionStyle]}>
-  <div class:list={["content","content"+contentWidth]}>
-<>
-  {
-    contentBlocks?.map((comp: ContentType) => {
-      return (
-        <ContentfulComponent
-          type={comp.sys.contentType.sys.id}
-          {...comp.fields}
-        />
-      );
-    })
-  }
+
+<section
+  class:list={[
+    "section" + sectionWidth,
+    "section" + sectionStyle,
+    "sectionMT" + sectionMarginTop,
+    "sectionMB" + sectionMarginBottom,
+  ]}
+>
+  <div class:list={["content", "content" + contentWidth]}>
+    <>
+      {
+        contentBlocks?.map((comp: ContentType) => {
+          return (
+            <ContentfulComponent
+              type={comp.sys.contentType.sys.id}
+              {...comp.fields}
+            />
+          );
+        })
+      }
+    </>
   </div>
+
+  <style>
+    section {
+      @apply w-full antialiased m-0;
+    }
+    .sectionStandard {
+      @apply mx-auto px-5 lg:px-16 2xl:px-0 max-w-7xl;
+    }
+    .sectionFullwidth {
+      @apply mx-0 px-0 max-w-full;
+    }
+
+    .sectionMTStandard {
+      @apply pt-9;
+    }
+    .sectionMBStandard {
+      @apply pb-4;
+    }
+
+    .sectionMTNone {
+      @apply pt-0;
+    }
+    .sectionMBNone {
+      @apply pb-0;
+    }
+
+    .sectionMTSmall {
+      @apply pt-1;
+    }
+    .sectionMBSmall {
+      @apply pb-1;
+    }
+
+    .sectionMTLarge {
+      @apply pt-20;
+    }
+    .sectionMBLarge {
+      @apply pb-20;
+    }
+
+    .sectionLight {
+      @apply bg-gray-200 text-black;
+    }
+    .sectionDark {
+      @apply bg-black text-white;
+    }
+
+
+
+
+    .content {
+      @apply mx-auto w-full max-w-full;
+    }
+    .contentStandard {
+      @apply max-w-7xl;
+    }
+    .contentFullwidth {
+      @apply max-w-full;
+    }
+  </style>
 </section>
-
-<style>
-  section{
-    @apply w-full antialiased m-0
-  }
-  .sectionStandard{
-    @apply mx-auto px-5 lg:px-16 2xl:px-0 max-w-7xl
-  }
-  .sectionFullwidth{
-    @apply mx-0 px-0 max-w-full
-  }
-  .sectionLight {
-    @apply bg-gray-200 text-black
-  }
-  .sectionDark {
-    @apply bg-black text-white
-  }
-  .content{
-    @apply mx-auto w-full max-w-full 
-  }
-  .contentStandard{
-    @apply max-w-7xl
-  }
-  .contentFullwidth{
-    @apply max-w-full 
-  }
-
-</style>
