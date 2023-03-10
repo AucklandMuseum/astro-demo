@@ -1,6 +1,4 @@
 ---
-import { YouTube } from '@astro-community/astro-embed-youtube';
-//console.log(Astro.props)
+import YouTube from "./react/YouTube";
 ---
-
-<YouTube id={Astro.props.videoUrl} />
+<YouTube client:only="react" {...Astro.props} ></YouTube>

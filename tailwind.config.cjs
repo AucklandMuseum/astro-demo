@@ -7,21 +7,31 @@ module.exports = {
 		'./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}',
 		'node_modules/preline/dist/*.js',
 	],
+	theme: {
+		extend: {
+		  typography: {
+			DEFAULT: {
+			  // Custom CSS here ↓
+			  css: {
+				hr: {
+					borderColor: 'var(--tw-prose-text)',
+					borderTopWidth: 1,
+				  },			  
+				},
+			},
+		  },
+		},
+	  },	
     plugins: [
         require('@tailwindcss/typography'),
         require('@tailwindcss/aspect-ratio'),
         require('@tailwindcss/line-clamp'),
         require('@tailwindcss/container-queries'),
-		require("daisyui"),
+		//require("daisyui"),
 		require("preline/plugin.js"),
-        plugin(function childrenPlugin({ addVariant }) {
-            // apply a style to all direct children
-            // example usage: "children:border-l children:border-blue-500"
-            addVariant('children', '& > *')
-        })
     ],
 	  // daisyUI config (optional)
-	  daisyui: {
+/* 	  daisyui: {
 		styled: true,
 		themes: ["lofi"],
 		base: true,
@@ -30,5 +40,5 @@ module.exports = {
 		rtl: false,
 		prefix: "",
 		darkTheme: "dark",
-	  },
+	  }, */
 }

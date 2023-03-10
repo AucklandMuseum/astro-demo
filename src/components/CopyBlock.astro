@@ -7,7 +7,7 @@ let { content, contentStyle, parent, parentStyle } = Astro.props;
 
 <div
 	class:list={[
-		"prose",
+		"prose","copy",
 		"copy" + contentStyle,
 		"copy" + parent,
 		"copy" + parentStyle,
@@ -16,21 +16,31 @@ let { content, contentStyle, parent, parentStyle } = Astro.props;
 />
 
 <style>
+	hr {
+		@apply border-t-4
+	}
 	.copy {
+		@apply max-w-none w-full
+	}
+	.copyStandard{
+		@apply prose
 	}
 	.copyLight {
-		@apply text-black;
+		@apply prose text-black
 	}
 	.copyDark {
-		@apply text-white;
+		@apply prose-invert
 	}
 	.copyLarge {
-		@apply prose-2xl max-w-full leading-tight;
+		@apply prose-2xl leading-tight;
 	}
+	.copySmall {
+		@apply prose-sm;
+	}	
 	.copyHeroLarge {
 		@apply mt-14;
 	}
 	.copyRightPanel {
-		@apply m-auto;
+		@apply justify-end
 	}
 </style>

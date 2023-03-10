@@ -27,8 +27,8 @@ let  {
     <>
       {
         contentBlocks?.map((comp: ContentType) => {
-          comp.fields["parent"] = parent;
-          comp.fields["parentStyle"] = parentStyle;
+          comp.fields["parent"] = "Section";
+          comp.fields["parentStyle"] = sectionStyle;
           return (
             <ContentfulComponent
               type={comp.sys.contentType.sys.id}
@@ -80,10 +80,10 @@ let  {
     }
 
     .sectionLight {
-      @apply bg-gray-200 text-black;
+      @apply bg-gray-200 
     }
     .sectionDark {
-      @apply bg-black text-white;
+      @apply bg-black
     }
 
 
