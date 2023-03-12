@@ -1,4 +1,27 @@
 ---
-import YouTube from "./react/YouTube";
+import getYouTubeID from "get-youtube-id";
+
+const { videoUrl, width, aspectRatio, autoplay } = Astro.props;
+
+let blockClassWidth = ["block", "w-full"];
+if (width != 100) blockClassWidth = ["block", "w-[" + width + "]"];
+
+let videoClassList = ["aspect-w-16", "aspect-h-9"];
+if (aspectRatio.indexOf("4:3") > 0)
+	videoClassList = ["aspect-w-4", "aspect-h-3"];
+if (aspectRatio.indexOf("Portait") > 0)
+	videoClassList = ["aspect-w-9", "aspect-h-16"];
+if (aspectRatio.indexOf("Square") > 0)
+	videoClassList = ["aspect-w-1", "aspect-h-1"];
+
+const videoId = getYouTubeID(videoUrl);
+
+const videoURL = "https://www.youtube.com/embed/" + videoId;
+if (autoplay) videoURL += "?autoplay=1";
 ---
-<YouTube client:only="react" {...Astro.props} ></YouTube>
+
+<div class:list={blockClassWidth}>
+	<div class:list={videoClassList}>
+		<iframe src={videoURL} frameborder="0" allowfullscreen></iframe>
+	</div>
+</div>
