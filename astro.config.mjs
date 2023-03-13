@@ -31,7 +31,8 @@ export default defineConfig({
       leftAndRightPanels: "components/LeftAndRightPanels",
       title: "components/Title",
       imageMetadata: "components/ImageMetadata",
-      WidgetYouTubeResponsive: "components/Youtube"
+      widgetYouTubeResponsive: "components/Youtube",
+      promoWithBorder: "components/PromoWithBorder",
     }
   }), compress()],
   adapter: netlify()

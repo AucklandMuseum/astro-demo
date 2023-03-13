@@ -1,0 +1,63 @@
+---
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
+//console.log(Astro.props);
+let {
+	image,
+	imagePosition,
+	content,
+	borderColor,
+	applyColorToTitle,
+	parent,
+	parentStyle,
+} = Astro.props;
+
+const borderColorValue = borderColor.value;
+const promoClass = "promo";
+const promoAlignmentClass = [promoClass, promoClass + imagePosition];
+const promoBarClass = [promoClass + "Bar", "border-[5px]"];
+const borderColorStyle = "border-color: " + borderColorValue;
+---
+
+<div class="w-full mt-16">
+	<div class:list={promoBarClass} style={borderColorStyle}>
+		<div class="px-10 pb-8 -mt-16">
+			<div class="flex justify-center lg:justify-end">
+				<div class="promoTop">
+					<ContentfulComponent
+						type={image.sys.contentType.sys.id}
+						{...image.fields}
+					/>
+				</div>
+			</div>
+			<div class=" ">
+				<>
+					{
+						content?.map((comp: ContentType) => {
+							comp.fields["parent"] = "Promo";
+							comp.fields["parentStyle"] = "";
+							comp.fields["contentStyle"] = "";
+							comp.fields["colorOverride"] = borderColorValue;
+							return (
+								<ContentfulComponent
+									type={comp.sys.contentType.sys.id}
+									F
+									{...comp.fields}
+								/>
+							);
+						})
+					}
+				</>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.promoTop {
+		@apply max-w-[200px] w-[40%];
+	}
+	.Top {
+		@apply pt-20;
+	}
+</style>

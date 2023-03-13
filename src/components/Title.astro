@@ -1,12 +1,14 @@
 ---
-const { title, subtitle, boldSubtitle, parent, parentStyle } = Astro.props;
+const { title, subtitle, boldSubtitle, parent, parentStyle, colorOverride } = Astro.props;
+
+const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
 ---
 <div class="max-w-full">
 <div class:list={["title", "title" + parentStyle, "title" + parent]}>
-  <div class="mb-10 font-bold uppercase" set:html={Astro.props.boldSubtitle} />
-  <h3 set:html={subtitle} />
+  <div class:list={["boldSubtitle", "boldSubtitle" + parentStyle, "boldSubtitle" + parent]} set:html={Astro.props.boldSubtitle} />
+  <h3 set:html={subtitle} style={overrideColorStyle} />
   <div>
-    <h2 set:html={title} />
+    <h2 set:html={title} style={overrideColorStyle} />
   </div>
 </div>
 </div>
@@ -20,12 +22,22 @@ const { title, subtitle, boldSubtitle, parent, parentStyle } = Astro.props;
   .title.titleHeroMedium {
     @apply px-0;
   }
+  .title.titlePromo {
+    @apply px-0 m-0 
+  }
   
   h2 {
     @apply text-inherit font-normal lg:font-thin text-4xl md:text-5xl lg:text-6xl lg:leading-tight;
   }
   h3 {
     @apply font-thin text-gray-400 text-3xl md:text-4xl lg:text-5xl lg:leading-tight;
+  }
+
+  .boldSubtitle{
+    @apply mb-10 font-bold uppercase
+  }
+  .boldSubtitlePromo{
+    @apply m-0 font-bold uppercase
   }
   
   .titleLight {
@@ -50,4 +62,13 @@ const { title, subtitle, boldSubtitle, parent, parentStyle } = Astro.props;
   .titleHeroMedium h3 {
     @apply font-thin text-gray-400 text-2xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-1;
   }
+
+ 
+  .titlePromo h2 {
+    @apply text-inherit font-bold text-4xl leading-tight mb-5
+  }
+
+  .titlePromo h3 {
+    @apply text-2xl;
+  } 
 </style>
