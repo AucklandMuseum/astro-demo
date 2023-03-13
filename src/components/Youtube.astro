@@ -1,6 +1,7 @@
 ---
 import getYouTubeID from "get-youtube-id";
 
+
 const { videoUrl, width, aspectRatio, autoplay } = Astro.props;
 
 let blockClassWidth = ["block", "w-full"];
@@ -19,9 +20,9 @@ const videoId = getYouTubeID(videoUrl);
 const videoEmbedURL = "https://www.youtube.com/embed/" + videoId;
 if (autoplay) videoURL += "?autoplay=1";
 ---
-
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js"></script>
 <div class:list={blockClassWidth}>
 	<div class:list={videoClassList}>
-		<iframe src={videoEmbedURL} frameborder="0" allowfullscreen></iframe>
+		<lite-youtube videoid={videoId}></lite-youtube>
 	</div>
 </div>

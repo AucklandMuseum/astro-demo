@@ -2,6 +2,7 @@
 @tailwind components
 @tailwind utility;
 
+
 @font-face {
   font-family: 'Gotham Narrow';
   font-style: normal;
@@ -21,16 +22,7 @@
   src: url("/fonts/GothamNarrow-Medium.woff2") format("woff2"), url("/fonts/GothamNarrow-Medium.woff") format("woff"); }
 
 @layer base {
-  body {
+  html {
 	  font-family: 'Gotham Narrow'; 
   }
-
-
-  .btn {
-    @apply text-black border-black pl-[48px] pr-[48px] pt-[12px] pb-[12px] text-[16px] mt-10 bg-transparent border-2 xl:border-[3px]
-  }
-
-   .reverse.btn {
-    @apply text-white border-white 
-  } 
 }
