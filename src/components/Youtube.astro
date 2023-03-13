@@ -16,12 +16,12 @@ if (aspectRatio.indexOf("Square") > 0)
 
 const videoId = getYouTubeID(videoUrl);
 
-const videoURL = "https://www.youtube.com/embed/" + videoId;
+const videoEmbedURL = "https://www.youtube.com/embed/" + videoId;
 if (autoplay) videoURL += "?autoplay=1";
 ---
 
 <div class:list={blockClassWidth}>
 	<div class:list={videoClassList}>
-		<iframe src={videoURL} frameborder="0" allowfullscreen></iframe>
+		<iframe src={videoEmbedURL} frameborder="0" allowfullscreen></iframe>
 	</div>
 </div>
