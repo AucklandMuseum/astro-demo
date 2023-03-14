@@ -1,0 +1,39 @@
+---
+import type { ContentType } from "contentful";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
+
+let  {
+  sectionWidth,
+  sectionStyle,
+  sectionMarginTop,
+  sectionMarginBottom,
+  contentWidth,
+  content,
+  parent,
+  parentStyle,
+} = Astro.props;
+
+---
+<div class="grid gap-8 grid-cols-3 items-start pt-4">
+    
+
+
+    <>
+      {
+        content?.map((comp: ContentType) => {
+          comp.fields["parent"] = parent;
+          comp.fields["parentStyle"] = parentStyle;
+          return (
+          <div class="relative flex flex-col h-full p-2 bg-black" >
+            <ContentfulComponent
+              type={comp.sys.contentType.sys.id}
+              {...comp.fields}
+            />
+            </div>
+          );
+        })
+      }
+    </>
+  
+
+</div>

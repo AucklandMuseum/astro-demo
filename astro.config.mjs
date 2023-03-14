@@ -33,6 +33,7 @@ export default defineConfig({
       imageMetadata: "components/ImageMetadata",
       widgetYouTubeResponsive: "components/Youtube",
       promoWithBorder: "components/PromoWithBorder",
+      contentCollection: "components/ContentCollection",
     }
   }), compress()],
   adapter: netlify()

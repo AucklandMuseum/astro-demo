@@ -2,7 +2,7 @@
 import type { ContentType } from "contentful";
 import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 
-let  {
+let {
   sectionWidth,
   sectionStyle,
   sectionMarginTop,
@@ -12,7 +12,6 @@ let  {
   parent,
   parentStyle,
 } = Astro.props;
-
 ---
 
 <section
@@ -80,23 +79,29 @@ let  {
     }
 
     .sectionLight {
-      @apply bg-gray-200 
+      @apply bg-gray-200;
     }
     .sectionDark {
-      @apply bg-black
+      @apply bg-black;
     }
-
-
-
 
     .content {
-      @apply mx-auto w-full max-w-full;
+      @apply mx-auto w-full bg-pink-50
+    }
+    .contentNarrow {
+      @apply md:max-w-4xl;
+    }
+    .sectionFullwidth .contentNarrow {
+      @apply px-5 lg:px-32 2xl:px-0
     }
     .contentStandard {
-      @apply max-w-7xl;
+      @apply md:max-w-7xl;
+    }
+    .sectionFullwidth .contentStandard {
+      @apply w-full px-5 lg:px-16 2xl:px-0
     }
     .contentFullwidth {
-      @apply max-w-full;
+      @apply w-full;
     }
   </style>
 </section>
