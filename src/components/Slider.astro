@@ -1,0 +1,28 @@
+---
+import type { ContentType } from "contentful";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
+
+const { contentBlocks, parent, parentStyle } = Astro.props;
+---
+
+<div
+  class="flex flex-nowrap overflow-x-auto snap-x snap-mandatory pb-5 m-auto no-scrollbar"
+>
+  <>
+    {
+      contentBlocks?.map((comp: ContentType) => {
+        comp.fields["parent"] = parent;
+        comp.fields["parentStyle"] = parentStyle;
+
+        return (
+          <div class="w-80 flex-none snap-center snap-always p-5 m-5 bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <ContentfulComponent
+              type={comp.sys.contentType.sys.id}
+              {...comp.fields}
+            />
+          </div>
+        );
+      })
+    }
+  </>
+</div>

@@ -1,0 +1,43 @@
+---
+import Cloudimage from "./react/Cloudimage";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
+//console.log(Astro.props);
+let {
+  coreImage,
+  title,
+  subtitle,
+  boldSubtitle,
+  displaySummary,
+  parent,
+  parentStyle,
+  overrideColorStyle,
+  slug
+} = Astro.props;
+---
+
+<a href={"/page/"+slug}>
+<div>
+  <div class="image">
+    <Cloudimage client:only="react" src={coreImage.fields.file.url} />
+  </div>
+  <div class="max-w-full prose">
+    <div class:list={["title", "title" + parentStyle, "title" + parent]}>
+      <div
+        class:list={[
+          "boldSubtitle",
+          "boldSubtitle" + parentStyle,
+          "boldSubtitle" + parent,
+        ]}
+        set:html={Astro.props.boldSubtitle}
+      />
+      <h3 set:html={subtitle} style={overrideColorStyle} />
+      <div>
+        <h2 set:html={title} style={overrideColorStyle} />
+      </div>
+      <div set:html={documentToHtmlString(displaySummary)}></div>
+    </div>
+  </div>
+</div>
+</a>
+<style></style>

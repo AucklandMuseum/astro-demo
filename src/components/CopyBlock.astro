@@ -2,7 +2,7 @@
 import * as contentful from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-let { content, contentStyle, parent, parentStyle } = Astro.props;
+let { content, contentStyle = "Standard", parent, parentStyle } = Astro.props;
 ---
 
 <div

@@ -25,7 +25,7 @@ export default defineConfig({
     space: spaceID,
     accessToken: CMA,
     components: {
-      contentItems: "components/ContentItems",
+      contentItems: "components/Section",
       copyBlock: "components/CopyBlock",
       marketingPanel: "components/Hero",
       leftAndRightPanels: "components/LeftAndRightPanels",
@@ -34,6 +34,8 @@ export default defineConfig({
       widgetYouTubeResponsive: "components/Youtube",
       promoWithBorder: "components/PromoWithBorder",
       contentCollection: "components/ContentCollection",
+      slider: "components/Slider",
+      page: "components/Page",
     }
   }), compress()],
   adapter: netlify()
