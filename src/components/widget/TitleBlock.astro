@@ -1,18 +1,31 @@
 ---
-const { title, subtitle, boldSubtitle, parent, parentStyle, colorOverride } = Astro.props;
+const { title, subtitle, boldSubtitle, status = "", statusColor = "grey-50", parent, parentStyle, colorOverride = "" } =
+  Astro.props;
 
 const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
 ---
-<div class="max-w-full">
-<div class:list={["title", "title" + parentStyle, "title" + parent]}>
-  <div class:list={["boldSubtitle", "boldSubtitle" + parentStyle, "boldSubtitle" + parent]} set:html={Astro.props.boldSubtitle} />
-  <h3 set:html={subtitle} style={overrideColorStyle} />
-  <div>
-    <h2 set:html={title} style={overrideColorStyle} />
+
+<header class="">
+  <h1 set:html={title} style={overrideColorStyle} />
+  <div class="extra-info">
+    <div class="date-location">
+      <div class="subtitle subtitle-date" set:html={boldSubtitle} style={overrideColorStyle}  />
+      <div class="subtitle subtitle-place" set:html={subtitle} style={overrideColorStyle} />
+    </div>
   </div>
-</div>
-</div>
+</header>
+
 <style>
+  .extra-info{
+    @apply  flex items-start
+  }
+  .status, .date-location {
+    @apply inline-block align-top mr-3 mb-1.5
+  }
+  .subtitle {
+    @apply text-gray-600 text-sm my-1 uppercase font-bold
+}
+
   .title {
     @apply mx-auto px-5 lg:px-16 2xl:px-0 max-w-7xl;
   }

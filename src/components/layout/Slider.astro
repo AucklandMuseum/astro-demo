@@ -15,7 +15,7 @@ const { contentBlocks, parent, parentStyle } = Astro.props;
         comp.fields["parentStyle"] = parentStyle;
 
         return (
-          <div class="w-80 flex-none snap-center snap-always p-5 m-5 bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+          <div class="w-80 min-h-[50vh] flex-none snap-center snap-always p-5 m-5 bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
             <ContentfulComponent
               type={comp.sys.contentType.sys.id}
               {...comp.fields}

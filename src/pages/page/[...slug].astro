@@ -23,7 +23,7 @@ const titleProps = {
 ---
 
 <BaseLayout page={page} section={section}>
-  <ContentfulComponent type="title" {...titleProps} />
+  <ContentfulComponent type="sectionTitle" {...titleProps} />
   <>
     {
       page?.fields.contentSections?.map((comp: ContentType) => {

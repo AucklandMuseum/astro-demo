@@ -14,6 +14,13 @@ module.exports = {
 				DEFAULT: {
 					// Custom CSS here ↓
 					css: {
+						color: '#333',
+						p: {
+							fontStyle: 'normal',
+							fontWeight: 400,
+							fontLeading: 'normal',
+							lineHeight: '1.5em',
+						},
 						hr: {
 							borderColor: 'var(--tw-prose-text)',
 							borderTopWidth: 1,
@@ -29,7 +36,7 @@ module.exports = {
 		require('@tailwindcss/line-clamp'),
 		require('@tailwindcss/container-queries'),
 		//require("daisyui"),
-		require("preline/plugin.js"),
+		//require("preline/plugin.js"),
 	],
 	// daisyUI config (optional)
 	/* 	  daisyui: {
