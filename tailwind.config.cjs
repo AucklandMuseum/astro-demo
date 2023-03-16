@@ -11,6 +11,7 @@ module.exports = {
 	theme: {
 		extend: {
 			typography: {
+
 				DEFAULT: {
 					// Custom CSS here ↓
 					css: {
@@ -25,6 +26,12 @@ module.exports = {
 							borderColor: 'var(--tw-prose-text)',
 							borderTopWidth: 1,
 						},
+						'blockquote p:first-of-type::before': {
+							content: '""',
+						  },
+						  'blockquote p:last-of-type::after': {
+							content: '""',
+						  }
 					},
 				},
 			},
