@@ -1,11 +1,16 @@
 ---
-import * as contentful from "contentful";
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-
 let { htmlContent, parent, parentStyle } = Astro.props;
 ---
-
-<div
-	class="prose prose-blockquote:text-xl prose-blockquote:text-gray-400 prose-img:m-auto prose-figure:bg-gray-100 prose-figcaption:bg-gray-100 prose-figcaption:mt-0 prose-figcaption:p-5 prose-figcaption:prose-p:mt-0"
+<article
+	class="prose max-w-none prose-blockquote:text-xl prose-blockquote:text-gray-400 prose-img:m-auto prose-figure:bg-gray-100 prose-figcaption:bg-gray-100 prose-figcaption:mt-0 prose-figcaption:px-5 prose-figcaption:pb-5 prose-figcaption:prose-p:mt-0"
 	set:html={htmlContent}
-/>
+></article>
+
+<link rel="stylesheet" href="https://cdn.scaleflex.it/plugins/js-cloudimage-responsive/latest/js-cloudimage-responsive.min.css?vh=a076ef&func=proxy"></link>
+<script src="https://cdn.scaleflex.it/plugins/js-cloudimage-responsive/latest/js-cloudimage-responsive.min.js"></script>
+<script src="//platform.instagram.com/en_US/embeds.js"></script>
+<script>
+    const ciResponsive = new window.CIResponsive({
+      token: 'ajrctguoxo',
+    });
+</script>

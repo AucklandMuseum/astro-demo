@@ -3,6 +3,7 @@ const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+	mode: 'jit',
 	content: [
 		'./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}',
 		'node_modules/preline/dist/*.js',
@@ -15,7 +16,9 @@ module.exports = {
 				DEFAULT: {
 					// Custom CSS here ↓
 					css: {
-						color: '#333',
+						img:{
+							width: '100%',
+						},
 						p: {
 							fontStyle: 'normal',
 							fontWeight: 400,

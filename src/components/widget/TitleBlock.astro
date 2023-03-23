@@ -16,6 +16,12 @@ const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
 </header>
 
 <style>
+    
+
+  .heroDark {
+    @apply prose-invert;
+  }
+
   .extra-info{
     @apply  flex items-start
   }
@@ -23,7 +29,7 @@ const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
     @apply inline-block align-top mr-3 mb-1.5
   }
   .subtitle {
-    @apply text-gray-600 text-sm my-1 uppercase font-bold
+    @apply text-sm my-1 uppercase font-bold
 }
 
   .title {
@@ -52,20 +58,13 @@ const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
   .boldSubtitlePromo{
     @apply m-0 font-bold uppercase
   }
-  
-  .titleLight {
-    @apply text-black;
-  }
-  .titleDark {
-    @apply text-white;
-  }
 
   .titleHeroLarge h2 {
     @apply text-inherit font-thin text-4xl md:text-4xl xl:text-6xl xl:leading-tight mb-10 md:mb-5 xl:mb-20;
   }
 
   .titleHeroLarge h3 {
-    @apply font-thin text-gray-400 text-3xl md:text-3xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-0;
+    @apply font-thin text-3xl md:text-3xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-0;
   }
 
   .titleHeroMedium h2 {
@@ -73,7 +72,7 @@ const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
   }
 
   .titleHeroMedium h3 {
-    @apply font-thin text-gray-400 text-2xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-1;
+    @apply font-thin text-2xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-1;
   }
 
  
