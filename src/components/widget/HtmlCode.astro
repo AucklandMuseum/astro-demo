@@ -19,6 +19,22 @@ let { htmlContent, parent, parentStyle } = Astro.props;
     token: "ajrctguoxo",
   });
 </script>
+<!-- jQuery -->
+<script
+  src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"
+  type="text/javascript"
+></script>
+
+<!-- nanogallery2 -->
+<link
+  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"
+></script>
 
 <style is:inline>
   .caption,
@@ -61,7 +77,8 @@ let { htmlContent, parent, parentStyle } = Astro.props;
   blockquote p {
     margin-top: 0 !important;
   }
-  figure.right, figure.left {
+  figure.right,
+  figure.left {
     @media (min-width: 800px) {
       width: 37.5%;
       max-width: 400px;
@@ -72,8 +89,8 @@ let { htmlContent, parent, parentStyle } = Astro.props;
       clear: right;
       float: right;
       margin-left: 1em;
-      margin-top:0!important;
-      margin-bottom:0!important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
     }
   }
   figure.left {
@@ -81,15 +98,15 @@ let { htmlContent, parent, parentStyle } = Astro.props;
       clear: left;
       float: left;
       margin-right: 1em;
-      margin-top:0!important;
-      margin-bottom:0!important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
     }
   }
-  figcaption{
-    padding:10px!important;
+  figcaption {
+    padding: 10px !important;
   }
   figcaption p {
-    margin-bottom: 7px!important;
-    margin-top:0!important;
-}
+    margin-bottom: 7px !important;
+    margin-top: 0 !important;
+  }
 </style>

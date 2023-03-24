@@ -5,9 +5,7 @@ import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 const { contentBlocks, parent, parentStyle } = Astro.props;
 ---
 
-<div
-  class="flex flex-nowrap overflow-x-auto snap-x snap-mandatory pb-5 m-auto no-scrollbar"
->
+<swiper-container class="mySwiper" init="false" class="flex flex-nowrap overflow-x-auto snap-x snap-mandatory pb-5 m-auto no-scrollbar">
   <>
     {
       contentBlocks?.map((comp: ContentType) => {
@@ -15,14 +13,56 @@ const { contentBlocks, parent, parentStyle } = Astro.props;
         comp.fields["parentStyle"] = parentStyle;
 
         return (
-          <div class="w-80 min-h-[50vh] flex-none snap-center snap-always p-5 m-5 bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+          <swiper-slide>
             <ContentfulComponent
               type={comp.sys.contentType.sys.id}
               {...comp.fields}
             />
-          </div>
+          </swiper-slide>
         );
       })
     }
   </>
-</div>
+</swiper-container>
+
+<script is:inline
+  
+  src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"
+></script>
+
+<script >
+  const swiperEl = document.querySelector("swiper-container");
+  Object.assign(swiperEl, {
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 5,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 5,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 5,
+      },
+    },
+  });
+  swiperEl.initialize();
+</script>
+
+<style>
+  swiper-slide {
+    @apply w-80 min-h-[50vh] p-5 m-5 bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out
+  }
+
+</style>
