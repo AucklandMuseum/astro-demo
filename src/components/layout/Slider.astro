@@ -30,7 +30,7 @@ const { contentBlocks, parent, parentStyle } = Astro.props;
   src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"
 ></script>
 
-<script >
+<script  is:inline>
   const swiperEl = document.querySelector("swiper-container");
   Object.assign(swiperEl, {
   keyboard: {
