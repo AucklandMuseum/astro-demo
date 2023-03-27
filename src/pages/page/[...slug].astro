@@ -10,7 +10,7 @@ const { slug } = Astro.params;
 let page = await getPageBySlug(slug);
 if (!page) return Astro.redirect("/404");
 
-let section = await getSectionByID(page.fields.parentSiteSection.sys.id);
+let section = await getSectionByID(page.fields.parentSiteSection?.sys.id);
 
 const titleProps = {
   title: page?.fields.title,

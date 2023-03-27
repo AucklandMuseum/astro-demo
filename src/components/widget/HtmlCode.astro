@@ -19,22 +19,26 @@ let { htmlContent, parent, parentStyle } = Astro.props;
     token: "ajrctguoxo",
   });
 </script>
-<!-- jQuery -->
-<script
-  src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"
-  type="text/javascript"
+
+<link type="text/css" rel="stylesheet" href="../src/lib/lightGallery/css/lightgallery-bundle.css" />
+<script is:inline src="../src/lib/lightGallery/lightgallery.min.js"></script>
+<script is:inline
+  src="../src/lib/lightGallery/plugins/thumbnail/lg-thumbnail.min.js"
+></script>
+<script is:inline src="../src/lib/lightGallery/plugins/zoom/lg-zoom.min.js"
+></script>
+<script is:inline src="../src/lib/lightGallery/plugins/relativeCaption/lg-relative-caption.min.js"
 ></script>
 
-<!-- nanogallery2 -->
-<link
-  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css"
-  rel="stylesheet"
-  type="text/css"
-/>
-<script
-  type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"
-></script>
+<script  is:inline>
+var galleries = document.getElementsByClassName('gallery');
+for (let item of galleries) {
+    lightGallery(item, {
+      plugins: [lgZoom, lgThumbnail, lgRelativeCaption],
+    subHtmlSelectorRelative: true,
+    })
+}
+</script>
 
 <style is:inline>
   .caption,
@@ -109,4 +113,21 @@ let { htmlContent, parent, parentStyle } = Astro.props;
     margin-bottom: 7px !important;
     margin-top: 0 !important;
   }
+
+  .gallery{
+    display: block;
+  }
+  .gallery a {
+    height: 100px !important;
+    display: inline-block;
+  }
+  .gallery img {
+    height: 100px !important;
+    width: auto !important;
+    margin: 0;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    vertical-align: top;
+  }
+  .gallery .caption {display: none;}
 </style>
