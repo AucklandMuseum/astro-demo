@@ -20,15 +20,11 @@ let { htmlContent, parent, parentStyle } = Astro.props;
   });
 </script>
 
-<link type="text/css" rel="stylesheet" href="../src/lib/lightGallery/css/lightgallery-bundle.css" />
-<script is:inline src="../src/lib/lightGallery/lightgallery.min.js"></script>
-<script is:inline
-  src="../src/lib/lightGallery/plugins/thumbnail/lg-thumbnail.min.js"
-></script>
-<script is:inline src="../src/lib/lightGallery/plugins/zoom/lg-zoom.min.js"
-></script>
-<script is:inline src="../src/lib/lightGallery/plugins/relativeCaption/lg-relative-caption.min.js"
-></script>
+<link type="text/css" rel="stylesheet" href="/src/lightGallery/css/lightgallery-bundle.css" />
+<script is:inline src="/src/lightGallery/lightgallery.min.js"></script>
+<script is:inline src="/src/lightGallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
+<script is:inline src="/src/lightGallery/plugins/zoom/lg-zoom.min.js"></script>
+<script is:inline src="/src/lightGallery/plugins/relativeCaption/lg-relative-caption.min.js"></script>
 
 <script  is:inline>
 var galleries = document.getElementsByClassName('gallery');
