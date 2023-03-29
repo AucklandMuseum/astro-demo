@@ -5,7 +5,7 @@ const spaceID = process.env.CONTENTFUL_SPACE_ID;
 const CMA = process.env.CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN;
 
 // https://astro.build/config
-import netlify from "@astrojs/netlify/edge-functions";
+import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 import react from "@astrojs/react";
@@ -19,7 +19,9 @@ import compress from "astro-compress";
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  integrations: [tailwind(), react(), contentful({
+  integrations: [tailwind(), react(), vue(/*{
+    appEntrypoint: '/src/pages/_app'
+  }*/), contentful({
     space: spaceID,
     accessToken: CMA,
     components: {
