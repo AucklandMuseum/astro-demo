@@ -19,9 +19,7 @@ import compress from "astro-compress";
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  integrations: [tailwind(), react(), vue(/*{
-    appEntrypoint: '/src/pages/_app'
-  }*/), contentful({
+  integrations: [tailwind(), react(), contentful({
     space: spaceID,
     accessToken: CMA,
     components: {
