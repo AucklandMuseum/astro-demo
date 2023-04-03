@@ -29,7 +29,7 @@
     "astro-compress": "^1.1.35",
     "autoprefixer": "^10.4.13",
     "cf-content-types-generator": "^2.8.0",
-    "contentful": "^10.0.0-beta-v10.18",
+    "contentful": "^9.3.5",
     "contentful-astro": "^1.1.0",
     "daisyui": "^2.49.0",
     "get-youtube-id": "^1.0.1",
