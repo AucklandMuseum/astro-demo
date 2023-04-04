@@ -1,0 +1,3455 @@
+[
+  {
+    "ts": "2023-04-04T01:30:55.512Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "1FF7DMIDRm9NS8voUW75dh",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:30.615Z",
+          "updatedAt": "2023-04-04T01:30:30.615Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "section"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Your Museum"
+          },
+          "slug": {
+            "en-NZ": "your-museum"
+          },
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              }
+            }
+          },
+          "coreImage": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "6hu1HkHYdgD2qhK7YMmwuN"
+              }
+            }
+          },
+          "secondaryTitle": {
+            "en-NZ": "Tō Whare Taonga"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              },
+              "path": [
+                "fields",
+                "parentSiteSection",
+                "en-US"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/1FF7DMIDRm9NS8voUW75dh/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "4451b19a-39d5-4cb4-8bb9-0dae60ba7960"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:30:55.979Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "1SPZG6IcC1ui6hPeBMNJri",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:30.180Z",
+          "updatedAt": "2023-04-04T01:30:30.180Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "section"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Discover"
+          },
+          "slug": {
+            "en-NZ": "discover"
+          },
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              }
+            }
+          },
+          "coreImage": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "5JqDZpi4bZlDWG8STuqLyq"
+              }
+            }
+          },
+          "secondaryTitle": {
+            "en-NZ": "Tuhuratia"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              },
+              "path": [
+                "fields",
+                "parentSiteSection",
+                "en-US"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/1SPZG6IcC1ui6hPeBMNJri/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "7f0e5ec4-ff4e-4a9f-a74d-cde121723a68"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:30:56.362Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "7tDlI6iLaWM4RjoXNwCISA",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:30.188Z",
+          "updatedAt": "2023-04-04T01:30:30.188Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "section"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Learn"
+          },
+          "slug": {
+            "en-NZ": "learn"
+          },
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              }
+            }
+          },
+          "coreImage": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "2pUhLFkuzLLZaRqDcwf3qA"
+              }
+            }
+          },
+          "secondaryTitle": {
+            "en-NZ": "Ako"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              },
+              "path": [
+                "fields",
+                "parentSiteSection",
+                "en-US"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/7tDlI6iLaWM4RjoXNwCISA/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "f09a4f7d-bdb7-425b-ad48-556da89430e9"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:30:56.852Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "3I2ce5dfwiPOKtHXZHtU4p",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:30.184Z",
+          "updatedAt": "2023-04-04T01:30:30.184Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "section"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "War Memorial"
+          },
+          "slug": {
+            "en-NZ": "war-memorial"
+          },
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              }
+            }
+          },
+          "coreImage": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "2V5F6fB5g8UASkZKKaQlGF"
+              }
+            }
+          },
+          "secondaryTitle": {
+            "en-NZ": "Paenga Hira"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              },
+              "path": [
+                "fields",
+                "parentSiteSection",
+                "en-US"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/3I2ce5dfwiPOKtHXZHtU4p/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "6c78f756-2400-41c4-9508-6458ab96f655"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:30:58.910Z",
+    "level": "error",
+    "error": {
+      "name": "InvalidEntry",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "1aHz0dvTrQP6kayY6zekVn",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:31.233Z",
+          "updatedAt": "2023-04-04T01:30:31.233Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "page"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Museum Store"
+          },
+          "slug": {
+            "en-NZ": "store"
+          },
+          "behaviour": {
+            "en-NZ": "Standard"
+          },
+          "isSearchable": {
+            "en-NZ": true
+          },
+          "alternateTitle": {
+            "en-NZ": "Store"
+          },
+          "redirect": {
+            "en-NZ": "https://store,aucklandmuseum.com"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "required",
+              "path": [
+                "fields",
+                "parentSiteSection"
+              ],
+              "details": "The property \"parentSiteSection\" is required here"
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/1aHz0dvTrQP6kayY6zekVn/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "1651f567-1d54-4ffe-8e27-6739d7bdc936"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:31:30.538Z",
+    "level": "error",
+    "error": {
+      "name": "InvalidEntry",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "3DFGLAHDaxWwAenwOtfYos",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:39.248Z",
+          "updatedAt": "2023-04-04T01:30:39.248Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "page"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Test"
+          },
+          "slug": {
+            "en-NZ": "test"
+          },
+          "behaviour": {
+            "en-NZ": "Standard"
+          },
+          "isSearchable": {
+            "en-NZ": true
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "required",
+              "path": [
+                "fields",
+                "parentSiteSection"
+              ],
+              "details": "The property \"parentSiteSection\" is required here"
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/3DFGLAHDaxWwAenwOtfYos/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "3023146d-2d06-4a8a-af67-9765456f5005"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:31:36.009Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "jCC6f8QRehOc0AJgWw4nV",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:41.252Z",
+          "updatedAt": "2023-04-04T01:30:41.252Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "imageMetadata"
+            }
+          }
+        },
+        "fields": {
+          "imageMedia": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "6GivCww16tFXfWfntIkOr"
+              }
+            }
+          },
+          "imageTitle": {
+            "en-NZ": "Stonehenge"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "6GivCww16tFXfWfntIkOr"
+              },
+              "path": [
+                "fields",
+                "imageMedia",
+                "en-US"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/jCC6f8QRehOc0AJgWw4nV/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "45dda0f8-7557-45c1-958c-443694bc0dc9"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:31:42.302Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "79RW3E3EFq5NQ2Z0aFpyJz",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:42.309Z",
+          "updatedAt": "2023-04-04T01:30:42.309Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "copyBlock"
+            }
+          }
+        },
+        "fields": {
+          "name": {
+            "en-NZ": "Home Copy"
+          },
+          "contentStyle": {
+            "en-NZ": "Large"
+          },
+          "content": {
+            "en-NZ": {
+              "nodeType": "document",
+              "data": {
+              },
+              "content": [
+                {
+                  "nodeType": "unordered-list",
+                  "data": {
+                  },
+                  "content": [
+                    {
+                      "nodeType": "list-item",
+                      "data": {
+                      },
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {
+                          },
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            },
+                            {
+                              "nodeType": "entry-hyperlink",
+                              "data": {
+                                "target": {
+                                  "sys": {
+                                    "id": "70OTMm2sGfxRdKPeBuQugX",
+                                    "type": "Link",
+                                    "linkType": "Entry"
+                                  }
+                                }
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Pamela Todd",
+                                  "marks": [
+                                  ],
+                                  "data": {
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "list-item",
+                      "data": {
+                      },
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {
+                          },
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "/war-memorial/online-cenotaph/features/bo-goldie"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Bo Goldie",
+                                  "marks": [
+                                  ],
+                                  "data": {
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "list-item",
+                      "data": {
+                      },
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {
+                          },
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            },
+                            {
+                              "nodeType": "entry-hyperlink",
+                              "data": {
+                                "target": {
+                                  "sys": {
+                                    "id": "4BxUjJod3eEuqmdCq5wY0s",
+                                    "type": "Link",
+                                    "linkType": "Entry"
+                                  }
+                                }
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "James Herbert",
+                                  "marks": [
+                                  ],
+                                  "data": {
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "list-item",
+                      "data": {
+                      },
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {
+                          },
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "/Visit/Exhibitions/Secrets-of-Stonehenge"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Stonehenge",
+                                  "marks": [
+                                  ],
+                                  "data": {
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "list-item",
+                      "data": {
+                      },
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {
+                          },
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "/page/making-volume"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Volume Blog",
+                                  "marks": [
+                                  ],
+                                  "data": {
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "paragraph",
+                  "data": {
+                  },
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "",
+                      "marks": [
+                      ],
+                      "data": {
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "id": "4BxUjJod3eEuqmdCq5wY0s",
+                "type": "Link",
+                "linkType": "Entry"
+              },
+              "path": [
+                "fields",
+                "content",
+                "en-US",
+                0
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/79RW3E3EFq5NQ2Z0aFpyJz/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "7e460381-9f66-4db0-b9b7-1ea2a0462427"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:31:42.720Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "rtqdzUBFvD2pQFKuTCOal",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:42.295Z",
+          "updatedAt": "2023-04-04T01:30:42.295Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "page"
+            }
+          }
+        },
+        "fields": {
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "33JMIpC77PNrEKMz0l8a8E"
+              }
+            }
+          },
+          "title": {
+            "en-NZ": "Bo Goldie - Called home to rest among his people"
+          },
+          "slug": {
+            "en-NZ": "bo-goldie"
+          },
+          "behaviour": {
+            "en-NZ": "Cenotaph"
+          },
+          "isSearchable": {
+            "en-NZ": true
+          },
+          "contentSections": {
+            "en-NZ": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "rfpDFf1W6rP45lxegDymw"
+                }
+              }
+            ]
+          },
+          "alternateUrls": {
+            "en-NZ": [
+              "/war-memorial/online-cenotaph/features/bo-goldie"
+            ]
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "rfpDFf1W6rP45lxegDymw"
+              },
+              "path": [
+                "fields",
+                "contentSections",
+                "en-US",
+                0
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/rtqdzUBFvD2pQFKuTCOal/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "d69ec4e4-8ead-473c-b3cc-a5213fd1d55b"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:31:50.701Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "3caPJLuY1RIdHHE9Fs4iCi",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:49.360Z",
+          "updatedAt": "2023-04-04T01:30:49.360Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "contentCollection"
+            }
+          }
+        },
+        "fields": {
+          "name": {
+            "en-NZ": "Stonehenge belt"
+          },
+          "behaviour": {
+            "en-NZ": "Belt"
+          },
+          "title": {
+            "en-NZ": "Enhance your visit"
+          },
+          "heading": {
+            "en-NZ": "Grab a bite to eat at one of our cafés or stop by the Museum Store to take home a piece of Stonehenge with you."
+          },
+          "contentBlocks": {
+            "en-NZ": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "6vCY5xfs7dHY94ZkwJxlv0"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "16k2JdagTG2QcEAJeQcxjv"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "fCK0e9Utx1LMGDow0U1gF"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "56gIVQIhcJ9mEZ0qVGAUe"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "16k2JdagTG2QcEAJeQcxjv"
+              },
+              "path": [
+                "fields",
+                "contentBlocks",
+                "en-US",
+                1
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/3caPJLuY1RIdHHE9Fs4iCi/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "3c8785a5-c940-4443-a691-cacc7c470288"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:13.072Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "3rdCYMoBslgrN18312QiYy",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:54.371Z",
+          "updatedAt": "2023-04-04T01:30:54.371Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "section"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Visit"
+          },
+          "slug": {
+            "en-NZ": "visit"
+          },
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              }
+            }
+          },
+          "coreImage": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "5FlEoSDWeMjtiTdKMLDMCX"
+              }
+            }
+          },
+          "secondaryTitle": {
+            "en-NZ": "Toro Mai"
+          },
+          "menuList": {
+            "en-NZ": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "4thbpXigeLLnZvNwbKfPZL"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "29biqKpKrODLIPoGqGPlsQ"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "3mufgIyxZH2JKgPShbveWO"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "2NgNKCQ9HG4ZRk7piItlBL"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "7wHPgMHYgtEiY2a6dE0rNO"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "YUZNch6EFkUZN37AKgIPW"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "6XtjIuk8qVFOO1dGUrf3au"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "6KxQGbxjTgIacBnK5FoRNU"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "1CjDUYchlumptoxf98wrfK"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "2NHP2OyzPR2bq5HHXprRj5"
+                }
+              }
+            ]
+          },
+          "menuGallery": {
+            "en-NZ": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "4Ti3nH52JgLhY8BUYokiQQ"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "2R1RF5mfMAdloNMIOTXBGF"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "7zC1uQLCQLMN2wEgOiya7i"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              },
+              "path": [
+                "fields",
+                "parentSiteSection",
+                "en-US"
+              ]
+            },
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4thbpXigeLLnZvNwbKfPZL"
+              },
+              "path": [
+                "fields",
+                "menuList",
+                "en-US",
+                0
+              ]
+            },
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "29biqKpKrODLIPoGqGPlsQ"
+              },
+              "path": [
+                "fields",
+                "menuList",
+                "en-US",
+                1
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/3rdCYMoBslgrN18312QiYy/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "4f3c48ad-ee6f-468b-b2d3-34b9b81ea972"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:14.104Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "1FF7DMIDRm9NS8voUW75dh",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:30.615Z",
+          "updatedAt": "2023-04-04T01:30:30.615Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "section"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Your Museum"
+          },
+          "slug": {
+            "en-NZ": "your-museum"
+          },
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              }
+            }
+          },
+          "coreImage": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "6hu1HkHYdgD2qhK7YMmwuN"
+              }
+            }
+          },
+          "secondaryTitle": {
+            "en-NZ": "Tō Whare Taonga"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              },
+              "path": [
+                "fields",
+                "parentSiteSection",
+                "en-US"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/1FF7DMIDRm9NS8voUW75dh/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "839bd377-5c49-4972-abf0-22c41f1166e4"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:14.557Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "1SPZG6IcC1ui6hPeBMNJri",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:30.180Z",
+          "updatedAt": "2023-04-04T01:30:30.180Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "section"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Discover"
+          },
+          "slug": {
+            "en-NZ": "discover"
+          },
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              }
+            }
+          },
+          "coreImage": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "5JqDZpi4bZlDWG8STuqLyq"
+              }
+            }
+          },
+          "secondaryTitle": {
+            "en-NZ": "Tuhuratia"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              },
+              "path": [
+                "fields",
+                "parentSiteSection",
+                "en-US"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/1SPZG6IcC1ui6hPeBMNJri/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "eaed4725-bdca-4499-b103-c7e33d5cece4"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:15.034Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "7tDlI6iLaWM4RjoXNwCISA",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:30.188Z",
+          "updatedAt": "2023-04-04T01:30:30.188Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "section"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Learn"
+          },
+          "slug": {
+            "en-NZ": "learn"
+          },
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              }
+            }
+          },
+          "coreImage": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "2pUhLFkuzLLZaRqDcwf3qA"
+              }
+            }
+          },
+          "secondaryTitle": {
+            "en-NZ": "Ako"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              },
+              "path": [
+                "fields",
+                "parentSiteSection",
+                "en-US"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/7tDlI6iLaWM4RjoXNwCISA/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "c1820ab9-b89f-4a44-8636-f4edab07a75d"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:15.427Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "3I2ce5dfwiPOKtHXZHtU4p",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:30.184Z",
+          "updatedAt": "2023-04-04T01:30:30.184Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "section"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "War Memorial"
+          },
+          "slug": {
+            "en-NZ": "war-memorial"
+          },
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              }
+            }
+          },
+          "coreImage": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "2V5F6fB5g8UASkZKKaQlGF"
+              }
+            }
+          },
+          "secondaryTitle": {
+            "en-NZ": "Paenga Hira"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              },
+              "path": [
+                "fields",
+                "parentSiteSection",
+                "en-US"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/3I2ce5dfwiPOKtHXZHtU4p/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "e8130ab2-ca40-45f6-aae4-46c733450ac8"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:15.841Z",
+    "level": "error",
+    "error": {
+      "name": "InvalidEntry",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "1aHz0dvTrQP6kayY6zekVn",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:31.233Z",
+          "updatedAt": "2023-04-04T01:30:31.233Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "page"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Museum Store"
+          },
+          "slug": {
+            "en-NZ": "store"
+          },
+          "behaviour": {
+            "en-NZ": "Standard"
+          },
+          "isSearchable": {
+            "en-NZ": true
+          },
+          "alternateTitle": {
+            "en-NZ": "Store"
+          },
+          "redirect": {
+            "en-NZ": "https://store,aucklandmuseum.com"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "required",
+              "path": [
+                "fields",
+                "parentSiteSection"
+              ],
+              "details": "The property \"parentSiteSection\" is required here"
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/1aHz0dvTrQP6kayY6zekVn/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "8aa3dc5d-a799-41e8-98ee-587b05a8b7a1"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:16.222Z",
+    "level": "error",
+    "error": {
+      "name": "InvalidEntry",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "3DFGLAHDaxWwAenwOtfYos",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:39.248Z",
+          "updatedAt": "2023-04-04T01:30:39.248Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "page"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Test"
+          },
+          "slug": {
+            "en-NZ": "test"
+          },
+          "behaviour": {
+            "en-NZ": "Standard"
+          },
+          "isSearchable": {
+            "en-NZ": true
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "required",
+              "path": [
+                "fields",
+                "parentSiteSection"
+              ],
+              "details": "The property \"parentSiteSection\" is required here"
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/3DFGLAHDaxWwAenwOtfYos/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "fd46b591-59fe-436a-ba4b-9a8be055f339"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:16.562Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "jCC6f8QRehOc0AJgWw4nV",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:41.252Z",
+          "updatedAt": "2023-04-04T01:30:41.252Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "imageMetadata"
+            }
+          }
+        },
+        "fields": {
+          "imageMedia": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "6GivCww16tFXfWfntIkOr"
+              }
+            }
+          },
+          "imageTitle": {
+            "en-NZ": "Stonehenge"
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "6GivCww16tFXfWfntIkOr"
+              },
+              "path": [
+                "fields",
+                "imageMedia",
+                "en-US"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/jCC6f8QRehOc0AJgWw4nV/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "6c96597e-00b0-4b15-a8e4-e8656a937077"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:16.950Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "79RW3E3EFq5NQ2Z0aFpyJz",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:42.309Z",
+          "updatedAt": "2023-04-04T01:30:42.309Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "copyBlock"
+            }
+          }
+        },
+        "fields": {
+          "name": {
+            "en-NZ": "Home Copy"
+          },
+          "contentStyle": {
+            "en-NZ": "Large"
+          },
+          "content": {
+            "en-NZ": {
+              "nodeType": "document",
+              "data": {
+              },
+              "content": [
+                {
+                  "nodeType": "unordered-list",
+                  "data": {
+                  },
+                  "content": [
+                    {
+                      "nodeType": "list-item",
+                      "data": {
+                      },
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {
+                          },
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            },
+                            {
+                              "nodeType": "entry-hyperlink",
+                              "data": {
+                                "target": {
+                                  "sys": {
+                                    "id": "70OTMm2sGfxRdKPeBuQugX",
+                                    "type": "Link",
+                                    "linkType": "Entry"
+                                  }
+                                }
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Pamela Todd",
+                                  "marks": [
+                                  ],
+                                  "data": {
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "list-item",
+                      "data": {
+                      },
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {
+                          },
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "/war-memorial/online-cenotaph/features/bo-goldie"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Bo Goldie",
+                                  "marks": [
+                                  ],
+                                  "data": {
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "list-item",
+                      "data": {
+                      },
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {
+                          },
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            },
+                            {
+                              "nodeType": "entry-hyperlink",
+                              "data": {
+                                "target": {
+                                  "sys": {
+                                    "id": "4BxUjJod3eEuqmdCq5wY0s",
+                                    "type": "Link",
+                                    "linkType": "Entry"
+                                  }
+                                }
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "James Herbert",
+                                  "marks": [
+                                  ],
+                                  "data": {
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "list-item",
+                      "data": {
+                      },
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {
+                          },
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "/Visit/Exhibitions/Secrets-of-Stonehenge"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Stonehenge",
+                                  "marks": [
+                                  ],
+                                  "data": {
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "nodeType": "list-item",
+                      "data": {
+                      },
+                      "content": [
+                        {
+                          "nodeType": "paragraph",
+                          "data": {
+                          },
+                          "content": [
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            },
+                            {
+                              "nodeType": "hyperlink",
+                              "data": {
+                                "uri": "/page/making-volume"
+                              },
+                              "content": [
+                                {
+                                  "nodeType": "text",
+                                  "value": "Volume Blog",
+                                  "marks": [
+                                  ],
+                                  "data": {
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "nodeType": "text",
+                              "value": "",
+                              "marks": [
+                              ],
+                              "data": {
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "paragraph",
+                  "data": {
+                  },
+                  "content": [
+                    {
+                      "nodeType": "text",
+                      "value": "",
+                      "marks": [
+                      ],
+                      "data": {
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "id": "4BxUjJod3eEuqmdCq5wY0s",
+                "type": "Link",
+                "linkType": "Entry"
+              },
+              "path": [
+                "fields",
+                "content",
+                "en-US",
+                0
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/79RW3E3EFq5NQ2Z0aFpyJz/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "bb373cff-00b0-4d4f-9c54-bcb69b1c67df"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:17.359Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "rtqdzUBFvD2pQFKuTCOal",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:42.295Z",
+          "updatedAt": "2023-04-04T01:30:42.295Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "page"
+            }
+          }
+        },
+        "fields": {
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "33JMIpC77PNrEKMz0l8a8E"
+              }
+            }
+          },
+          "title": {
+            "en-NZ": "Bo Goldie - Called home to rest among his people"
+          },
+          "slug": {
+            "en-NZ": "bo-goldie"
+          },
+          "behaviour": {
+            "en-NZ": "Cenotaph"
+          },
+          "isSearchable": {
+            "en-NZ": true
+          },
+          "contentSections": {
+            "en-NZ": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "rfpDFf1W6rP45lxegDymw"
+                }
+              }
+            ]
+          },
+          "alternateUrls": {
+            "en-NZ": [
+              "/war-memorial/online-cenotaph/features/bo-goldie"
+            ]
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "rfpDFf1W6rP45lxegDymw"
+              },
+              "path": [
+                "fields",
+                "contentSections",
+                "en-US",
+                0
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/rtqdzUBFvD2pQFKuTCOal/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "ef4ad257-f252-408f-8c57-942ac60fd5df"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:17.780Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "3caPJLuY1RIdHHE9Fs4iCi",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:49.360Z",
+          "updatedAt": "2023-04-04T01:30:49.360Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "contentCollection"
+            }
+          }
+        },
+        "fields": {
+          "name": {
+            "en-NZ": "Stonehenge belt"
+          },
+          "behaviour": {
+            "en-NZ": "Belt"
+          },
+          "title": {
+            "en-NZ": "Enhance your visit"
+          },
+          "heading": {
+            "en-NZ": "Grab a bite to eat at one of our cafés or stop by the Museum Store to take home a piece of Stonehenge with you."
+          },
+          "contentBlocks": {
+            "en-NZ": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "6vCY5xfs7dHY94ZkwJxlv0"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "16k2JdagTG2QcEAJeQcxjv"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "fCK0e9Utx1LMGDow0U1gF"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "56gIVQIhcJ9mEZ0qVGAUe"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "16k2JdagTG2QcEAJeQcxjv"
+              },
+              "path": [
+                "fields",
+                "contentBlocks",
+                "en-US",
+                1
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/3caPJLuY1RIdHHE9Fs4iCi/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "cece52e7-be47-4043-887e-06207482cacc"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:18.237Z",
+    "level": "error",
+    "error": {
+      "name": "UnresolvedLinks",
+      "entity": {
+        "metadata": {
+          "tags": [
+          ]
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "xmm9edywwgpz"
+            }
+          },
+          "id": "3rdCYMoBslgrN18312QiYy",
+          "type": "Entry",
+          "createdAt": "2023-04-04T01:30:54.371Z",
+          "updatedAt": "2023-04-04T01:30:54.371Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "3vLiH6O1JU5mq9fdqDnL1y"
+            }
+          },
+          "publishedCounter": 0,
+          "version": 1,
+          "automationTags": [
+          ],
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "section"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-NZ": "Visit"
+          },
+          "slug": {
+            "en-NZ": "visit"
+          },
+          "parentSiteSection": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              }
+            }
+          },
+          "coreImage": {
+            "en-NZ": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Asset",
+                "id": "5FlEoSDWeMjtiTdKMLDMCX"
+              }
+            }
+          },
+          "secondaryTitle": {
+            "en-NZ": "Toro Mai"
+          },
+          "menuList": {
+            "en-NZ": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "4thbpXigeLLnZvNwbKfPZL"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "29biqKpKrODLIPoGqGPlsQ"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "3mufgIyxZH2JKgPShbveWO"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "2NgNKCQ9HG4ZRk7piItlBL"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "7wHPgMHYgtEiY2a6dE0rNO"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "YUZNch6EFkUZN37AKgIPW"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "6XtjIuk8qVFOO1dGUrf3au"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "6KxQGbxjTgIacBnK5FoRNU"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "1CjDUYchlumptoxf98wrfK"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "2NHP2OyzPR2bq5HHXprRj5"
+                }
+              }
+            ]
+          },
+          "menuGallery": {
+            "en-NZ": [
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "4Ti3nH52JgLhY8BUYokiQQ"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "2R1RF5mfMAdloNMIOTXBGF"
+                }
+              },
+              {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Entry",
+                  "id": "7zC1uQLCQLMN2wEgOiya7i"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "data": {
+        "status": 422,
+        "statusText": "Unprocessable Entity",
+        "message": "Validation error",
+        "details": {
+          "errors": [
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6s2FeYt5LTC7pokdWkGY3Z"
+              },
+              "path": [
+                "fields",
+                "parentSiteSection",
+                "en-US"
+              ]
+            },
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4thbpXigeLLnZvNwbKfPZL"
+              },
+              "path": [
+                "fields",
+                "menuList",
+                "en-US",
+                0
+              ]
+            },
+            {
+              "name": "notResolvable",
+              "link": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "29biqKpKrODLIPoGqGPlsQ"
+              },
+              "path": [
+                "fields",
+                "menuList",
+                "en-US",
+                1
+              ]
+            }
+          ]
+        },
+        "request": {
+          "url": "/spaces/xmm9edywwgpz/environments/master/entries/3rdCYMoBslgrN18312QiYy/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/0.0.0-determined-by-semantic-release; feature space-import; sdk contentful-management.js/0.0.0-determined-by-semantic-release; platform node.js/v18.12.1; os Windows/v18.12.1;",
+            "CF-Sequence": "447c4f54-6981-4e7a-9fff-44f92eae1069",
+            "Authorization": "Bearer ...YMzfA",
+            "X-Contentful-Version": 1,
+            "User-Agent": "axios/0.27.2"
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "1bf17c8e-ce61-44ba-9771-e08132ca6198"
+      }
+    }
+  },
+  {
+    "ts": "2023-04-04T01:32:18.237Z",
+    "level": "error",
+    "error": "Could not publish the following entities: Your Museum (1FF7DMIDRm9NS8voUW75dh), Discover (1SPZG6IcC1ui6hPeBMNJri), Learn (7tDlI6iLaWM4RjoXNwCISA), War Memorial (3I2ce5dfwiPOKtHXZHtU4p), Museum Store (1aHz0dvTrQP6kayY6zekVn), Test (3DFGLAHDaxWwAenwOtfYos), jCC6f8QRehOc0AJgWw4nV, Home Copy (79RW3E3EFq5NQ2Z0aFpyJz), Bo Goldie - Called home to rest among his people (rtqdzUBFvD2pQFKuTCOal), Enhance your visit (3caPJLuY1RIdHHE9Fs4iCi), Visit (3rdCYMoBslgrN18312QiYy)"
+  }
+]
