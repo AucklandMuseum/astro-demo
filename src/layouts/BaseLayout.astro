@@ -19,6 +19,18 @@ const { page, section } = Astro.props;
 <!DOCTYPE html>
 <html lang="en" data-theme="lofi">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-149E0ZFVZ8"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-149E0ZFVZ8");
+    </script>
     <BaseHead page={page} section={section} />
   </head>
   <body>
@@ -35,6 +47,6 @@ const { page, section } = Astro.props;
       src="https://cdn.scaleflex.it/plugins/js-cloudimage-responsive/latest/js-cloudimage-responsive.min.js"
     ></script>
 
-     <Footer />
+    <Footer />
   </body>
 </html>
