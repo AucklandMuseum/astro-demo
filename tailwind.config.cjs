@@ -10,6 +10,9 @@ module.exports = {
 	],
 
 	theme: {
+		fontFamily: {
+			sans: ['"Gotham Narrow"', 'sans-serif']
+		  },		
 		extend: {
 			typography: {
 

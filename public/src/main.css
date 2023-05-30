@@ -2,19 +2,19 @@
   font-family: 'Gotham Narrow';
   font-style: normal;
   font-weight: 200;
-  src: url("../AucklandMuseum/fonts/GothamNarrow-Light.woff2") format("woff2"), url("../AucklandMuseum/fonts/GothamNarrow-Light.woff") format("woff"); }
+  src: url("/fonts/GothamNarrow-Light.woff2") format("woff2"), url("/fonts/GothamNarrow-Light.woff") format("woff"); }
 
 @font-face {
   font-family: 'Gotham Narrow';
   font-style: normal;
   font-weight: 400;
-  src: url("../AucklandMuseum/fonts/GothamNarrow-Book.woff2") format("woff2"), url("../AucklandMuseum/fonts/GothamNarrow-Book.woff") format("woff"); }
+  src: url("/fonts/GothamNarrow-Book.woff2") format("woff2"), url("/fonts/GothamNarrow-Book.woff") format("woff"); }
 
 @font-face {
   font-family: 'Gotham Narrow';
   font-style: normal;
   font-weight: 600;
-  src: url("../AucklandMuseum/fonts/GothamNarrow-Medium.woff2") format("woff2"), url("../AucklandMuseum/fonts/GothamNarrow-Medium.woff") format("woff"); }
+  src: url("/fonts/GothamNarrow-Medium.woff2") format("woff2"), url("/fonts/GothamNarrow-Medium.woff") format("woff"); }
 
 * {
   box-sizing: border-box;

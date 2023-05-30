@@ -7,25 +7,25 @@
   font-family: 'Gotham Narrow';
   font-style: normal;
   font-weight: 200;
-  src: url("/fonts/GothamNarrow-Light.woff2") format("woff2"), url("/fonts/GothamNarrow-Light.woff") format("woff"); }
+  src: local('Helvetica'), url("/fonts/GothamNarrow-Light.woff") format("woff"), url("/fonts/GothamNarrow-Light.woff2") format("woff2"); 
+  font-display: swap;
+  }
 
 @font-face {
   font-family: 'Gotham Narrow';
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/gotham-narrow-ssm-400.woff") format("woff"), url("/fonts/GothamNarrow-Book.woff2") format("woff2"); }
+  src: local('Helvetica'), url("/fonts/gotham-narrow-ssm-400.woff") format("woff"), url("/fonts/GothamNarrow-Book.woff2") format("woff2"); 
+  font-display: swap;
+  }
 
 @font-face {
   font-family: 'Gotham Narrow';
   font-style: normal;
   font-weight: 600;
-  src: url("/fonts/gotham-narrow-ssm-700.woff") format("woff"), url("/fonts/GothamNarrow-Medium.woff2") format("woff2"); }
-
-@layer base {
-  html {
-	  font-family: 'Gotham Narrow'; 
+  src: local('Helvetica'), url("/fonts/gotham-narrow-ssm-700.woff") format("woff"), url("/fonts/GothamNarrow-Medium.woff2") format("woff2"); 
+  font-display: swap;
   }
-}
 
 @layer utility {
     /* Chrome, Safari and Opera */
