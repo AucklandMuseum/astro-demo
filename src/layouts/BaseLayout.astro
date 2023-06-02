@@ -34,7 +34,7 @@ const { page, section } = Astro.props;
     <BaseHead page={page} section={section} />
   </head>
   <body>
-    <div class="mx-auto px-5 lg:px-16 2xl:px-0 max-w-7xl"><Meganav /></div>
+    <Meganav />
     <slot />
     <script src="../../node_modules/preline/dist/preline.js"></script>
     <!-- Add lazyload library -->
