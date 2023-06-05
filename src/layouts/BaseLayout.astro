@@ -2,7 +2,8 @@
 import "styles/global.css";
 
 import BaseHead from "components/BaseHead.astro";
-import Meganav from "components/Meganav.astro";
+import MegaNav from "components/vue/MegaNav.vue"
+import NavBar from "components/vue/NavBar.vue"
 import Footer from "components/Footer.astro";
 import { TypePage } from "types/TypePage";
 import { TypeContentSection } from "types/TypeContentSection";
@@ -34,7 +35,7 @@ const { page, section } = Astro.props;
     <BaseHead page={page} section={section} />
   </head>
   <body>
-    <Meganav />
+    <MegaNav client:only="vue" />
     <slot />
     <script src="../../node_modules/preline/dist/preline.js"></script>
     <!-- Add lazyload library -->

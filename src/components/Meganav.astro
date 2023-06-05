@@ -1,7 +1,6 @@
 ---
+import MegaNav from "components/vue/MegaNav.vue"
 ---
-
-<div class="text-base">
   <header class="z-50 w-full bg-white text-black">
     <div
       class="container mx-auto flex flex-row justify-between py-[16px] text-xs sm:text-sm sm:font-bold"
@@ -16,39 +15,40 @@
       </div>
       <div class="flex flex-row flex-nowrap align-middle">
         <ul
-          class="font-bold tracking-wide mt-0 flex w-auto divide-x-2 divide-gray-300 text-base"
+          class="font-bold tracking-wide mt-0 flex w-auto divide-x-2 divide-gray-300 "
         >
-          <li class="pr-[16px] self-center text-base">
+          <li class="pr-[16px] self-center ">
             <a
-              class="text-center uppercase whitespace-nowrap text-base"
+              class="text-center uppercase whitespace-nowrap "
               title="Buy Tickets"
-              href="/tickets">Tickets</a>
+              href="/tickets">Tickets</a
+            >
           </li>
-          <li class="px-[16px] self-center text-base">
+          <li class="px-[16px] self-center ">
             <a
-              class="text-center uppercase whitespace-nowrap text-base"
+              class="text-center uppercase whitespace-nowrap "
               title="Become a member"
-              href="/membership">Membership</a>
+              href="/membership">Membership</a
+            >
           </li>
-          <li class="pl-[16px] mr-[8px] self-center text-base">
+          <li class="pl-[16px] mr-[8px] self-center ">
             <a
-              class="text-center uppercase whitespace-nowrap text-base"
+              class="text-center uppercase whitespace-nowrap "
               title="Donate"
-              href="/donate">Donate</a>
+              href="/donate">Donate</a
+            >
           </li>
         </ul>
       </div>
     </div>
   </header>
   <header
-    class="z-50 w-full border-b-4 border-white bg-black text-white shadow-md"
+    class="relative z-50 w-full border-b-4 border-white bg-black text-white shadow-md"
   >
     <nav
       class="lg:text-lg container mx-auto flex flex-nowrap flex-row items-bottom mb-[-4px] pt-[40px]"
     >
-      <div
-        class="lg:text-lg flex flex-shrink-0 w-[140px] ml-[20px] mr-[20px]"
-      >
+      <div class="lg:text-lg flex flex-shrink-0 w-[140px] ml-[20px] mr-[20px]">
         <a class="lg:text-lg" href="/"
           ><img
             class="flex-shrink-0"
@@ -63,7 +63,7 @@
         <li class="hover:border-b-4 hover:mb-[4px] md:px-2 lg:px-4 xl:px-5">
           <button
             type="button"
-            class="text-left whitespace-nowrap text-sm lg:text-lg"
+            class="relative text-left whitespace-nowrap text-sm lg:text-lg"
             role="combobox"
             title="Show subnavigation"
             aria-controls="header-nav-visit"
@@ -71,7 +71,6 @@
             aria-label="Show Visit subnavigation"
             ><span class="font-light block">Toro Mai</span> Visit</button
           >
-
         </li>
         <li class="hover:border-b-4 hover:mb-[4px] md:px-2 lg:px-4 xl:px-5">
           <button
@@ -148,4 +147,3 @@
       </div>
     </nav>
   </header>
-</div>
