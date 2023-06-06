@@ -96,7 +96,7 @@ const engagement = [
 											<a class="" href="#">
 												<figure class="object-cover" >
 													<CloudImage src="https://www.aucklandmuseum.com/CMSPages/GetFile.aspx?guid=ceea8d84-bc4e-47d9-ab06-2042a898455c" />
-													<figcaption class="flex items-end bg-black bg-opacity-50 absolute bottom-0 w-full p-3 min-h-full hover:min-h-0">
+													<figcaption class="flex items-end bg-black bg-opacity-50 absolute bottom-0 w-full p-3 min-h-full">
 														<p class="table-cell align-bottom">Double trouble</p>
 													</figcaption>
 												</figure>
