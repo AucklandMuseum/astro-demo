@@ -94,52 +94,30 @@ const recentPosts = [
 							title="Show Visit subnavigation" aria-controls="header-nav-visit" aria-expanded="false"
 							aria-label="Show Visit subnavigation"><span class="font-light block">Toro
 								Mai</span> Visit</PopoverButton>
-						<transition enter-active-class="transition ease-out duration-200"
+						<transition enter-active-class="transition ease-out duration-100"
 							enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0"
-							leave-active-class="transition ease-in duration-150"
+							leave-active-class="transition ease-in duration-100"
 							leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
 							<PopoverPanel
-								class="absolute inset-x-0 top-[158px] z-50 bg-white shadow-lg ring-1 ring-gray-900/5">
-								<div
-									class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-10 px-6 py-10 lg:grid-cols-2 lg:px-8">
-									<div class="grid grid-cols-2 gap-x-6 sm:gap-x-8">
+								class="absolute inset-x-0 top-[158px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
+								<div class="mx-auto flex w-full">
 
-										<div class="flow-root">
-											<div class="-my-2">
-												<a v-for="item in engagement" :key="item.name" :href="item.href"
-													class="flex gap-x-4 py-2 text-sm font-bold text-gray-900">
-													{{ item.name }}
-												</a>
-											</div>
+									<div class="min-w-fit">
+										<div class="py-10 px-20">
+											<a v-for="item in engagement" :key="item.name" :href="item.href"
+												class="flex py-3 text-gray-100">
+												{{ item.name }}
+											</a>
 										</div>
 									</div>
-									<div class="grid grid-cols-1 gap-10 sm:gap-8 lg:grid-cols-2">
+									<div class="w-full min-h-full bg-black p-10 grid grid-cols-2 grid-rows-2 gap-1">
 										<h3 class="sr-only">Recent posts</h3>
-										<article v-for="post in recentPosts" :key="post.id"
-											class="relative isolate flex max-w-2xl flex-col gap-x-8 gap-y-6 sm:flex-row sm:items-start lg:flex-col lg:items-stretch">
-											<div class="relative flex-none">
-												<img class="aspect-[2/1] w-full rounded-lg bg-gray-100 object-cover sm:aspect-[16/9] sm:h-32 lg:h-auto"
-													:src="post.imageUrl" alt="" />
-												<div
-													class="absolute inset-0 rounded-lg ring-1 ring-inset ring-gray-900/10" />
-											</div>
-											<div>
-												<div class="flex items-center gap-x-4">
-													<time :datetime="post.datetime"
-														class="text-sm leading-6 text-gray-600">{{ post.date }}</time>
-													<a :href="post.category.href"
-														class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100">{{
-															post.category.title }}</a>
-												</div>
-												<h4 class="mt-2 text-sm font-semibold leading-6 text-gray-900">
-													<a :href="post.href">
-														<span class="absolute inset-0" />
-														{{ post.title }}
-													</a>
-												</h4>
-												<p class="mt-2 text-sm leading-6 text-gray-600">{{ post.description }}</p>
-											</div>
-										</article>
+										<div class="col-span-2 xl:row-span-2 xl:col-auto text-white bg-slate-300">
+										</div>
+										<div class="row-start-2 xl:row-auto text-white bg-blue-300">
+										</div>
+										<div class="row-start-2 xl:col-start-2 xl:row-auto text-white bg-red-300">
+										</div>										
 									</div>
 								</div>
 							</PopoverPanel>
@@ -173,14 +151,15 @@ const recentPosts = [
 				<li class="hover:border-b-4 hover:mb-[4px] md:px-2 lg:px-4 xl:px-5">
 					<button type="button" class="text-left whitespace-nowrap text-sm lg:text-lg" role="combobox"
 						title="Show Store subnavigation" aria-controls="header-nav-store" aria-expanded="false"
-					aria-label="Show Store subnavigation"><span class="font-light block">Hokohoko</span>
-					Store</button>
-			</li>
-		</ul>
-		<div class="lg:text-lg flex flex-grow justify-end mr-[8px]">
-			<MagnifyingGlassIcon class="h-8 w-8 lg:h-10 lg:w-10 text-white" aria-hidden="true" />
-		</div>
-	</nav>
+						aria-label="Show Store subnavigation"><span class="font-light block">Hokohoko</span>
+						Store</button>
+				</li>
+			</ul>
+			<div class="lg:text-lg flex flex-grow justify-end mr-[8px]">
+				<MagnifyingGlassIcon class="h-8 w-8 lg:h-10 lg:w-10 text-white" aria-hidden="true" />
+			</div>
+		</nav>
 
-</header></template>
+	</header>
+</template>
   
