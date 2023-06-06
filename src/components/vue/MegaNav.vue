@@ -1,6 +1,7 @@
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems, Popover, PopoverPanel, PopoverButton } from '@headlessui/vue'
 import { MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
+import CloudImage from "./CloudImage.vue";
 import {
 	BookOpenIcon,
 	BriefcaseIcon,
@@ -23,32 +24,6 @@ const engagement = [
 	{ name: 'Museum Store', href: '#', icon: ShieldCheckIcon },
 	{ name: 'Kids and family', href: '#', icon: ShieldCheckIcon },
 	{ name: 'Venues', href: '#', icon: ShieldCheckIcon },
-]
-
-const recentPosts = [
-	{
-		id: 2,
-		title: 'Robin Morrison: Road Trip',
-		href: '#',
-		date: 'Mar 10, 2023',
-		datetime: '2023-03-10',
-		category: { title: 'Sales', href: '#' },
-		imageUrl:
-			'https://ajrctguoxo.cloudimg.io/v7/https%3A%2F%2Fwww.aucklandmuseum.com%2FCMSPages%2FGetFile.aspx%3Fguid%3D8bc1ea01-9ce7-4396-87c6-a0ec7a50ab42?w=280&h=160&org_if_sml=1&ci_url_encoded=1&force_format=webp%2Cjpeg&func=crop&gravity=face',
-		description: 'Optio cum necessitatibus dolor voluptatum provident commodi et.',
-	},
-	{
-		id: 1,
-		title: 'Double trouble',
-		href: '#',
-		date: 'Mar 16, 2023',
-		datetime: '2023-03-16',
-		category: { title: 'Marketing', href: '#' },
-		imageUrl:
-			'https://ajrctguoxo.cloudimg.io/v7/https://www.aucklandmuseum.com/aucklandmuseum/files/ce/ceea8d84-bc4e-47d9-ab06-2042a898455c.jpg?w=280&h=160&org_if_sml=1&ci_url_encoded=1&force_format=webp%2Cjpeg&func=crop&gravity=face',
-		description:
-			'Et et dolore officia quis nostrud esse aute cillum irure do esse. Eiusmod ad deserunt cupidatat est magna Lorem.',
-	}
 ]
 </script>
 
@@ -99,7 +74,7 @@ const recentPosts = [
 							leave-active-class="transition ease-in duration-100"
 							leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
 							<PopoverPanel
-								class="absolute inset-x-0 top-[158px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
+								class="absolute inset-x-0 sm:top-[198px] md:top-[178px] xl:top-[158px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
 								<div class="mx-auto flex w-full">
 
 									<div class="min-w-fit">
@@ -110,14 +85,29 @@ const recentPosts = [
 											</a>
 										</div>
 									</div>
-									<div class="w-full min-h-full bg-black p-10 grid grid-cols-2 grid-rows-2 gap-1">
+									<div class="w-full min-h-full bg-black p-10 grid grid-cols-2 grid-rows-2 gap-1 
+									[&>*:nth-child(2)]:col-span-2  xl:[&>*:nth-child(2)]:row-span-2 xl:[&>*:nth-child(2)]:col-auto xl:[&>*:nth-child(2)]:aspect-w-1 xl:[&>*:nth-child(2)]:aspect-h-1
+									[&>*:nth-child(3)]:row-start-2 xl:[&>*:nth-child(3)]:row-auto xl:[&>*:nth-child(3)]:aspect-w-16 xl:[&>*:nth-child(3)]:aspect-h-9
+									[&>*:nth-child(4)]:row-start-2 xl:[&>*:nth-child(4)]:col-start-2 xl:[&>*:nth-child(4)]:row-auto xl:[&>*:nth-child(4)]:aspect-w-16 xl:[&>*:nth-child(4)]:aspect-h-9
+									
+									">
 										<h3 class="sr-only">Recent posts</h3>
-										<div class="col-span-2 xl:row-span-2 xl:col-auto text-white bg-slate-300">
+										<div class="text-white bg-slate-300">
+											<a class="" href="#">
+												<figure class="object-cover" >
+													<CloudImage src="https://www.aucklandmuseum.com/CMSPages/GetFile.aspx?guid=ceea8d84-bc4e-47d9-ab06-2042a898455c" />
+													<figcaption class="flex items-end bg-black bg-opacity-50 absolute bottom-0 w-full p-3 min-h-full hover:min-h-0">
+														<p class="table-cell align-bottom">Double trouble</p>
+													</figcaption>
+												</figure>
+											</a>
 										</div>
-										<div class="row-start-2 xl:row-auto text-white bg-blue-300">
+										<div class="text-white bg-blue-300">
+2
 										</div>
-										<div class="row-start-2 xl:col-start-2 xl:row-auto text-white bg-red-300">
-										</div>										
+										<div class="text-white bg-red-300">
+3
+										</div>
 									</div>
 								</div>
 							</PopoverPanel>
