@@ -54,8 +54,8 @@ const engagement = [
 			</div>
 		</div>
 	</header>
-	<header class="z-50 w-full border-b-4 border-white bg-black text-white shadow-md">
-		<nav class="lg:text-lg container mx-auto flex flex-nowrap flex-row items-bottom mb-[-4px] pt-[40px]">
+	<header class="z-50 w-full border-b-[6px] border-white bg-black text-white shadow-md">
+		<nav class="lg:text-lg container mx-auto flex flex-nowrap flex-row items-bottom mb-[-6px] pt-[40px]">
 			<div class="lg:text-lg flex flex-shrink-0 w-[140px] ml-[20px] mr-[20px]">
 				<a class="lg:text-lg" href="/"><img class="flex-shrink-0" src="/images/am-logo.svg"
 						alt="Auckland War Memorial Museum" /></a>
@@ -63,7 +63,7 @@ const engagement = [
 			<ul
 				class="flex font-bold tracking-wide lg:mt-0 lg:flex lg:w-auto flex-initial space-x-[5px] lg:space-x-[4px] xl:space-x-[30px]">
 
-				<li class="hover:border-b-4 hover:mb-[4px] md:px-2 lg:px-4 xl:px-5">
+				<li class="hover:border-b-4 hover:mb-[6px] md:px-2 lg:px-4 xl:px-5">
 					<Popover class="z-50 shadow">
 						<PopoverButton class="text-left whitespace-nowrap text-sm lg:text-lg outline-none" role="combobox"
 							title="Show Visit subnavigation" aria-controls="header-nav-visit" aria-expanded="false"
@@ -74,7 +74,7 @@ const engagement = [
 							leave-active-class="transition ease-in duration-100"
 							leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
 							<PopoverPanel
-								class="absolute inset-x-0 sm:top-[198px] md:top-[178px] xl:top-[158px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
+								class="absolute inset-x-0 sm:top-[197px] md:top-[177px] xl:top-[157px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
 								<div class="mx-auto flex w-full">
 
 									<div class="min-w-fit">

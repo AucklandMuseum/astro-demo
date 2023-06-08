@@ -9,7 +9,7 @@ const cloudimageConfig = {
 
 <template>
 	<CloudImageProvider v-bind:cloudImageConfig="cloudimageConfig">
-		<BackgroundImg v-bind:src=src params="org_if_sml=0" />
+		<BackgroundImg v-bind:src=src params="org_if_sml=0&force_format=webp,jpeg&func=crop&gravity=face" />
 	</CloudImageProvider>
 </template>
 
