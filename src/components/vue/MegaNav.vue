@@ -85,29 +85,26 @@ const engagement = [
 											</a>
 										</div>
 									</div>
-									<div class="w-full min-h-full bg-black p-10 grid grid-cols-2 grid-rows-2 gap-1 
-									[&>*:nth-child(2)]:col-span-2  xl:[&>*:nth-child(2)]:row-span-2 xl:[&>*:nth-child(2)]:col-auto xl:[&>*:nth-child(2)]:aspect-w-1 xl:[&>*:nth-child(2)]:aspect-h-1
-									[&>*:nth-child(3)]:row-start-2 xl:[&>*:nth-child(3)]:row-auto xl:[&>*:nth-child(3)]:aspect-w-16 xl:[&>*:nth-child(3)]:aspect-h-9
-									[&>*:nth-child(4)]:row-start-2 xl:[&>*:nth-child(4)]:col-start-2 xl:[&>*:nth-child(4)]:row-auto xl:[&>*:nth-child(4)]:aspect-w-16 xl:[&>*:nth-child(4)]:aspect-h-9
-									
-									">
+									<div class="w-full min-h-full bg-black p-10 grid grid-cols-2 grid-rows-2 gap-1">
 										<h3 class="sr-only">Recent posts</h3>
-										<div class="text-white bg-slate-300">
-											<a class="" href="#">
-												<figure class="object-cover" >
-													<CloudImage src="https://www.aucklandmuseum.com/CMSPages/GetFile.aspx?guid=ceea8d84-bc4e-47d9-ab06-2042a898455c" />
-													<figcaption class="flex items-end bg-black bg-opacity-50 absolute bottom-0 w-full p-3 min-h-full">
-														<p class="table-cell align-bottom">Double trouble</p>
+
+											<a class=" text-white bg-black col-span-2 xl:row-span-2 xl:col-auto group" href="#">
+												<figure class="flex relative overflow-hidden h-full " >
+													<CloudImage class="block object-cover h-auto min-h-full min-w-full absolute w-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+													src="https://www.aucklandmuseum.com/CMSPages/GetFile.aspx?guid=ceea8d84-bc4e-47d9-ab06-2042a898455c" />
+													<figcaption class=" transition-[height] z-[55] h-full w-full bg-black bg-opacity-50 flex self-end p-5 group-hover:h-16 duration-300 ">
+														<p class="flex items-end">Double trouble</p>
 													</figcaption>
 												</figure>
 											</a>
-										</div>
-										<div class="text-white bg-blue-300">
-2
-										</div>
-										<div class="text-white bg-red-300">
+
+										<a class="text-white bg-blue-300 row-start-2 xl:row-auto">
+											</a>
+
+
+										<a class="text-white bg-red-300 row-start-2 xl:col-start-2 xl:row-auto ">
 3
-										</div>
+										</a>
 									</div>
 								</div>
 							</PopoverPanel>
