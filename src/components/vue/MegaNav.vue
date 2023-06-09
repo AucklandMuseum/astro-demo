@@ -30,7 +30,7 @@ const engagement = [
 <template>
 	<header class="z-50 w-full bg-white text-black pl-5 pr-5">
 		<div class="container max-w-7xl mx-auto flex flex-row justify-between py-[16px] text-xs md:text-sm md:font-bold">
-			<div class="flex self-start flex-shrink flex-row flex-wrap align-middle">
+			<div class="flex self-start flex-shrink flex-row flex-wrap">
 				<div class="flex">
 					Open 10AM - 5PM Mon - Fri, 9AM - 5PM Sat, Sun, Public Holidays.
 				</div>
@@ -38,7 +38,7 @@ const engagement = [
 					Open late every Tuesday evening until 8.30PM.
 				</div>
 			</div>
-			<div class="flex flex-row flex-nowrap align-middle">
+			<div class="flex flex-row flex-nowrap">
 				<ul class="font-bold tracking-wide mt-0 flex w-auto divide-x-2 divide-gray-300 ">
 					<li class="pr-4 self-center ">
 						<a class="text-center uppercase whitespace-nowrap " title="Buy Tickets" href="/tickets">Tickets</a>
@@ -54,13 +54,13 @@ const engagement = [
 			</div>
 		</div>
 	</header>
-	<header class="z-50 w-full border-b-[6px] border-white bg-black text-white shadow-md pl-5 pr-5">
+	<header class="hidden md:block z-50 w-full border-b-[6px] border-white bg-black text-white shadow-md pl-5 pr-5">
 		<nav class="lg:text-lg container max-w-7xl mx-auto flex flex-nowrap flex-row items-bottom -mb-1.5 pt-10">
 			<div class="w-[169px] mr-5 -pb-5 align-bottom self-end">
 				<a class="" href="/"><img class="" src="/images/am-logo.svg"
 						alt="Auckland War Memorial Museum" /></a>
 			</div>
-			<ul class="flex flex-row font-bold tracking-wide lg:mt-0 w-full justify-evenly pb-4 
+			<ul class="flex flex-row justify-evenly font-bold tracking-wide lg:mt-0 w-full pb-4 
 			whitespace-nowrap text-sm md:text-base lg:text-lg ">
 				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5">
 					<Popover class="z-50 shadow">
@@ -73,7 +73,7 @@ const engagement = [
 							leave-active-class="transition ease-in duration-100"
 							leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
 							<PopoverPanel
-								class="absolute inset-x-0 sm:top-[197px] md:top-[177px] xl:top-[157px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
+								class="absolute inset-x-0 md:top-[176px] top-[164px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
 								<div class="mx-auto flex w-full">
 
 									<div class="min-w-fit">
