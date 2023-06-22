@@ -12,7 +12,9 @@ import {
 	
 } from '@heroicons/vue/24/outline'
 
-const engagement = [
+
+
+const menuVisit = [
 	{ name: 'What\'s On', href: '#', icon: InformationCircleIcon },
 	{ name: 'Plan your visit', href: '#', icon: UsersIcon },
 	{ name: 'Tourist Information', href: '#', icon: NewspaperIcon },
@@ -23,10 +25,20 @@ const engagement = [
 	{ name: 'Kids and family', href: '#', icon: ShieldCheckIcon },
 	{ name: 'Venues', href: '#', icon: ShieldCheckIcon },
 ]
+
+const mainNav = [
+{ en: 'Visit', mi: 'Toro Mai', menu: menuVisit},
+{ en: 'Discover', mi: 'Tuhuratia'},
+{ en: 'Learn', mi: 'Ako'},
+{ en: 'War Memorial', mi: 'Paenga Hira'},
+{ en: 'Your Museum', mi: 'Tō Whare Taonga'},
+{ en: 'Store', mi: 'Hokohoko'},
+	
+]
 </script>
 
 <template>
-	<Alerts />
+	<!--  <Alerts /> -->
 	<header class="z-50 w-full bg-white text-black pl-5 pr-5">
 		<div
 			class="container max-w-7xl mx-auto flex flex-row justify-around sm:justify-between py-[16px] text-xs md:text-sm font-bold">
@@ -65,12 +77,13 @@ const engagement = [
 			</div>
 			<ul class="flex flex-row justify-evenly font-bold tracking-wide lg:mt-0 w-full pb-4 
 			whitespace-nowrap text-sm md:text-base lg:text-lg ">
-				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5">
+
+
+				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5" v-for="nav in mainNav">
 					<Popover class="z-50 shadow">
-						<PopoverButton class="text-left outline-offset-8" role="combobox" title="Show Visit subnavigation"
+						<PopoverButton class="text-left focus:outline-none" role="combobox" title="Show Visit subnavigation"
 							aria-controls="header-nav-visit" aria-expanded="false" aria-label="Show Visit subnavigation">
-							<span class="font-light block">Toro
-								Mai</span> Visit
+							<span class="font-light block">{{nav.mi}}</span> {{nav.en}}
 						</PopoverButton>
 						<transition enter-active-class="transition ease-out duration-100"
 							enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0"
@@ -82,7 +95,7 @@ const engagement = [
 
 									<div class="min-w-fit">
 										<div class="py-10 px-20">
-											<a v-for="item in engagement" :key="item.name" :href="item.href"
+											<a v-for="item in nav.menu" :key="item.name" :href="item.href"
 												class="flex py-2 lg:py-3 text-gray-100">
 												{{ item.name }}
 											</a>
@@ -115,36 +128,6 @@ const engagement = [
 							</PopoverPanel>
 						</transition>
 					</Popover>
-				</li>
-				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5">
-					<button type="button" class="text-left" role="combobox" title="Show Discover subnavigation"
-						aria-controls="header-nav-visit" aria-expanded="false"
-						aria-label="Show Discover subnavigation"><span class="font-light block">Tuhuratia</span>
-						Discover</button>
-				</li>
-				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5">
-					<button type="button" class="text-left" role="combobox" title="Show Learn subnavigation"
-						aria-controls="header-nav-visit" aria-expanded="false" aria-label="Show Learn subnavigation"><span
-							class="font-light block">Ako</span>
-						Learn</button>
-				</li>
-				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5">
-					<button type="button" class="text-left" role="combobox" title="Show War Memorial subnavigation"
-						aria-controls="header-nav-visit" aria-expanded="false"
-						aria-label="Show War Memorial subnavigation"><span class="font-light block">Paenga Hira</span>
-						War Memorial</button>
-				</li>
-				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5">
-					<button type="button" class="text-left" role="combobox" title="Show Your Museum subnavigation"
-						aria-controls="header-nav-visit" aria-expanded="false"
-						aria-label="Show Your Museum subnavigation"><span class="font-light block">Tō Whare
-							Taonga</span> Your Museum</button>
-				</li>
-				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5">
-					<button type="button" class="text-left" role="combobox" title="Show Store subnavigation"
-						aria-controls="header-nav-store" aria-expanded="false" aria-label="Show Store subnavigation"><span
-							class="font-light block">Hokohoko</span>
-						Store</button>
 				</li>
 			</ul>
 			<div class="lg:text-lg flex flex-grow justify-end ml-2 items-end mb-7">
