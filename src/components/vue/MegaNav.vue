@@ -1,17 +1,15 @@
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems, Popover, PopoverPanel, PopoverButton } from '@headlessui/vue'
-import { MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
 import CloudImage from "./CloudImage.vue";
+import Alerts from "./Alerts.vue"
 import {
-	BookOpenIcon,
+	MagnifyingGlassIcon,
 	BriefcaseIcon,
-	GlobeAltIcon,
 	InformationCircleIcon,
 	NewspaperIcon,
 	ShieldCheckIcon,
-	UserGroupIcon,
 	UsersIcon,
-	VideoCameraIcon,
+	
 } from '@heroicons/vue/24/outline'
 
 const engagement = [
@@ -28,9 +26,11 @@ const engagement = [
 </script>
 
 <template>
+	<Alerts />
 	<header class="z-50 w-full bg-white text-black pl-5 pr-5">
-		<div class="container max-w-7xl mx-auto flex flex-row justify-between py-[16px] text-xs md:text-sm font-bold">
-			<div class="flex self-start flex-shrink flex-row flex-wrap mr-10">
+		<div
+			class="container max-w-7xl mx-auto flex flex-row justify-around sm:justify-between py-[16px] text-xs md:text-sm font-bold">
+			<div class="hidden sm:flex self-start flex-shrink flex-row flex-wrap mr-10">
 				<div class="flex pr-1">
 					Open 10AM - 5PM Mon - Fri,
 				</div>
@@ -82,19 +82,10 @@ const engagement = [
 
 									<div class="min-w-fit">
 										<div class="py-10 px-20">
-											<Menu>
-												<MenuButton>Menu</MenuButton>
-												<MenuItems>
-													<MenuItem
-													v-for="item in engagement"
-													:key="item.name"
-													:href="item.href"
-													as="a"
-													class="flex py-2 lg:py-3 text-gray-100 outline-offset-4">
-													{{ item.name }}
-													</MenuItem>
-												</MenuItems>
-											</Menu>
+											<a v-for="item in engagement" :key="item.name" :href="item.href"
+												class="flex py-2 lg:py-3 text-gray-100">
+												{{ item.name }}
+											</a>
 										</div>
 									</div>
 									<div class="w-full min-h-full bg-black p-10 grid grid-cols-2 grid-rows-2 gap-1">
@@ -158,9 +149,8 @@ const engagement = [
 			</ul>
 			<div class="lg:text-lg flex flex-grow justify-end ml-2 items-end mb-7">
 				<MagnifyingGlassIcon class="h-8 w-8 lg:h-10 lg:w-10 text-white" aria-hidden="true" />
-			</div>
-		</nav>
+		</div>
+	</nav>
 
-	</header>
-</template>
+</header></template>
   
