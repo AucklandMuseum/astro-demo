@@ -39,30 +39,30 @@ const mainNav = [
 
 <template>
 	<!--  <Alerts /> -->
-	<header class="z-50 w-full bg-white text-black pl-5 pr-5">
-		<div
-			class="container max-w-7xl mx-auto flex flex-row justify-around sm:justify-between py-[16px] text-xs md:text-sm font-bold">
-			<div class="hidden sm:flex self-start flex-shrink flex-row flex-wrap mr-10">
-				<div class="flex pr-1">
+	<header class="z-50 w-full shadow-md  bg-white text-black pl-5 pr-5">
+		<div class="container max-w-7xl mx-auto flex flex-col sm:flex-row justify-around sm:justify-between py-[16px] text-xs md:text-sm font-bold">
+			<div class="flex justify-center pb-4 sm:pb-0 sm:justify-start sm:self-start sm:mr-10  flex-shrink flex-row flex-wrap [&>p]:flex [&>p]:pr-1">
+				<p>
 					Open 10AM - 5PM Mon - Fri,
-				</div>
-				<div class="flex pr-1">
+				</p>
+				<p>
 					9AM - 5PM Sat, Sun, Public Holidays.
-				</div>
-				<div class="flex">
+				</p>
+				<p>
 					Open late every Tuesday evening until 8.30PM.
-				</div>
+				</p>
 			</div>
-			<div class="flex flex-row flex-nowrap text-sm ">
-				<ul class="font-bold tracking-wide mt-0 flex w-auto divide-x-2 divide-gray-300 ">
-					<li class="pr-4 self-center ">
+			<div class="flex flex-row flex-nowrap justify-center sm:justify-end text-sm">
+				<ul class="font-bold tracking-wide mt-0 flex w-auto divide-x-2 divide-gray-300 
+				[&>li]:self-center [&>li]:pl-4 [&>li]:pr-4 [&>li:first-child]:pl-0 [&>li:last-child]:pr-0">
+					<li>
 						<a class="text-center uppercase whitespace-nowrap " title="Buy Tickets" href="/tickets">Tickets</a>
 					</li>
-					<li class="px-4 self-center ">
+					<li>
 						<a class="text-center uppercase whitespace-nowrap " title="Become a member"
 							href="/membership">Membership</a>
 					</li>
-					<li class="pl-4 self-center ">
+					<li>
 						<a class="text-center uppercase whitespace-nowrap " title="Donate" href="/donate">Donate</a>
 					</li>
 				</ul>
@@ -81,14 +81,16 @@ const mainNav = [
 
 				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5" v-for="nav in mainNav">
 					<Popover class="z-50 shadow">
-						<PopoverButton class="text-left focus:outline-none" role="combobox" title="Show Visit subnavigation"
+						<PopoverButton class="text-left focus:outline-none" role="combobox" :title=nav.en
 							aria-controls="header-nav-visit" aria-expanded="false" aria-label="Show Visit subnavigation">
 							<span class="font-light block">{{nav.mi}}</span> {{nav.en}}
 						</PopoverButton>
-						<transition enter-active-class="transition ease-out duration-100"
-							enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0"
+						<transition enter-active-class="transition ease-out duration-200"
+							enter-from-class="opacity-0 -translate-y-1" 
+							enter-to-class="opacity-100 translate-y-0"
 							leave-active-class="transition ease-in duration-100"
-							leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
+							leave-from-class="opacity-100 translate-y-0" 
+							leave-to-class="opacity-0 -translate-y-1">
 							<PopoverPanel
 								class="absolute inset-x-0  top-[104px] lg:top-[112px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
 								<div class="mx-auto flex w-full">
