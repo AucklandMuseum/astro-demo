@@ -1,0 +1,15 @@
+[
+  {
+    "ts": "2023-06-23T00:06:51.097Z",
+    "level": "error",
+    "error": {
+      "errno": -4058,
+      "code": "ENOENT",
+      "syscall": "open",
+      "path": "C:\\contentful\\export.json",
+      "stacktrace": [
+        "Error: ENOENT: no such file or directory, open 'C:\\contentful\\export.json'"
+      ]
+    }
+  }
+]

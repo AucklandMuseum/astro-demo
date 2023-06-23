@@ -1,5 +1,6 @@
 ---
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { BaseFieldMap, EntrySkeletonType } from "contentful";
 import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 //console.log(Astro.props);
 let {
@@ -36,7 +37,7 @@ imageMetadata.fields["size"] = size;
     <div class="h-full flex flex-col justify-center">
         <>
           {
-            content?.map((comp: ContentType) => {
+            content?.map((comp: ContentfulComponent) => {
               comp.fields["parent"] = "Hero" + size;
               comp.fields["parentStyle"] = style;
               return (

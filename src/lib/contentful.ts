@@ -1,12 +1,11 @@
 import contentful from "contentful";
-import { TypeContentSection } from "types/TypeContentSection";
-import { TypePage } from "types/TypePage";
+import { TypeSection } from "types/contentful/TypeSection";
+import { TypePage } from "types/contentful/TypePage";
 
 const baseClient = contentful.createClient({
   host: "preview.contentful.com",
   accessToken: import.meta.env.CONTENTFUL_PREVIEW_TOKEN,
-  space: import.meta.env.CONTENTFUL_SPACE_ID,
-  resolveLinks: true,
+  space: import.meta.env.CONTENTFUL_SPACE_ID
 })
 
 const client = baseClient;
@@ -29,7 +28,7 @@ export function getPageByAltURL(
 
 export function getSectionByID(
   contentfulID: string
-): Promise<contentful.Entry<TypeContentSection>> {
+): Promise<contentful.Entry<TypeSection>> {
   if(contentfulID)
   return client
     .getEntries(

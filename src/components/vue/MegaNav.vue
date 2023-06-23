@@ -1,72 +1,43 @@
 <script setup>
-import { Menu, MenuButton, MenuItem, MenuItems, Popover, PopoverPanel, PopoverButton } from '@headlessui/vue'
+import { Popover, PopoverPanel, PopoverButton } from '@headlessui/vue'
 import CloudImage from "./CloudImage.vue";
 import Alerts from "./Alerts.vue"
-import {
-	MagnifyingGlassIcon,
-	BriefcaseIcon,
-	InformationCircleIcon,
-	NewspaperIcon,
-	ShieldCheckIcon,
-	UsersIcon,
-	
-} from '@heroicons/vue/24/outline'
+import TopNav from "./TopNav.vue"
+import OpeningHours from "./OpeningHours.vue"
+import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 
 
 
 const menuVisit = [
-	{ name: 'What\'s On', href: '#', icon: InformationCircleIcon },
-	{ name: 'Plan your visit', href: '#', icon: UsersIcon },
-	{ name: 'Tourist Information', href: '#', icon: NewspaperIcon },
-	{ name: 'Guided tours', href: '#', icon: BriefcaseIcon },
-	{ name: 'Exhibitions', href: '#', icon: ShieldCheckIcon },
-	{ name: 'Galleries', href: '#', icon: ShieldCheckIcon },
-	{ name: 'Museum Store', href: '#', icon: ShieldCheckIcon },
-	{ name: 'Kids and family', href: '#', icon: ShieldCheckIcon },
-	{ name: 'Venues', href: '#', icon: ShieldCheckIcon },
+	{ name: 'What\'s On', href: '#' },
+	{ name: 'Plan your visit', href: '#' },
+	{ name: 'Tourist Information', href: '#' },
+	{ name: 'Guided tours', href: '#' },
+	{ name: 'Exhibitions', href: '#' },
+	{ name: 'Galleries', href: '#' },
+	{ name: 'Museum Store', href: '#' },
+	{ name: 'Kids and family', href: '#' },
+	{ name: 'Venues', href: '#' },
 ]
 
 const mainNav = [
-{ en: 'Visit', mi: 'Toro Mai', menu: menuVisit},
-{ en: 'Discover', mi: 'Tuhuratia'},
-{ en: 'Learn', mi: 'Ako'},
-{ en: 'War Memorial', mi: 'Paenga Hira'},
-{ en: 'Your Museum', mi: 'Tō Whare Taonga'},
-{ en: 'Store', mi: 'Hokohoko'},
-	
+	{ en: 'Visit', mi: 'Toro Mai', menu: menuVisit },
+	{ en: 'Discover', mi: 'Tuhuratia' },
+	{ en: 'Learn', mi: 'Ako' },
+	{ en: 'War Memorial', mi: 'Paenga Hira' },
+	{ en: 'Your Museum', mi: 'Tō Whare Taonga' },
+	{ en: 'Store', mi: 'Hokohoko' },
+
 ]
 </script>
 
 <template>
 	<!--  <Alerts /> -->
 	<header class="z-50 w-full shadow-md  bg-white text-black pl-5 pr-5">
-		<div class="container max-w-7xl mx-auto flex flex-col sm:flex-row justify-around sm:justify-between py-[16px] text-xs md:text-sm font-bold">
-			<div class="flex justify-center pb-4 sm:pb-0 sm:justify-start sm:self-start sm:mr-10  flex-shrink flex-row flex-wrap [&>p]:flex [&>p]:pr-1">
-				<p>
-					Open 10AM - 5PM Mon - Fri,
-				</p>
-				<p>
-					9AM - 5PM Sat, Sun, Public Holidays.
-				</p>
-				<p>
-					Open late every Tuesday evening until 8.30PM.
-				</p>
-			</div>
-			<div class="flex flex-row flex-nowrap justify-center sm:justify-end text-sm">
-				<ul class="font-bold tracking-wide mt-0 flex w-auto divide-x-2 divide-gray-300 
-				[&>li]:self-center [&>li]:pl-4 [&>li]:pr-4 [&>li:first-child]:pl-0 [&>li:last-child]:pr-0">
-					<li>
-						<a class="text-center uppercase whitespace-nowrap " title="Buy Tickets" href="/tickets">Tickets</a>
-					</li>
-					<li>
-						<a class="text-center uppercase whitespace-nowrap " title="Become a member"
-							href="/membership">Membership</a>
-					</li>
-					<li>
-						<a class="text-center uppercase whitespace-nowrap " title="Donate" href="/donate">Donate</a>
-					</li>
-				</ul>
-			</div>
+		<div
+			class="container max-w-7xl mx-auto flex flex-col sm:flex-row justify-around sm:justify-between py-[16px] text-xs md:text-sm font-bold">
+			<OpeningHours />
+			<TopNav />
 		</div>
 	</header>
 	<header
@@ -79,18 +50,17 @@ const mainNav = [
 			whitespace-nowrap text-sm md:text-base lg:text-lg ">
 
 
-				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5" v-for="nav in mainNav">
+				<li class="flex-auto hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5"
+					v-for="nav in mainNav">
 					<Popover class="z-50 shadow">
 						<PopoverButton class="text-left focus:outline-none" role="combobox" :title=nav.en
 							aria-controls="header-nav-visit" aria-expanded="false" aria-label="Show Visit subnavigation">
-							<span class="font-light block">{{nav.mi}}</span> {{nav.en}}
+							<span class="font-light block">{{ nav.mi }}</span> {{ nav.en }}
 						</PopoverButton>
 						<transition enter-active-class="transition ease-out duration-200"
-							enter-from-class="opacity-0 -translate-y-1" 
-							enter-to-class="opacity-100 translate-y-0"
+							enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0"
 							leave-active-class="transition ease-in duration-100"
-							leave-from-class="opacity-100 translate-y-0" 
-							leave-to-class="opacity-0 -translate-y-1">
+							leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
 							<PopoverPanel
 								class="absolute inset-x-0  top-[104px] lg:top-[112px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
 								<div class="mx-auto flex w-full">
@@ -134,8 +104,9 @@ const mainNav = [
 			</ul>
 			<div class="lg:text-lg flex flex-grow justify-end ml-2 items-end mb-7">
 				<MagnifyingGlassIcon class="h-8 w-8 lg:h-10 lg:w-10 text-white" aria-hidden="true" />
-		</div>
-	</nav>
+			</div>
+		</nav>
 
-</header></template>
+	</header>
+</template>
   

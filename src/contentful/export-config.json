@@ -1,0 +1,9 @@
+{
+	"environmentId": "master",
+	"exportDir": "./src/contentful",
+	"saveFile": true,
+	"contentFile": "export.json",
+	"downloadAssets": false,
+	"errorLogFile": "./src/contentful/error.log",
+  "useVerboseRenderer": false
+  }
