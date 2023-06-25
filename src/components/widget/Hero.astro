@@ -16,15 +16,17 @@ let {
   parentStyle
 } = Astro.props;
 
+let type = "hero";
+
 imageMetadata.fields["size"] = size;
 ---
 
 <div
   class:list={[
     "wrapper",
-    "hero" + style,
-    "hero" + size,
-    "hero" + contentAlignment,
+    type + style,
+    type + size,
+    type + contentAlignment,
   ]}
 >
   <div class={"image"}>
@@ -38,7 +40,7 @@ imageMetadata.fields["size"] = size;
         <>
           {
             content?.map((comp: ContentfulComponent) => {
-              comp.fields["parent"] = "Hero" + size;
+              comp.fields["parent"] = type + size;
               comp.fields["parentStyle"] = style;
               return (
                 <ContentfulComponent

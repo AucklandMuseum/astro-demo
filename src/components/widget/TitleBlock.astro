@@ -5,7 +5,7 @@ const { title, subtitle, boldSubtitle, status = "", statusColor = "grey-50", par
 const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
 ---
 
-<header class="">
+<header class:list={[parent + parentStyle]}>
   <h2 set:html={title} style={overrideColorStyle} />
   <div class="extra-info">
     <div class="date-location">
@@ -18,8 +18,8 @@ const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
 <style>
     
 
-  .heroDark {
-    @apply prose-invert;
+  .heroLargeDark  {
+    @apply text-white;
   }
 
   .extra-info{
