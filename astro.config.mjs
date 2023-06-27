@@ -33,7 +33,7 @@ export default defineConfig({
       copyBlock: "components/widget/CopyBlock",
       marketingPanel: "components/widget/Hero",
       title: "components/widget/TitleBlock",
-      sectionTitle: "components/widget/SectionTitleBlock",
+      sectionTitle: "components/widget/PageSectionTitleBlock",
       imageMetadata: "components/widget/ImageMetadata",
       promoWithBorder: "components/widget/PromoWithBorder",
       page: "components/widget/PageBlock",

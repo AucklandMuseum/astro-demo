@@ -1,0 +1,16 @@
+---
+import TitleBlock from "./TitleBlock.astro";
+const { colorOverride } =
+  Astro.props;
+
+const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
+---
+
+<div class="mx-auto px-5 max-w-7xl">
+<TitleBlock
+  behaviour="Page"
+  {...Astro.props}
+  overrideColorStyle={overrideColorStyle}
+/>
+</div>
+<style></style>
