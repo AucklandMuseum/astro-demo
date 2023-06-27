@@ -72,7 +72,7 @@ const mainNav = [
 												{{ item.name }}
 											</a>
 										</div>
-										<div class="flex justify-self-end place-items-center"><XMarkIcon class="m-5 mr-1 w-5 h-5 lg:w-10 lg:h-10" @click="close" aria-label="Close" />Close</div>
+										<div class="flex justify-self-end place-items-center cursor-pointer"  @click="close" ><XMarkIcon class="m-5 mr-1 w-5 h-5 lg:w-10 lg:h-10" aria-label="Close" />Close</div>
 									</div>
 									<div class="w-full min-h-full bg-black p-10 grid grid-cols-2 grid-rows-2 gap-1">
 										<h3 class="sr-only">Featured</h3>
