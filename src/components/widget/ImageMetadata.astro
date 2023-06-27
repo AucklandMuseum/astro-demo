@@ -2,10 +2,12 @@
 import Cloudimage from "../react/Cloudimage";
 
 const { imageTitle, imageCaption, imageMedia, size, classOverride } = Astro.props;
+const params = "org_if_sml=0&force_format=webp,jpeg&func=cropfit&gravity=face";
+
 ---
 
 <figure  class="w-full h-full">
-	<Cloudimage client:only="react" src={imageMedia.fields.file.url} />
+	<Cloudimage client:only="react" src={imageMedia.fields.file.url} params={params} />
 </figure>
 <style>
 	Cloudimage {

@@ -16,15 +16,16 @@ const cloudimageConfig = {
 </script>
 
 <template>
-	<CloudImageProvider v-bind:cloudImageConfig="cloudimageConfig">
-		<Img v-bind:src=src params="org_if_sml=0&force_format=webp,jpeg&gravity=face" />
+	<CloudImageProvider :cloudImageConfig="cloudimageConfig">
+		<Img :src=src :params=params alt="" />
 	</CloudImageProvider>
 </template>
 
 <script>
 export default {
  props: {
-   src: String
+   src: String,
+   params: String
  }
 }
 </script>

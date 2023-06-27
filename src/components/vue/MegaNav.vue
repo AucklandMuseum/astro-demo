@@ -72,7 +72,9 @@ const mainNav = [
 												{{ item.name }}
 											</a>
 										</div>
-										<div class="flex justify-self-end place-items-center cursor-pointer"  @click="close" ><XMarkIcon class="m-5 mr-1 w-5 h-5 lg:w-10 lg:h-10" aria-label="Close" />Close</div>
+										<div class="flex justify-self-end place-items-center cursor-pointer" @click="close">
+											<XMarkIcon class="m-5 mr-1 w-5 h-5 lg:w-10 lg:h-10" aria-label="Close" />Close
+										</div>
 									</div>
 									<div class="w-full min-h-full bg-black p-10 grid grid-cols-2 grid-rows-2 gap-1">
 										<h3 class="sr-only">Featured</h3>
@@ -81,7 +83,8 @@ const mainNav = [
 											<figure class="flex relative overflow-hidden h-full ">
 												<CloudImage
 													class="block object-cover h-auto min-h-full min-w-full absolute w-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-													src="https://www.aucklandmuseum.com/CMSPages/GetFile.aspx?guid=ceea8d84-bc4e-47d9-ab06-2042a898455c" />
+													src="https://www.aucklandmuseum.com/CMSPages/GetFile.aspx?guid=ceea8d84-bc4e-47d9-ab06-2042a898455c"
+													params="org_if_sml=0&force_format=webp,jpeg&func=crop&gravity=face" />
 												<figcaption
 													class=" transition-[height] z-[55] h-full w-full bg-black bg-opacity-50 flex self-end p-5 group-hover:h-16 duration-300 ">
 													<p class="flex items-end">Double trouble</p>
@@ -90,11 +93,32 @@ const mainNav = [
 										</a>
 
 										<a class="text-white bg-blue-300 row-start-2 xl:row-auto">
+
+											<figure class="flex relative overflow-hidden h-full ">
+												<CloudImage
+													class="block object-cover h-auto min-h-full min-w-full absolute w-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+													src="https://www.aucklandmuseum.com/aucklandmuseum/files/f2/f2953c70-9c56-4f30-8b60-3aab26776b07.jpg"
+													params="org_if_sml=0&force_format=webp,jpeg&func=crop&gravity=face" />
+												<figcaption
+													class=" transition-[height] z-[55] h-full w-full bg-black bg-opacity-50 flex self-end p-5 group-hover:h-16 duration-300 ">
+													<p class="flex items-end">Get more from your Museum with Membership</p>
+												</figcaption>
+											</figure>
 										</a>
 
 
 										<a class="text-white bg-red-300 row-start-2 xl:col-start-2 xl:row-auto">
-											3
+											<figure class="flex relative overflow-hidden h-full ">
+												<CloudImage
+													class="block object-cover h-auto min-h-full min-w-full absolute w-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+													src="https://www.aucklandmuseum.com/CMSPages/GetFile.aspx?guid=32c8dede-78c4-4198-98a6-3c4e189835e9"
+													params="org_if_sml=0&force_format=webp,jpeg&func=crop&gravity=face" />
+												<figcaption
+													class=" transition-[height] z-[55] h-full w-full bg-black bg-opacity-50 flex self-end p-5 group-hover:h-16 duration-300 ">
+													<p class="flex items-end">Honour and remember New Zealand's servicemen
+														and women</p>
+												</figcaption>
+											</figure>
 										</a>
 									</div>
 								</div>
