@@ -36,7 +36,7 @@ imageMetadata.fields["size"] = size;
     />
   </div>
   <div class:list={["content"]}>
-    <div class="h-full flex flex-col justify-center">
+    <div class="h-full flex flex-col justify-center xl:max-w-3xl">
         <>
           {
             content?.map((comp: ContentfulComponent) => {
@@ -67,7 +67,7 @@ imageMetadata.fields["size"] = size;
   }
 
   .wrapper {
-    @apply md:flex md:flex-row w-full;
+    @apply md:flex md:flex-row w-full ;
   }
 
   .heroLarge.heroLeft .image {
@@ -78,7 +78,7 @@ imageMetadata.fields["size"] = size;
   }
 
   .heroLarge .content {
-    @apply pt-10 pb-10 pl-[24px] pr-[24px] lg:pl-16 lg:pr-16 md:bg-opacity-50 md:w-6/12;
+    @apply px-[24px] py-10 lg:py-32 lg:px-16 md:bg-opacity-50 md:w-6/12;
   }
   .heroLarge.heroLeft .content {
     @apply z-10;
@@ -88,7 +88,7 @@ imageMetadata.fields["size"] = size;
   }
 
   .heroMedium .content {
-    @apply pt-10 pb-10 pl-5 pr-5 lg:pl-16 lg:pr-16 md:bg-opacity-50 md:w-6/12;
+    @apply px-5 py-10 lg:px-16 md:bg-opacity-50 md:w-6/12;
   }
   .heroMedium .image {
     @apply md:w-6/12;

@@ -4,7 +4,7 @@ import Cloudimage from "../react/Cloudimage";
 const { imageTitle, imageCaption, imageMedia, size, classOverride } = Astro.props;
 ---
 
-<figure>
+<figure  class="w-full h-full">
 	<Cloudimage client:only="react" src={imageMedia.fields.file.url} />
 </figure>
 <style>

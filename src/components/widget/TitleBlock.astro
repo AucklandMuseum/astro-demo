@@ -23,7 +23,7 @@ const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
   }
 
   .extra-info{
-    @apply  flex items-start
+    @apply  flex items-start w-full
   }
   .status, .date-location {
     @apply inline-block align-top mr-3 mb-1.5
@@ -46,7 +46,7 @@ const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
   }
   
   h2 {
-    @apply text-inherit font-normal lg:font-thin text-4xl md:text-5xl lg:text-6xl lg:leading-tight;
+    @apply text-inherit font-normal md:font-thin text-4xl md:text-5xl lg:text-6xl lg:leading-tight;
   }
   h3 {
     @apply font-thin text-gray-400 text-3xl md:text-4xl lg:text-5xl lg:leading-tight;
