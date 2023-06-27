@@ -29,7 +29,7 @@ let { content, contentStyle = "Standard", parent, parentStyle } = Astro.props;
 		@apply prose text-black
 	}
 	.copyDark {
-		@apply prose-invert
+		@apply prose text-white
 	}
 	.copyLarge {
 		@apply prose-2xl leading-tight;
@@ -37,8 +37,8 @@ let { content, contentStyle = "Standard", parent, parentStyle } = Astro.props;
 	.copySmall {
 		@apply prose-sm;
 	}	
-	.copyHeroLarge {
-		@apply mt-14;
+	.copyheroLarge {
+		@apply mt-2 lg:mt-5 xl:mt-10 xl:text-xl
 	}
 	.copyRightPanel {
 		@apply justify-end
