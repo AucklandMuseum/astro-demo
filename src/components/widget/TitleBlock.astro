@@ -1,11 +1,12 @@
 ---
-const { title, subtitle, boldSubtitle, status = "", statusColor = "grey-50", parent, parentStyle, colorOverride = "" } =
+const { title, subtitle, boldSubtitle, behaviour, status = "", statusColor = "grey-50", parent, parentStyle, colorOverride = "" } =
   Astro.props;
 
 const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
 ---
-
 <header class:list={[parent + parentStyle]}>
+{behaviour === 'Page' || !behaviour && 
+
   <h2 set:html={title} style={overrideColorStyle} />
   <div class="extra-info">
     <div class="date-location">
@@ -13,6 +14,22 @@ const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
       <div class="subtitle subtitle-place" set:html={subtitle} style={overrideColorStyle} />
     </div>
   </div>
+
+}
+
+{behaviour === 'Hero' && 
+
+<div set:html={boldSubtitle} style={overrideColorStyle} 
+  class="font-bold uppercase" />
+<h3 set:html={subtitle} style={overrideColorStyle} 
+  class="font-thin text-3xl md:text-2xl xl:text-5xl text-gray-400 xl:leading-tight mt-3 mb-2 xl:mb-20;" />
+<h2 set:html={title} style={overrideColorStyle} 
+  class="font-thin text-4xl md:text-3xl xl:text-6xl xl:leading-tight mb-10 md:mb-5 xl:mb-20" />
+
+}
+
+
+
 </header>
 
 <style>
@@ -22,65 +39,4 @@ const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
     @apply text-white;
   }
 
-  .extra-info{
-    @apply  flex items-start w-full
-  }
-  .status, .date-location {
-    @apply inline-block align-top mr-3 mb-1.5
-  }
-  .subtitle {
-    @apply text-sm my-1 uppercase font-bold
-}
-
-  .title {
-    @apply mx-auto px-5 lg:px-16 2xl:px-0 max-w-7xl;
-  }
-  .title.titleHeroLarge {
-    @apply px-0;
-  }
-  .title.titleHeroMedium {
-    @apply px-0;
-  }
-  .title.titlePromo {
-    @apply px-0 m-0 
-  }
-  
-  h2 {
-    @apply text-inherit font-normal md:font-thin text-4xl md:text-5xl lg:text-6xl lg:leading-tight;
-  }
-  h3 {
-    @apply font-thin text-gray-400 text-3xl md:text-4xl lg:text-5xl lg:leading-tight;
-  }
-
-  .boldSubtitle{
-    @apply mb-10 font-bold uppercase
-  }
-  .boldSubtitlePromo{
-    @apply m-0 font-bold uppercase
-  }
-
-  .titleHeroLarge h2 {
-    @apply text-inherit font-thin text-4xl md:text-4xl xl:text-6xl xl:leading-tight mb-10 md:mb-5 xl:mb-20;
-  }
-
-  .titleHeroLarge h3 {
-    @apply font-thin text-3xl md:text-3xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-0;
-  }
-
-  .titleHeroMedium h2 {
-    @apply text-inherit font-thin text-3xl md:text-4xl xl:leading-tight mb-10 md:mb-12 xl:mb-20;
-  }
-
-  .titleHeroMedium h3 {
-    @apply font-thin text-2xl xl:text-3xl xl:leading-tight mb-2 md:mb-2 xl:mb-1;
-  }
-
- 
-  .titlePromo h2 {
-    @apply text-inherit font-bold text-4xl leading-tight mb-5
-  }
-
-  .titlePromo h3 {
-    @apply text-2xl;
-  } 
 </style>
