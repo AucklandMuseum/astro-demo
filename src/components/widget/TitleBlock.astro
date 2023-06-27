@@ -2,7 +2,7 @@
 const { title, subtitle, boldSubtitle, behaviour, status = "", statusColor = "grey-50", parent, parentStyle, colorOverride = "" } =
   Astro.props;
 
-const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
+const overrideColorStyle = colorOverride == "" ? "    text-wrap: balance;" : "    text-wrap: balance;color: " + colorOverride;
 ---
 <header class:list={[parent + parentStyle]}>
 {behaviour === 'Page' || !behaviour && 
@@ -22,7 +22,7 @@ const overrideColorStyle = colorOverride == "" ? "" : "color: " + colorOverride;
 <div set:html={boldSubtitle} style={overrideColorStyle} 
   class="font-bold uppercase" />
 <h3 set:html={subtitle} style={overrideColorStyle} 
-  class="font-thin text-3xl md:text-2xl xl:text-5xl text-gray-400 xl:leading-tight mt-3 mb-2 xl:mb-20;" />
+  class="font-thin text-3xl md:text-2xl xl:text-5xl text-gray-400 xl:leading-tight mt-3 mb-2" />
 <h2 set:html={title} style={overrideColorStyle} 
   class="font-thin text-4xl md:text-3xl xl:text-6xl xl:leading-tight mb-10 md:mb-5 xl:mb-20" />
 
