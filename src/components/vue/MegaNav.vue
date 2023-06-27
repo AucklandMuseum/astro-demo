@@ -43,7 +43,7 @@ const mainNav = [
 	<header
 		class="hidden md:block relative z-50 w-full border-b-[6px] border-white bg-black text-white shadow-md pl-5 pr-5">
 		<nav class="lg:text-lg container max-w-7xl mx-auto flex flex-nowrap flex-row items-bottom -mb-1.5 pt-10">
-			<div class="w-[169px] mr-5 xs:mx-5 -pb-5 align-bottom self-end">
+			<div class="w-[169px] ml-0 mr-5 xs:mx-5 md:ml-0 xl:ml-5 -pb-5 align-bottom self-end">
 				<a class="" href="/"><img class="" src="/images/am-logo.svg" alt="Auckland War Memorial Museum" /></a>
 			</div>
 			<ul class="flex flex-row justify-evenly font-bold tracking-wide lg:mt-0 w-full pb-4 
