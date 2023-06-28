@@ -6,8 +6,12 @@ const overrideColorStyle = colorOverride == "" ? "text-wrap: balance;" : "text-w
 ---
 <header class:list={[parent + parentStyle]}>
 
+  {!behaviour && 
+  <>
+  </>
+  }
 
-{(behaviour === 'Page' || !behaviour) && 
+{behaviour === 'Page' && 
 
 <div class="w-full">
   <h1 set:html={title} style={overrideColorStyle} 
