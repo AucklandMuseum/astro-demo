@@ -142,10 +142,11 @@ const mainNav = [
 						</Popover>
 					</li>
 				</ul>
-			<div class="lg:text-lg flex flex-grow justify-end ml-2 items-end mb-7">
-				<MagnifyingGlassIcon class="h-8 w-8 lg:h-10 lg:w-10 text-white" aria-hidden="true" />
-			</div>
-		</nav>
-	</div>
-</header></template>
+				<div class="lg:text-lg flex flex-grow justify-end ml-2 items-end mb-7">
+					<MagnifyingGlassIcon class="h-8 w-8 lg:h-10 lg:w-10 text-white" aria-hidden="true" />
+				</div>
+			</nav>
+		</div>
+	</header>
+</template>
   

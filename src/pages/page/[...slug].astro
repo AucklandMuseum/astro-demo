@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "layouts/BaseLayout.astro";
+import PageSectionTitleBlock from "components/widget/PageSectionTitleBlock.astro";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 
 import { getPageBySlug, getSectionByID } from "lib/contentful";
 import type { ContentType } from "contentful";
-import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
-
 const { slug } = Astro.params;
 
 let page = await getPageBySlug(slug);
@@ -23,7 +23,7 @@ const titleProps = {
 ---
 
 <BaseLayout page={page} section={section}>
-  <ContentfulComponent type="sectionTitle" {...titleProps} />
+  <PageSectionTitleBlock type="sectionTitle" {...titleProps} />
   <>
     {
       page?.fields.contentSections?.map((comp: ContentType) => {

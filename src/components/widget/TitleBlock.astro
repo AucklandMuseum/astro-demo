@@ -5,10 +5,20 @@ const { title, subtitle, boldSubtitle, behaviour, status = "", statusColor = "gr
 const overrideColorStyle = colorOverride == "" ? "text-wrap: balance;" : "text-wrap: balance;color: " + colorOverride;
 ---
 <header class:list={[parent + parentStyle]}>
+
+
 {(behaviour === 'Page' || !behaviour) && 
 
+<div class="w-full">
+  <h1 set:html={title} style={overrideColorStyle} 
+    class="text-inherit font-bold text-4xl md:text-5xl leading-tight pb-5" />
+</div>
 
-<div class="mx-auto px-0 pt-10 pb-5 max-w-7xl">
+}
+
+{behaviour === 'Section' && 
+
+<div class="w-full">
   <div class="" set:html={Astro.props.boldSubtitle} />
   <h3 set:html={subtitle} style={overrideColorStyle} 
     class="font-thin text-gray-400 text-3xl md:text-4xl lg:text-5xl lg:leading-tight" />
@@ -17,7 +27,6 @@ const overrideColorStyle = colorOverride == "" ? "text-wrap: balance;" : "text-w
     class="text-inherit font-normal lg:font-thin text-4xl md:text-5xl lg:text-6xl lg:leading-tight" />
   </div>
 </div>
-
 
 }
 
