@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
 import contentful from "contentful-astro";
+import tailwind from "@astrojs/tailwind";
 const spaceID = process.env.CONTENTFUL_SPACE_ID;
 const CMA = process.env.CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN;
 

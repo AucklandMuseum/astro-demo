@@ -1,5 +1,5 @@
 ---
-import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
+import ContentfulComponent from "contentful-astro/ContentfulComponent.astro"
 //console.log(Astro.props);
 let {
   imageMetadata,
@@ -8,7 +8,7 @@ let {
   boldSubtitle,
   content,
   contentAlignment,
-  size,
+  behaviour,
   style,
   parent,
   parentStyle
@@ -16,14 +16,14 @@ let {
 
 let type = "hero";
 
-imageMetadata.fields["size"] = size;
+imageMetadata.fields["size"] = behaviour;
 ---
 
 <div
   class:list={[
     "wrapper",
     type + style,
-    type + size,
+    type + behaviour,
     type + contentAlignment,
   ]}
 >
@@ -38,7 +38,7 @@ imageMetadata.fields["size"] = size;
         <>
           {
             content?.map((comp: ContentfulComponent) => {
-              comp.fields["parent"] = type + size;
+              comp.fields["parent"] = type + behaviour;
               comp.fields["parentStyle"] = style;
               return (
                 <ContentfulComponent
@@ -61,7 +61,7 @@ imageMetadata.fields["size"] = size;
 
   .heroLight .content,
   .heroLight {
-    @apply bg-gray-200
+    @apply bg-gray-100
   }
 
   .wrapper {

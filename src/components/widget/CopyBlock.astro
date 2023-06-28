@@ -1,5 +1,4 @@
 ---
-import * as contentful from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 let { content, contentStyle = "Standard", parent, parentStyle } = Astro.props;
@@ -12,7 +11,7 @@ let { content, contentStyle = "Standard", parent, parentStyle } = Astro.props;
 		"copy" + parent,
 		"copy" + parentStyle,
 	]}
-	set:html={documentToHtmlString(content)}
+	set:html={documentToHtmlString(content).replace(/\n/g, `</br>`)}
 />
 
 <style>
@@ -29,10 +28,10 @@ let { content, contentStyle = "Standard", parent, parentStyle } = Astro.props;
 		@apply prose text-black
 	}
 	.copyDark {
-		@apply prose text-white
+		@apply prose-invert
 	}
 	.copyLarge {
-		@apply prose-2xl leading-tight;
+		@apply prose-xl md:prose-2xl leading-tight;
 	}
 	.copySmall {
 		@apply prose-sm;
