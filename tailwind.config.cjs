@@ -11,6 +11,7 @@ module.exports = {
 			sans: ['"Gotham Narrow"', 'sans-serif']
 		  },		
 		extend: {
+
 			typography: {
 
 				DEFAULT: {

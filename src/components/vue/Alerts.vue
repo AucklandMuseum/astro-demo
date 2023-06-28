@@ -10,8 +10,8 @@ import { ExclamationTriangleIcon, InformationCircleIcon, XMarkIcon, XCircleIcon 
 				<InformationCircleIcon class="h-5 w-5 text-blue-400" aria-hidden="true" />
 			</div>
 			<div class="ml-3">
-				<h3 class="text-lg font-black text-blue-900">Info</h3>
-				<div class="mt-2 text-lg text-blue-900">
+				<h3 class="text-sm md:text-lg font-black text-blue-900">Info</h3>
+				<div class="mt-2 text-sm md:text-lg text-blue-900">
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo
 						totam eius aperiam dolorum.</p>
 				</div>
@@ -33,8 +33,8 @@ import { ExclamationTriangleIcon, InformationCircleIcon, XMarkIcon, XCircleIcon 
 				<ExclamationTriangleIcon class="h-5 w-5 text-yellow-400" aria-hidden="true" />
 			</div>
 			<div class="ml-3">
-				<h3 class="text-lg font-black text-yellow-900">Warning</h3>
-				<div class="mt-2 text-lg text-yellow-900">
+				<h3 class="text-sm md:text-lg font-black text-yellow-900">Warning</h3>
+				<div class="mt-2 text-sm md:text-lg text-yellow-900">
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo
 						totam eius aperiam dolorum.</p>
 				</div>
@@ -56,8 +56,8 @@ import { ExclamationTriangleIcon, InformationCircleIcon, XMarkIcon, XCircleIcon 
 				<ExclamationTriangleIcon  class="h-5 w-5 text-red-400" aria-hidden="true" />
 			</div>
 			<div class="ml-3">
-				<h3 class="text-lg font-black text-red-900">Alert</h3>
-				<div class="mt-2 text-lg text-red-900">
+				<h3 class="text-sm md:text-lg font-black text-red-900">Alert</h3>
+				<div class="mt-2 text-sm md:text-lg text-red-900">
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo
 						totam eius aperiam dolorum.</p>
 				</div>
