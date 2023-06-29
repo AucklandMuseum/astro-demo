@@ -16,7 +16,7 @@ const cloudimageConfig = {
 export default function MySidebar(props) {
   return (
     <CloudimageProvider config={cloudimageConfig}>
-      <Img src={props.src} params={props.params} class="w-full h-full"/>
+      <Img src={props.src} params={props.params} className="w-full h-full"/>
     </CloudimageProvider>
   );
 };

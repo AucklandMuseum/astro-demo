@@ -29,7 +29,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "astro": "^2.1.9",
-    "astro-compress": "^1.1.35",
+    "astro-icon": "^0.8.1",
     "autoprefixer": "^10.4.13",
     "contentful": "^10.3.0",
     "contentful-astro": "^1.1.0",
@@ -53,8 +53,12 @@
     "vue-lazyload": "^3.0.0"
   },
   "devDependencies": {
+    "@astrojs/image": "^0.17.1",
+    "@astrojs/partytown": "^1.2.3",
     "@graphql-codegen/cli": "^3.2.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "astro-compress": "^1.1.47",
+    "astro-themes": "^0.2.4",
     "cf-content-types-generator": "^2.12.2",
     "cross-env": "^7.0.3",
     "postcss-import": "^15.1.0",
