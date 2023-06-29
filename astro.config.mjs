@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import contentful from "contentful-astro";
 import tailwind from "@astrojs/tailwind";
+import partytown from "@astrojs/partytown";
+
 const spaceID = process.env.CONTENTFUL_SPACE_ID;
 const CMA = process.env.CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN;
 
@@ -19,9 +21,12 @@ import compress from "astro-compress";
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  integrations: [tailwind(), react(), vue({
+  integrations: [tailwind(),
+  react(),
+  vue({
     appEntrypoint: '/src/pages/_app'
-  }), contentful({
+  }),
+  contentful({
     space: spaceID,
     accessToken: CMA,
     components: {
@@ -40,6 +45,22 @@ export default defineConfig({
       WidgetYouTubeResponsive: "components/widget/Youtube",
       widgetHtmlCode: "components/widget/HtmlCode",
     }
-  }), compress()],
+  }),
+  compress(),
+  partytown({
+    // Adds dataLayer.push as a forwarding-event.
+    config: {
+      forward: ["dataLayer.push"],
+      logCalls: true,
+      logGetters: true,
+      logSetters: true,
+      logImageRequests: true,
+      logMainAccess: true,
+      logSendBeaconRequests: true,
+      logStackTraces: false,
+      logScriptExecution: true,      
+    },
+  }),
+  ],
   adapter: netlify()
 });

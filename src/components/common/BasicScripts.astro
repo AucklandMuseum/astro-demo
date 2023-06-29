@@ -32,9 +32,6 @@
   }
 
   window.onload = function () {
-    let lastKnownScrollPosition = window.scrollY;
-    let ticking = true;
-
     attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
       if (defaultTheme.endsWith(':only')) {
         return;
@@ -44,3 +41,7 @@
     });
   };
 </script>
+
+<!-- Add js-cloudimage-responsiv library -->
+<script type="text/partytown" src="https://cdn.scaleflex.it/filerobot/js-cloudimage-responsive/lazysizes.min.js"></script>
+<script type="text/partytown" src="https://cdn.scaleflex.it/plugins/js-cloudimage-responsive/latest/js-cloudimage-responsive.min.js"></script>

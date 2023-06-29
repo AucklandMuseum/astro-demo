@@ -19,23 +19,23 @@ const { page, section } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <BaseHead page={page} section={section} />
     <Themes  />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-149E0ZFVZ8"
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-149E0ZFVZ8"
     ></script>
-    <script>
+    <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-149E0ZFVZ8");
     </script>
-    <BaseHead page={page} section={section} />
+
   </head>
   <body class="bg-white dark:text-slate-300 dark:bg-black">
-    <!-- <ToggleTheme /> --> 
+    <!-- <ToggleTheme /> -->
     <MegaNav client:only="vue" />
     <slot />
     <BasicScripts />
@@ -44,15 +44,6 @@ const { page, section } = Astro.props;
         content-visibility: auto;
       }
     </style>
-    <!-- Add lazyload library -->
-    <script
-      src="https://cdn.scaleflex.it/filerobot/js-cloudimage-responsive/lazysizes.min.js"
-    ></script>
-
-    <!-- Add js-cloudimage-responsiv library -->
-    <script
-      src="https://cdn.scaleflex.it/plugins/js-cloudimage-responsive/latest/js-cloudimage-responsive.min.js"
-    ></script>
   </body>
 </html>
 

@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
 	mode: 'jit',
@@ -48,19 +47,7 @@ module.exports = {
 		require('@tailwindcss/aspect-ratio'),
 		require('@tailwindcss/line-clamp'),
 		require('@tailwindcss/container-queries'),
-		//require("daisyui"),
-		//require("preline/plugin.js"),
 	],
 	darkMode: 'class',
-	// daisyUI config (optional)
-	/* 	  daisyui: {
-			styled: true,
-			themes: ["lofi"],
-			base: true,
-			utils: true,
-			logs: false,
-			rtl: false,
-			prefix: "",
-			darkTheme: "dark",
-		  }, */
+
 }

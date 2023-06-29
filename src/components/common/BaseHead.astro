@@ -4,11 +4,12 @@
 import "styles/global.css";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { htmlToText } from "html-to-text";
-import type { TypePage, TypeContentSection } from "types/index";
+import type { TypePage, TypeSection } from "types/contentful/index";
+import { ChainModifiers, LocaleCode } from "contentful";
 
 interface Props {
-  page:TypePage,
-  section?: TypeContentSection
+	page: TypePage<ChainModifiers, LocaleCode>;
+	section?: TypeSection<ChainModifiers, LocaleCode>;
 }
 
 const { page, section } = Astro.props;
@@ -22,8 +23,7 @@ if (section !== null && section) {
 			: section.fields.title;
 	sectionMetaDescription = section.fields.metaDescription;
 
-	if(sectionMetaTitle !== "")
-		sectionMetaTitle = " - " + sectionMetaTitle;
+	if (sectionMetaTitle !== "") sectionMetaTitle = " - " + sectionMetaTitle;
 }
 
 let metaTitle =
@@ -66,6 +66,24 @@ let metaDescription =
 <meta property="twitter:description" content={metaDescription} />
 <meta property="twitter:image" content={new URL("", Astro.url)} />
 
-<link rel="preload" href="/fonts/GothamNarrow-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/fonts/GothamNarrow-Book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/fonts/GothamNarrow-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link
+	rel="preload"
+	href="/fonts/GothamNarrow-Light.woff2"
+	as="font"
+	type="font/woff2"
+	crossorigin="anonymous"
+/>
+<link
+	rel="preload"
+	href="/fonts/GothamNarrow-Book.woff2"
+	as="font"
+	type="font/woff2"
+	crossorigin="anonymous"
+/>
+<link
+	rel="preload"
+	href="/fonts/GothamNarrow-Medium.woff2"
+	as="font"
+	type="font/woff2"
+	crossorigin="anonymous"
+/>
