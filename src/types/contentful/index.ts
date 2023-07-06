@@ -8,6 +8,7 @@ export type { TypeImageMetadata, TypeImageMetadataFields, TypeImageMetadataSkele
 export type { TypeImageWithColourBox, TypeImageWithColourBoxFields, TypeImageWithColourBoxSkeleton } from "./TypeImageWithColourBox";
 export type { TypeImageWithTrain, TypeImageWithTrainFields, TypeImageWithTrainSkeleton } from "./TypeImageWithTrain";
 export type { TypeLeftAndRightPanels, TypeLeftAndRightPanelsFields, TypeLeftAndRightPanelsSkeleton } from "./TypeLeftAndRightPanels";
+export type { TypeLocalisedString, TypeLocalisedStringFields, TypeLocalisedStringSkeleton } from "./TypeLocalisedString";
 export type { TypeMarketingPanel, TypeMarketingPanelFields, TypeMarketingPanelSkeleton } from "./TypeMarketingPanel";
 export type { TypeMenuGroup, TypeMenuGroupFields, TypeMenuGroupSkeleton } from "./TypeMenuGroup";
 export type { TypeMenuItem, TypeMenuItemFields, TypeMenuItemSkeleton } from "./TypeMenuItem";

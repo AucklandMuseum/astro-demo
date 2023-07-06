@@ -11,10 +11,10 @@ let { htmlContent, parent, parentStyle } = Astro.props;
   rel="stylesheet"
   href="https://cdn.scaleflex.it/plugins/js-cloudimage-responsive/latest/js-cloudimage-responsive.min.css?vh=a076ef&func=proxy"
 />
-<script
+<script is:inline
   src="https://cdn.scaleflex.it/plugins/js-cloudimage-responsive/latest/js-cloudimage-responsive.min.js"
 ></script>
-<script>
+<script  is:inline>
   const ciResponsive = new window.CIResponsive({
     token: "ajrctguoxo",
   });

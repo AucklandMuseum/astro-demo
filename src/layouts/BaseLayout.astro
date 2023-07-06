@@ -5,14 +5,18 @@ import ToggleTheme from "components/common/ToggleTheme.astro";
 import BaseHead from "components/common/BaseHead.astro";
 import BasicScripts from 'components/common/BasicScripts.astro';
 import MegaNav from "components/vue/MegaNav.vue";
-import { FieldsType } from "contentful";
+import { EntryCollection, EntrySkeletonType } from "contentful";
+import * as contentfulUtils  from "lib/contentful";
 
 interface Props {
-  page: FieldsType;
-  section?: FieldsType;
+  page: EntrySkeletonType;
+  section?: EntrySkeletonType;
 }
 
 const { page, section } = Astro.props;
+
+const topNav = await contentfulUtils.getMenuGroupMenuItemsByName("top");
+const mainNav = await contentfulUtils.getMenuGroupMenuGroupsByName("main");
 
 ---
 
@@ -36,7 +40,7 @@ const { page, section } = Astro.props;
   </head>
   <body class="bg-white dark:text-slate-300 dark:bg-black">
     <!-- <ToggleTheme /> -->
-    <MegaNav client:only="vue" />
+    <MegaNav client:load topNavItems={topNav} navItems={mainNav} />
     <slot />
     <BasicScripts />
     <style is:global>

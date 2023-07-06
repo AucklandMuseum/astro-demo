@@ -5,11 +5,11 @@ import "styles/global.css";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { htmlToText } from "html-to-text";
 import type { TypePage, TypeSection } from "types/contentful/index";
-import { ChainModifiers, LocaleCode } from "contentful";
+import { ChainModifiers, EntrySkeletonType, LocaleCode } from "contentful";
 
 interface Props {
-	page: TypePage<ChainModifiers, LocaleCode>;
-	section?: TypeSection<ChainModifiers, LocaleCode>;
+	page: EntrySkeletonType;
+	section?: EntrySkeletonType;
 }
 
 const { page, section } = Astro.props;

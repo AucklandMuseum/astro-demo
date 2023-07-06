@@ -1,35 +1,35 @@
-<script setup>
+<script lang="ts">
 import { Popover, PopoverPanel, PopoverButton } from '@headlessui/vue'
 import CloudImage from "./CloudImage.vue";
 import Alerts from "./Alerts.vue"
 import TopNav from "./TopNav.vue"
 import OpeningHours from "./OpeningHours.vue"
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { defineComponent } from 'vue'
+import { ChainModifiers, LocaleCode } from 'contentful';
+import { TypeLocalisedString, TypeMenuItem } from 'types/contentful';
 
+export default defineComponent({
+	props: {
+		topNavItems: Array<TypeMenuItem<ChainModifiers, LocaleCode>>,
+		navItems: Array<TypeMenuItem<ChainModifiers, LocaleCode>>,
+		openingHours: Array<TypeLocalisedString<ChainModifiers, LocaleCode>>
+	},
+	components: {
+		TopNav,
+		OpeningHours,
+		Alerts,
+		Popover,
+		PopoverButton,
+		PopoverPanel,
+		XMarkIcon,
+		MagnifyingGlassIcon,
+		CloudImage
+	}
+})
 
-
-const menuVisit = [
-	{ name: 'What\'s On', href: '#' },
-	{ name: 'Plan your visit', href: '#' },
-	{ name: 'Tourist Information', href: '#' },
-	{ name: 'Guided tours', href: '#' },
-	{ name: 'Exhibitions', href: '#' },
-	{ name: 'Galleries', href: '#' },
-	{ name: 'Museum Store', href: '#' },
-	{ name: 'Kids and family', href: '#' },
-	{ name: 'Venues', href: '#' },
-]
-
-const mainNav = [
-	{ en: 'Visit', mi: 'Toro Mai', menu: menuVisit },
-	{ en: 'Discover', mi: 'Tuhuratia' },
-	{ en: 'Learn', mi: 'Ako' },
-	{ en: 'War Memorial', mi: 'Paenga Hira' },
-	{ en: 'Your Museum', mi: 'Tō Whare Taonga' },
-	{ en: 'Store', mi: 'Hokohoko' },
-
-]
 </script>
+
 
 <template>
 	<!-- <Alerts /> -->
@@ -37,8 +37,8 @@ const mainNav = [
 		<div class="mx-auto px-5 max-w-7xl">
 			<div
 				class="w-full flex flex-col sm:flex-row justify-around sm:justify-between py-[16px] text-xs md:text-sm font-bold">
-				<OpeningHours />
-				<TopNav />
+				<OpeningHours :content-items="openingHours" />
+				<TopNav :navItems="topNavItems" />
 			</div>
 		</div>
 	</header>
@@ -48,17 +48,17 @@ const mainNav = [
 				<div class="w-[169px] ml-0 mr-5 xs:mx-5 md:ml-0 -pb-5 align-bottom self-end">
 					<a class="" href="/"><img class="" src="/images/am-logo.svg" alt="Auckland War Memorial Museum" /></a>
 				</div>
-				<ul class="flex flex-row justify-evenly font-bold tracking-wide lg:mt-0 w-full pb-4 
+				<ul class="flex flex-row flex-shrink justify-evenly font-bold tracking-wide lg:mt-0 max-w-min pb-4  space-x-10
 			whitespace-nowrap text-sm md:text-base lg:text-lg ">
 
 
 					<li class="flex-auto group hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5"
-						v-for="nav in mainNav">
+						v-for="nav in navItems">
 						<Popover class="z-50 shadow">
-							<PopoverButton class="text-left focus:outline-none" role="combobox" :title=nav.en
+							<PopoverButton class="text-left focus:outline-none" role="combobox" :title=nav.fields.title
 								aria-controls="header-nav-visit" aria-expanded="false"
 								aria-label="Show Visit subnavigation">
-								<span class="font-light block">{{ nav.mi }}</span> {{ nav.en }}
+								<span class="font-light block">{{ nav.fields.title }}</span> {{ nav.fields.title }}
 							</PopoverButton>
 							<transition enter-active-class="transition ease-out duration-200"
 								enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0"
@@ -70,10 +70,10 @@ const mainNav = [
 
 										<div class="min-w-fit flex flex-col">
 											<div class="py-10 px-20">
-												<a v-for="item in nav.menu" :key="item.name" :href="item.href"
+												<!-- <a v-for="item in menuVisit" :key="item.name" :href="item.href"
 													class="flex py-2 lg:py-3 text-gray-100">
 													{{ item.name }}
-												</a>
+												</a> -->
 											</div>
 											<div class="flex justify-self-end place-items-center cursor-pointer"
 												@click="close">
@@ -149,4 +149,3 @@ const mainNav = [
 		</div>
 	</header>
 </template>
-  

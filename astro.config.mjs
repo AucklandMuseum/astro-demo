@@ -2,9 +2,11 @@ import { defineConfig } from 'astro/config';
 import contentful from "contentful-astro";
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
+import { loadEnv } from 'vite'
 
 const spaceID = process.env.CONTENTFUL_SPACE_ID;
 const CMA = process.env.CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN;
+const env = loadEnv("", process.cwd())
 
 // https://astro.build/config
 import netlify from "@astrojs/netlify/functions"

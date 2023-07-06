@@ -6,3 +6,7 @@ interface ImportMetaEnv {
 	readonly CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN: string;
 	readonly CLOUDIMAGE_TOKEN: string;
   }
+
+  interface ImportMeta {
+	readonly env: ImportMetaEnv;
+  }
