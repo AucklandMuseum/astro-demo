@@ -1,12 +1,12 @@
 <script lang="ts">
-import { ChainModifiers, LocaleCode } from 'contentful';
-import { TypeLocalisedString } from 'types/contentful';
+import { ChainModifiers, Entry, LocaleCode } from 'contentful';
+import { TypeLocalisedString, TypeLocalisedStringSkeleton } from 'types/contentful';
 import { defineComponent } from 'vue';
 
 
 export default defineComponent({
 	props: {
-		contentItems: Array<TypeLocalisedString<ChainModifiers, LocaleCode>>
+		contentItems: Array<Entry<TypeLocalisedStringSkeleton, undefined, string>>
 	},
 })
 </script>

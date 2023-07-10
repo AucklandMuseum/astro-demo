@@ -1,13 +1,8 @@
-<script lang="ts">
-import { ChainModifiers, LocaleCode } from 'contentful';
-import { TypeMenuItem } from 'types/contentful';
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { ref } from "vue";
+import * as contentfulUtils from "lib/contentful.js";
 
-export default defineComponent({
-	props: {
-		navItems: Array<TypeMenuItem<ChainModifiers, LocaleCode>>
-	},
-})
+let navItems = await contentfulUtils.getMenuGroupMenuItemsByName("top", contentfulUtils.DefaultLocale);
 </script>
 
 
@@ -17,9 +12,9 @@ export default defineComponent({
 					[&>li]:self-center [&>li]:pl-4 [&>li]:pr-4 
 					[&>li:first-child]:pl-0 [&>li:last-child]:pr-0">
 			<li v-for="item in navItems" as="template">
-				<a class="text-center uppercase whitespace-nowrap" :title="item.fields?.title.toString()"
-					:href="item.fields?.url?.toString()">{{
-						item.fields?.secondaryTitle ? item.fields?.secondaryTitle : item.fields?.title }}</a>
+				<a class="text-center uppercase whitespace-nowrap" :title="item['fields']?.title.toString()"
+					:href="item['fields']?.url?.toString()">{{
+						item['fields']?.secondaryTitle ? item['fields']?.secondaryTitle : item['fields']?.title }}</a>
 			</li>
 		</ul>
 	</div>
