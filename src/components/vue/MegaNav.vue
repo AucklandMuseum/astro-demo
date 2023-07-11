@@ -32,19 +32,18 @@ navItems = { "default": mainNavDefault, "mi": mainNavMI }
 	</header>
 	<header class="hidden md:block relative z-50 w-full border-b-[6px] border-white bg-black text-white shadow-md">
 		<div class="mx-auto px-5 max-w-7xl ">
-			<nav class="lg:text-lg w-full  flex flex-nowrap flex-row items-bottom -mb-1.5 pt-10">
-				<div class="w-[169px] ml-0 mr-5 xs:mx-5 md:ml-0 -pb-5 align-bottom self-end flex-shrink-0">
+			<nav class="lg:text-lg w-full flex flex-nowrap flex-row justify-items-stretch items-baseline -mb-1.5 pt-5">
+				<div class="w-[169px] ml-0 mr-5 -pb-5 align-bottom self-end flex-shrink-0">
 					<a class="" href="/"><img class="" src="/images/am-logo.svg" alt="Auckland War Memorial Museum" /></a>
 				</div>
-				<PopoverGroup as="ul" class="flex flex-row flex-shrink justify-evenly font-bold tracking-wide lg:mt-0 max-w-min pb-4 space-x-5 lg:space-x-10
-			whitespace-nowrap text-sm md:text-base lg:text-lg ">
-
-
-					<Popover as="li"
-						class="flex-auto group hover:border-b-4 hover:-mb-2.5 hover:-pb-1 mb-0 lg:px-4 xl:px-5 z-50 shadow"
-						v-for="(item, index) in navItems['default']" :key="item.sys.id">
-						<PopoverButton class="text-left focus:outline-none" role="combobox" :title="item['fields']['title']"
-							aria-controls="header-nav-visit" aria-expanded="false" aria-label="Show Visit subnavigation">
+				<PopoverGroup as="ul" class="flex flex-row font-bold tracking-wide lg:mt-0 space-x-0
+			whitespace-nowrap text-sm md:text-base lg:text-lg  ">
+					<Popover as="li" class="flex-auto group z-50 shadow" v-for="(item, index) in navItems['default']"
+						:key="item.sys.id">
+						<PopoverButton
+							class="text-left hover:border-b-4 hover:-mb-3 hover:pb-2.5 hover:outline-none my-5 lg:mx-1 px-3 lg:px-4 xl:px-5"
+							role="combobox" :title="item['fields']['title']" aria-controls="header-nav-visit"
+							aria-expanded="false" aria-label="Show Visit subnavigation">
 							<span class="font-light block">{{ navItems['mi'][index]['fields']['title'] }}</span> {{
 								item['fields']['title'] }}
 						</PopoverButton>
@@ -53,22 +52,24 @@ navItems = { "default": mainNavDefault, "mi": mainNavMI }
 							leave-active-class="transition ease-in duration-100"
 							leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
 							<PopoverPanel v-slot="{ close }"
-								class="absolute inset-x-0 top-[119px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
+								class="absolute inset-x-0 md:top-[108px] lg:top-[116px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
 								<div class="mx-auto flex w-full">
 
 									<div class="min-w-fit flex flex-col">
-										<div class="py-10 px-20">
+										<div class="py-10 px-10">
 
 											<a v-for="menu in item['fields']['menuItems']" href="#"
-												class="flex py-2 lg:py-3 text-gray-100">
+												class="flex px-2 py-2 lg:py-3 text-gray-100">
 												{{ menu['fields']['title'] }}
 
 											</a>
 										</div>
-										<div class="flex justify-self-end place-items-center cursor-pointer" @click="close">
-											<XMarkIcon class="m-5 mr-1 w-5 h-5 lg:w-10 lg:h-10" aria-label="Close" />
+										<a href="#"
+											class=" -outline-offset-4 py-2 px-2 flex justify-self-end place-items-center cursor-pointer"
+											@click="close">
+											<XMarkIcon class="m-3 mr-2 w-5 h-5 lg:w-5 lg:h-5" aria-label="Close" />
 											Close
-										</div>
+										</a>
 									</div>
 									<div class="w-full min-h-full bg-black p-10 grid grid-cols-2 grid-rows-2 gap-1">
 										<h3 class="sr-only">Featured</h3>
@@ -130,10 +131,9 @@ navItems = { "default": mainNavDefault, "mi": mainNavMI }
 						</transition>
 					</Popover>
 				</PopoverGroup>
-				<div class="lg:text-lg flex flex-grow justify-end ml-2 items-end mb-7 sm:mb-10 lg:mb-8">
-					<MagnifyingGlassIcon class="h-8 w-8 lg:h-10 lg:w-10 text-white" aria-hidden="true" />
+				<div class="lg:text-lg flex flex-grow justify-end self-end ml-1 lg:ml-2 items-baseline pb-8">
+					<MagnifyingGlassIcon class="md:h-6 md:w-6 lg:h-8 lg:w-8 text-white" aria-hidden="true" />
 				</div>
 			</nav>
 		</div>
-	</header>
-</template>
+	</header></template>
