@@ -24,7 +24,7 @@ navItems = { "default": mainNavDefault, "mi": mainNavMI }
 	<header class="z-50 w-full shadow-md  bg-white text-black">
 		<div class="mx-auto px-5 max-w-7xl">
 			<div
-				class="w-full flex flex-col sm:flex-row justify-around sm:justify-between py-[16px] text-xs md:text-sm font-bold">
+				class="w-full flex flex-col lg:flex-row justify-around lg:justify-between py-[16px] text-xs lg:text-sm font-bold">
 				<OpeningHours />
 				<TopNav />
 			</div>
@@ -33,7 +33,7 @@ navItems = { "default": mainNavDefault, "mi": mainNavMI }
 	<header class="hidden md:block relative z-50 w-full border-b-[6px] border-white bg-black text-white shadow-md">
 		<div class="mx-auto px-5 max-w-7xl ">
 			<nav class="lg:text-lg w-full flex flex-nowrap flex-row justify-items-stretch items-baseline -mb-1.5 pt-5">
-				<div class="w-[169px] ml-0 mr-5 -pb-5 align-bottom self-end flex-shrink-0">
+				<div class="w-[140px] lg:w-[169px] ml-0 mr-5 -pb-5 align-bottom self-end flex-shrink-0">
 					<a class="" href="/"><img class="" src="/images/am-logo.svg" alt="Auckland War Memorial Museum" /></a>
 				</div>
 				<PopoverGroup as="ul" class="flex flex-row font-bold tracking-wide lg:mt-0 space-x-0
@@ -91,7 +91,7 @@ navItems = { "default": mainNavDefault, "mi": mainNavMI }
 											</figure>
 										</a>
 
-										<a class="text-white bg-black row-start-2 xl:row-auto group/2">
+										<a href="#" class="text-white bg-black row-start-2 xl:row-auto group/2">
 
 											<figure class="flex relative overflow-hidden h-full ">
 												<CloudImage
@@ -109,7 +109,7 @@ navItems = { "default": mainNavDefault, "mi": mainNavMI }
 										</a>
 
 
-										<a class="text-white bg-black row-start-2 xl:col-start-2 xl:row-auto group/3">
+										<a href="#" class="text-white bg-black row-start-2 xl:col-start-2 xl:row-auto group/3">
 											<figure class="flex relative overflow-hidden h-full ">
 												<CloudImage
 													class="block object-cover h-auto min-h-full min-w-full absolute w-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
