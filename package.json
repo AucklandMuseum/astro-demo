@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.2.2",
-    "@astrojs/netlify": "^2.2.0",
+    "@astrojs/netlify": "^2.4.0",
     "@astrojs/react": "^2.0.2",
     "@astrojs/sitemap": "^1.4.0",
     "@astrojs/tailwind": "^3.0.0",
