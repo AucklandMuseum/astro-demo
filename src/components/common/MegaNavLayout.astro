@@ -3,7 +3,11 @@ import SearchIcon from "components/vue/SearchIcon.vue"
 import TopNav from "components/vue/TopNav.vue"
 import OpeningHours from "components/vue/OpeningHours.vue"
 import MegaNav from "components/vue/MegaNav.vue";
+import * as contentfulUtils from "lib/contentful.js";
 
+
+const mainNavDefault = await contentfulUtils.getMenuGroupMenuGroupsByName("main", "en-NZ");
+const mainNavMI = await contentfulUtils.getMenuGroupMenuGroupsByName("main", "mi-NZ" );
 ---
 
 <!-- <Alerts /> -->
@@ -22,7 +26,8 @@ import MegaNav from "components/vue/MegaNav.vue";
 			<div class="w-[140px] lg:w-[169px] ml-0 mr-5 -pb-5 align-bottom self-end flex-shrink-0">
 				<a class="" href="/"><img class="" src="/images/am-logo.svg" alt="Auckland War Memorial Museum" /></a>
 			</div>
-			<MegaNav />
+
+			<MegaNav mainNavDefault={mainNavDefault} mainNavMI={mainNavMI}  client:only="vue"/>
 			<div class="lg:text-lg flex flex-grow justify-end self-end ml-1 lg:ml-2 items-baseline pb-8">
 				<SearchIcon />
 			</div>

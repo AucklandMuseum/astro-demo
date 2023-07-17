@@ -1,16 +1,18 @@
 ---
 import BaseLayout from "layouts/BaseLayout.astro";
-import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
+import ContentfulComponent from "components/common/ContentfulComponent.astro"
 import PageSectionTitleBlock from "components/widget/PageSectionTitleBlock.astro";
 import { getPageByAltURL, getSectionByID } from "lib/contentful";
+import * as i18n from "astro-i18n-aut";
+import { ContentType } from "contentful";
 
 const { slug } = Astro.params;
 
-const page = await getPageByAltURL(slug.toLowerCase())
+const page = await getPageByAltURL(slug?.toLowerCase(), "en-NZ")
 if (!page) return Astro.redirect("/404");
 
 const section = await getSectionByID(
-  page.fields.parentSiteSection?.sys.id
+  page.fields.parentSiteSection?.sys.id, "en-NZ"
 );
 
 

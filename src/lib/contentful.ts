@@ -16,7 +16,7 @@ export const contentfulClient = contentful.createClient({
 
 export function getMenuGroupMenuItemsByName(
   name: string, 
-  locale: string
+  locale?: string
 ): Promise<(contentful.UnresolvedLink<"Entry"> | contentful.Entry<TypeMenuItemSkeleton, undefined, string>)[]> {
   return contentfulClient
     .getEntries({
@@ -27,7 +27,7 @@ export function getMenuGroupMenuItemsByName(
 
 export function getMenuGroupMenuGroupsByName(
   name: string, 
-  locale: string
+  locale?: string
 ): Promise<(contentful.UnresolvedLink<"Entry"> | contentful.Entry<TypeMenuGroupSkeleton, undefined, string>)[]> {
   return contentfulClient
     .getEntries({
@@ -38,7 +38,7 @@ export function getMenuGroupMenuGroupsByName(
 
 export function getLocalisedStringByName(
   name: string, 
-  locale: string
+  locale?: string
 ): Promise<contentful.Entry<TypeLocalisedStringSkeleton>> {
   return contentfulClient
     .getEntries({ locale: locale, "content_type": "localisedString", "fields.name": name })
@@ -48,7 +48,7 @@ export function getLocalisedStringByName(
 
 export function getPageBySlug(
   contentfulSlug: string, 
-  locale: string
+  locale?: string
 ): Promise<contentful.Entry<EntrySkeletonType>> {
   return contentfulClient
     .getEntries({ locale: locale, "content_type": "page", "fields.slug": contentfulSlug, "include": 10 })
@@ -57,7 +57,7 @@ export function getPageBySlug(
 
 export function getPageByAltURL(
   altURL: string, 
-  locale: string
+  locale?: string
 ): Promise<contentful.Entry<EntrySkeletonType>> {
   return contentfulClient
     .getEntries({ locale: locale, "content_type": "page", "fields.alternateUrls[in]": "/" + altURL, "include": 10 })
@@ -66,7 +66,7 @@ export function getPageByAltURL(
 
 export function getSectionByID(
   contentfulID: string, 
-  locale: string
+  locale?: string
 ): Promise<contentful.Entry<EntrySkeletonType>> {
   if (contentfulID)
     return contentfulClient

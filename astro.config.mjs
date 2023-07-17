@@ -2,11 +2,16 @@ import { defineConfig } from 'astro/config';
 import contentful from "contentful-astro";
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
-import { loadEnv } from 'vite'
+import { i18n, defaultLocaleSitemapFilter } from "astro-i18n-aut";
+import sitemap from "@astrojs/sitemap";
 
-const spaceID = process.env.CONTENTFUL_SPACE_ID;
-const CMA = process.env.CONTENTFUL_MANAGEMENT_API_ACCESS_TOKEN;
-const env = loadEnv("", process.cwd())
+
+const defaultLocale = "en";
+const locales = {
+  en: "en-NZ", // the `defaultLocale` value must present in `locales` keys
+  mi: "mi-NZ",
+};
+import.meta.env.LOCALES = locales
 
 // https://astro.build/config
 import netlify from "@astrojs/netlify/functions"
@@ -22,15 +27,32 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    redirects: true,
+  },
   output: 'server',
+  trailingSlash: "never",
+  build: {
+    format: "file",
+    split: true
+  },
   integrations: [tailwind(),
   react(),
   vue({
     appEntrypoint: '/src/pages/_app'
   }),
+  i18n({
+    locales:locales,
+    defaultLocale:defaultLocale,
+  }),
+  sitemap({
+    i18n: {
+      locales:locales,
+      defaultLocale:defaultLocale,
+    },
+    filter: defaultLocaleSitemapFilter({ defaultLocale }),
+  }),
   contentful({
-    space: spaceID,
-    accessToken: CMA,
     components: {
       contentItems: "components/layout/ContentSection",
       contentCollection: "components/layout/ContentCollection",

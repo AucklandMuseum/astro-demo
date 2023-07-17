@@ -1,11 +1,14 @@
 ---
+export const prerender = true;
+
 import BaseLayout from "layouts/BaseLayout.astro";
 
 import { getPageBySlug } from "lib/contentful";
 import type { ContentType } from "contentful";
-import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
+import ContentfulComponent from "components/common/ContentfulComponent.astro"
+import * as i18n from "astro-i18n-aut";
 
-let page = await getPageBySlug("home");
+let page = await getPageBySlug("home","en-NZ");
 if (!page) return Astro.redirect("/404");
 
 const titleProps = {

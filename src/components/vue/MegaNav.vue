@@ -1,18 +1,17 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import * as contentfulUtils from "lib/contentful.js";
+
 import { Popover, PopoverPanel, PopoverButton, PopoverGroup } from '@headlessui/vue'
 import CloudImage from "./CloudImage.vue";
 import { XMarkIcon } from '@heroicons/vue/24/outline'
 
-let mainNavDefault = ref(null)
-let mainNavMI = ref(null)
-let navItems = ref(null)
+interface Props {
+	mainNavDefault,
+	mainNavMI
+}
 
-mainNavDefault = await contentfulUtils.getMenuGroupMenuGroupsByName("main", contentfulUtils.DefaultLocale);
-mainNavMI = await contentfulUtils.getMenuGroupMenuGroupsByName("main", contentfulUtils.MaoriLocale);
-navItems = { "default": mainNavDefault, "mi": mainNavMI }
-
+const props = defineProps<Props>()
+const navItems = ref({ "default": props.mainNavDefault, "mi": props.mainNavMI })
 </script>
 
 
