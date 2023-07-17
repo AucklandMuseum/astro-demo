@@ -3,7 +3,7 @@ import { ref } from "vue";
 import * as contentfulUtils from "lib/contentful.js";
 import { Popover, PopoverPanel, PopoverButton, PopoverGroup } from '@headlessui/vue'
 import CloudImage from "./CloudImage.vue";
-import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { XMarkIcon } from '@heroicons/vue/24/outline'
 
 let mainNavDefault = ref(null)
 let mainNavMI = ref(null)
