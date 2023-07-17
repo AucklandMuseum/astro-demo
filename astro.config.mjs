@@ -2,16 +2,6 @@ import { defineConfig } from 'astro/config';
 import contentful from "contentful-astro";
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
-import { i18n, defaultLocaleSitemapFilter } from "astro-i18n-aut";
-import sitemap from "@astrojs/sitemap";
-
-
-const defaultLocale = "en";
-const locales = {
-  en: "en-NZ", // the `defaultLocale` value must present in `locales` keys
-  mi: "mi-NZ",
-};
-import.meta.env.LOCALES = locales
 
 // https://astro.build/config
 import netlify from "@astrojs/netlify/functions"
@@ -31,26 +21,10 @@ export default defineConfig({
     redirects: true,
   },
   output: 'server',
-  trailingSlash: "never",
-  build: {
-    format: "file",
-    split: true
-  },
   integrations: [tailwind(),
   react(),
   vue({
     appEntrypoint: '/src/pages/_app'
-  }),
-  i18n({
-    locales:locales,
-    defaultLocale:defaultLocale,
-  }),
-  sitemap({
-    i18n: {
-      locales:locales,
-      defaultLocale:defaultLocale,
-    },
-    filter: defaultLocaleSitemapFilter({ defaultLocale }),
   }),
   contentful({
     components: {
