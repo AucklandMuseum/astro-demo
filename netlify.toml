@@ -1,4 +1,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = script-src 'self' app.netlify.com netlify-cdp-loader.netlify.app; frame-src app.contentful.com; frame-ancestors app.contentful.com
+    Content-Security-Policy = "script-src 'self' app.netlify.com netlify-cdp-loader.netlify.app; frame-src app.contentful.com; frame-ancestors app.contentful.com"
