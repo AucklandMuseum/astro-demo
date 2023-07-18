@@ -1,9 +1,11 @@
 ---
 import "styles/global.css";
-import Themes from "astro-themes"
+import '@contentful/live-preview/style.css';
+
+import Themes from "astro-themes";
 import ToggleTheme from "components/common/ToggleTheme.astro";
 import BaseHead from "components/common/BaseHead.astro";
-import BasicScripts from 'components/common/BasicScripts.astro';
+import BasicScripts from "components/common/BasicScripts.astro";
 import MegaNavLayout from "components/common/MegaNavLayout.astro";
 
 
@@ -13,17 +15,18 @@ interface Props {
 }
 
 const { page, section } = Astro.props;
-
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <BaseHead page={page} section={section} />
-    <Themes  />
+    <Themes />
     <!-- Google tag (gtag.js) -->
-    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-149E0ZFVZ8"
-    ></script>
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-149E0ZFVZ8"></script>
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -32,7 +35,10 @@ const { page, section } = Astro.props;
       gtag("js", new Date());
       gtag("config", "G-149E0ZFVZ8");
     </script>
-
+    <script type="module">
+      import { ContentfulLivePreview } from "../../node_modules/@contentful/live-preview/dist/index.js";
+      ContentfulLivePreview.init({ locale: "en-NZ" });
+    </script>
   </head>
   <body class="bg-white dark:text-slate-300 dark:bg-black">
     <!-- <ToggleTheme /> -->
@@ -46,4 +52,3 @@ const { page, section } = Astro.props;
     </style>
   </body>
 </html>
-
