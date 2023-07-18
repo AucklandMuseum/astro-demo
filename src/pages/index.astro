@@ -28,6 +28,7 @@ const titleProps = {
         return (
           <ContentfulComponent
             type={comp.sys.contentType.sys.id}
+            id={comp.sys.id}
             {...comp.fields}
           />
         );

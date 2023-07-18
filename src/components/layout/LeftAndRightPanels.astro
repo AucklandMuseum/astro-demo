@@ -37,6 +37,7 @@ const {
           return (
             <ContentfulComponent
               type={comp.sys.contentType.sys.id}
+              id={comp.sys.id}
               {...comp.fields}
             />
           );

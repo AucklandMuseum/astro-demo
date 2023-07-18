@@ -30,6 +30,7 @@ imageMetadata.fields["size"] = behaviour;
   <div class={"image"}>
     <ContentfulComponent
       type={imageMetadata.sys.contentType.sys.id}
+      id={imageMetadata.sys.id}
       {...imageMetadata.fields}
     />
   </div>
@@ -43,6 +44,7 @@ imageMetadata.fields["size"] = behaviour;
               return (
                 <ContentfulComponent
                   type={comp.sys.contentType.sys.id}
+                  id={comp.sys.id}
                   {...comp.fields}
                 />
               );

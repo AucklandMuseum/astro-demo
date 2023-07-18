@@ -3,6 +3,7 @@ import type { ContentType } from "contentful";
 import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 
 let {
+  id,
   sectionWidth,
   sectionStyle,
   sectionMarginTop,
@@ -31,6 +32,7 @@ let {
           return (
             <ContentfulComponent
               type={comp.sys.contentType.sys.id}
+              id={comp.sys.id}
               {...comp.fields}
             />
           );

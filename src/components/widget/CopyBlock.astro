@@ -1,7 +1,16 @@
 ---
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { ContentfulLivePreview } from '@contentful/live-preview';
+import '@contentful/live-preview/style.css';
 
-let { content, contentStyle = "Standard", parent, parentStyle } = Astro.props;
+interface Props {
+  id:string;
+  [prop: string]: unknown;
+}
+
+ContentfulLivePreview.init({ locale: 'en-NZ'});
+
+let { id, content, contentStyle = "Standard", parent, parentStyle } = Astro.props;
 ---
 
 <div
@@ -11,7 +20,9 @@ let { content, contentStyle = "Standard", parent, parentStyle } = Astro.props;
 		"copy" + parent,
 		"copy" + parentStyle,
 	]}
-	set:html={documentToHtmlString(content).replace(/\n/g, `</br>`)}
+	set:html={documentToHtmlString(content as any).replace(/\n/g, `</br>`)}
+	{...ContentfulLivePreview.getProps({ entryId: id, fieldId: 'title' })}
+
 />
 
 <style>
