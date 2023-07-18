@@ -15,7 +15,7 @@ const overrideColorStyle = colorOverride == "" ? "text-wrap: balance;" : "text-w
 
 <div class="w-full">
   <h1 set:html={title} style={overrideColorStyle} 
-    class="text-inherit font-bold text-4xl md:text-5xl leading-tight pb-5" />
+    class="prose font-bold text-4xl md:text-5xl leading-tight pb-5" />
 </div>
 
 }
@@ -25,10 +25,10 @@ const overrideColorStyle = colorOverride == "" ? "text-wrap: balance;" : "text-w
 <div class="w-full">
   <div class="" set:html={Astro.props.boldSubtitle} />
   <h3 set:html={subtitle} style={overrideColorStyle} 
-    class="font-thin text-gray-400 text-3xl md:text-4xl lg:text-5xl lg:leading-tight" />
+    class="prose font-thin text-gray-400 text-3xl md:text-4xl lg:text-5xl lg:leading-tight" />
   <div>
     <h1 set:html={title} style={overrideColorStyle} 
-    class="text-inherit font-normal lg:font-thin text-4xl md:text-5xl lg:text-6xl lg:leading-tight" />
+    class="prose font-normal lg:font-thin text-4xl md:text-5xl lg:text-6xl lg:leading-tight" />
   </div>
 </div>
 
@@ -39,18 +39,18 @@ const overrideColorStyle = colorOverride == "" ? "text-wrap: balance;" : "text-w
 <div set:html={boldSubtitle}
   class="font-bold uppercase" />
 <h3 set:html={subtitle} 
-  class="font-thin text-3xl md:text-2xl xl:text-5xl text-gray-400 xl:leading-tight mt-3 mb-2" />
+  class="prose font-thin text-3xl md:text-2xl xl:text-5xl text-gray-400 xl:leading-tight mt-3 mb-2" />
 <h2 set:html={title} 
-  class="font-thin text-4xl md:text-3xl xl:text-6xl xl:leading-tight mb-10 md:mb-5 xl:mb-20" />
+  class="prose font-thin text-4xl md:text-3xl xl:text-6xl xl:leading-tight mb-10 md:mb-5 xl:mb-20" />
 
 }
 
 {behaviour === 'Promo' && 
 
 <h2 set:html={title} style={overrideColorStyle} 
-  class="font-bold text-4xl" />
+  class="prose font-bold text-4xl" />
   <h3 set:html={subtitle}
-  class=" font-light text-4xl uppercase text-gray-400 mt-5 mb-10" />
+  class="prose font-light text-4xl uppercase text-gray-400 mt-5 mb-10" />
 }
 </header>
 

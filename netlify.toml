@@ -1,5 +1,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "script-src 'self' app.netlify.com netlify-cdp-loader.netlify.app; font-src *; frame-src 'self' app.contentful.com; frame-ancestors 'self' app.contentful.com"
-	X-Frame-Options = "ALLOW-FROM https://app.contentful.com"
+    Content-Security-Policy = "script-src 'self' app.netlify.com netlify-cdp-loader.netlify.app; font-src *; frame-src 'self' app.contentful.com; frame-ancestors 'self' app.contentful.com;upgrade-insecure-requests 'none';"
+    X-Frame-Options = "ALLOW-FROM https://app.contentful.com",
+    Access-Control-Allow-Origin = "app.contentful.com",
+    Access-Control-Allow-Credentials "true",
