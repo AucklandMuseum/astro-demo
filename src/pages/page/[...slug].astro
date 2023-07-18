@@ -4,7 +4,7 @@ import PageSectionTitleBlock from "components/widget/PageSectionTitleBlock.astro
 import ContentfulComponent from "components/common/ContentfulComponent.astro"
 
 import { getPageBySlug, getSectionByID } from "lib/contentful";
-import type { ContentType } from "contentful";
+import type { ContentType } from "contentful/dist/contentful.browser.min.js";
 const { slug } = Astro.params;
 
 let page = await getPageBySlug(slug);

@@ -1,4 +1,4 @@
-import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
+import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful/dist/contentful.browser.min.js";
 import type { TypeMenuItemSkeleton } from "./TypeMenuItem";
 import type { TypePageSkeleton } from "./TypePage";
 

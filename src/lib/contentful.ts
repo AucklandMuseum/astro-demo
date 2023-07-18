@@ -1,5 +1,5 @@
 import * as contentful from "contentful";
-import { EntrySkeletonType } from "contentful";
+import { EntrySkeletonType } from "contentful/dist/contentful.browser.min.js";
 import { TypeLocalisedStringSkeleton, TypeMenuGroupSkeleton, TypeMenuItemSkeleton } from "types/contentful";
 
 
