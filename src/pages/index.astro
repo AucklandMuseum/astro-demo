@@ -2,12 +2,15 @@
 import BaseLayout from "layouts/BaseLayout.astro";
 
 import { getPageBySlug } from "lib/contentful";
-import type { ContentType } from "contentful";
+import type { ContentType, ContentTypeSys } from "contentful";
 import ContentfulComponent from "components/common/ContentfulComponent.astro"
+import { ContentfulLivePreview } from '@contentful/live-preview';
 import * as i18n from "astro-i18n-aut";
 
 let page = await getPageBySlug("home","en-NZ");
 if (!page) return Astro.redirect("/404");
+
+ContentfulLivePreview.init({ locale: 'en-NZ'});
 
 const titleProps = {
   title: page?.fields.title,
@@ -28,6 +31,7 @@ const titleProps = {
         return (
           <ContentfulComponent
             type={comp.sys.contentType.sys.id}
+            id={comp.sys.id}
             {...comp.fields}
           />
         );
