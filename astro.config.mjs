@@ -22,6 +22,10 @@ export default defineConfig({
   },
   output: 'server',
   vite:{
+    server:{headers:{"X-Frame-Options":"ALLOW-FROM https://app.contentful.com",
+                      "Access-Control-Allow-Origin":"app.contentful.com",
+                      "Access-Control-Allow-Credentials":"true",
+                      "Content-Security-Policy":"script-src 'self' app.netlify.com netlify-cdp-loader.netlify.app; font-src *; frame-src 'self' app.contentful.com; frame-ancestors 'self' app.contentful.com;upgrade-insecure-requests 'none';"}}
     //ssr:{noExternal:['contentful']}
   },
   integrations: [tailwind(),
