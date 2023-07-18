@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
-import contentful from "contentful-astro";
+import contentfulAstro from "contentful-astro";
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
-import netlify from "@astrojs/netlify/edge-functions"
+import netlify from "@astrojs/netlify/functions"
 
 // https://astro.build/config
 import react from "@astrojs/react";
@@ -21,12 +21,13 @@ export default defineConfig({
     redirects: true,
   },
   output: 'server',
+  vite:{
+    //ssr:{noExternal:['contentful']}
+  },
   integrations: [tailwind(),
   react(),
-  vue({
-    appEntrypoint: '/src/pages/_app'
-  }),
-  contentful({
+  vue(),
+  contentfulAstro({
     components: {
       contentItems: "components/layout/ContentSection",
       contentCollection: "components/layout/ContentCollection",
