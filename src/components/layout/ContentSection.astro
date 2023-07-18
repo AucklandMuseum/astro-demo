@@ -1,5 +1,4 @@
 ---
-import type { ContentType } from "contentful";
 import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 
 let {
@@ -25,7 +24,7 @@ let {
   <div class:list={["content", "content" + contentWidth]}>
     <>
       {
-        contentBlocks?.map((comp: ContentType) => {
+        contentBlocks?.map((comp: any) => {
           comp.fields["parent"] = "Section";
           comp.fields["parentStyle"] = sectionStyle;
           return (

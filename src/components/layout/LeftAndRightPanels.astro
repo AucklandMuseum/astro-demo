@@ -1,5 +1,4 @@
 ---
-import type { ContentType } from "contentful";
 import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 import { getEntryByID } from "lib/contentful";
 
@@ -31,7 +30,7 @@ const {
   >
     <>
       {
-        leftContentBlock?.map((comp: ContentType) => {
+        leftContentBlock?.map((comp: any) => {
           comp.fields["parent"] = "LeftPanel";
           comp.fields["parentStyle"] = leftPanelBackground;
           return (

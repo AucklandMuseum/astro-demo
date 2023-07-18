@@ -2,7 +2,6 @@
 import BaseLayout from "layouts/BaseLayout.astro";
 
 import { getPageBySlug } from "lib/contentful";
-import type { ContentType, ContentTypeSys } from "contentful/dist/contentful.browser";
 import ContentfulComponent from "components/common/ContentfulComponent.astro"
 import { ContentfulLivePreview } from '@contentful/live-preview';
 
@@ -24,7 +23,7 @@ const titleProps = {
 <BaseLayout page={page}>
   <>
     {
-      page?.fields.contentSections?.map((comp: ContentType) => {
+      page?.fields.contentSections?.map((comp: any) => {
         comp.fields["parent"] = titleProps.parent;
         comp.fields["parentStyle"] = titleProps.parentStyle;
         return (

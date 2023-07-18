@@ -4,12 +4,10 @@
 import "styles/global.css";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { htmlToText } from "html-to-text";
-import type { TypePage, TypeSection } from "types/contentful/index";
-import { ChainModifiers, EntrySkeletonType, LocaleCode } from "contentful";
 
 interface Props {
-	page: EntrySkeletonType;
-	section?: EntrySkeletonType;
+	page: any;
+	section?: any;
 }
 
 const { page, section } = Astro.props;

@@ -1,6 +1,4 @@
 ---
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { ContentType } from "contentful";
 import ContentfulComponent from "contentful-astro/ContentfulComponent.astro";
 //console.log(Astro.props);
 let {
@@ -34,7 +32,7 @@ const borderColorStyle = "border-color: " + borderColorValue;
 			<div class=" ">
 				<>
 					{
-						content?.map((comp: ContentType) => {
+						content?.map((comp: any) => {
 							comp.fields["parent"] = "Promo";
 							comp.fields["parentStyle"] = "";
 							comp.fields["contentStyle"] = "";
