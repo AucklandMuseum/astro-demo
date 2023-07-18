@@ -2,12 +2,15 @@
 import "styles/global.css";
 import '@contentful/live-preview/style.css';
 
+import { ContentfulLivePreview } from '@contentful/live-preview';
+
 import Themes from "astro-themes";
 import ToggleTheme from "components/common/ToggleTheme.astro";
 import BaseHead from "components/common/BaseHead.astro";
 import BasicScripts from "components/common/BasicScripts.astro";
 import MegaNavLayout from "components/common/MegaNavLayout.astro";
 
+ContentfulLivePreview.init({ locale: "en-NZ" });
 
 interface Props {
   page;
@@ -34,10 +37,6 @@ const { page, section } = Astro.props;
       }
       gtag("js", new Date());
       gtag("config", "G-149E0ZFVZ8");
-    </script>
-    <script type="module">
-      import { ContentfulLivePreview } from "../../node_modules/@contentful/live-preview/dist/index.js";
-      ContentfulLivePreview.init({ locale: "en-NZ" });
     </script>
   </head>
   <body class="bg-white dark:text-slate-300 dark:bg-black">
