@@ -25,6 +25,7 @@ const borderColorStyle = "border-color: " + borderColorValue;
 				<div class="promoTop">
 					<ContentfulComponent
 						type={image.sys.contentType.sys.id}
+						id={image.sys.id}
 						{...image.fields}
 					/>
 				</div>
@@ -40,7 +41,7 @@ const borderColorStyle = "border-color: " + borderColorValue;
 							return (
 								<ContentfulComponent
 									type={comp.sys.contentType.sys.id}
-									F
+									id={comp.sys.id}
 									{...comp.fields}
 								/>
 							);
