@@ -26,7 +26,9 @@ export default defineConfig({
   },
   integrations: [tailwind(),
   react(),
-  vue(),
+  vue({
+    appEntrypoint: '/src/pages/_app'
+  }),
   contentfulAstro({
     components: {
       contentItems: "components/layout/ContentSection",

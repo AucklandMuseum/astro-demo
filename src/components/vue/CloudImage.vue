@@ -1,5 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import Img, { CloudImageProvider } from 'vue-cloudimage-responsive-plain';
+
+interface Props {
+	src: String,
+	params: String
+}
+
+const props = defineProps<Props>()
 
 const cloudimageConfig = {
   token: 'ajrctguoxo',
@@ -13,19 +20,12 @@ const cloudimageConfig = {
     xl: '(min-width: 1280px)' 
 }
 };
+
+
 </script>
 
 <template>
-	<CloudImageProvider :cloudImageConfig="cloudimageConfig">
-		<Img :src=src :params=params alt="" />
+	<CloudImageProvider :cloudImageConfig=cloudimageConfig>
+		<Img :src=props.src :params=props.params alt="" />
 	</CloudImageProvider>
 </template>
-
-<script>
-export default {
- props: {
-   src: String,
-   params: String
- }
-}
-</script>
