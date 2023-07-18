@@ -2,6 +2,7 @@
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { ContentfulLivePreview } from '@contentful/live-preview';
 
+ContentfulLivePreview.init({locale:"en-NZ"})
 
 let { id, content, contentStyle = "Standard", parent, parentStyle } = Astro.props;
 ---
