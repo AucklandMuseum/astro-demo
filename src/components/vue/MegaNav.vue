@@ -6,8 +6,8 @@ import CloudImage from "./CloudImage.vue";
 import { XMarkIcon } from '@heroicons/vue/24/outline'
 
 interface Props {
-	mainNavDefault,
-	mainNavMI
+	mainNavDefault: any,
+	mainNavMI: any
 }
 
 const props = defineProps<Props>()

@@ -6,11 +6,11 @@ import ToggleTheme from "components/common/ToggleTheme.astro";
 import BaseHead from "components/common/BaseHead.astro";
 import BasicScripts from "components/common/BasicScripts.astro";
 import MegaNavLayout from "components/common/MegaNavLayout.astro";
-import '@contentful/live-preview/style.css';
+import "@contentful/live-preview/style.css";
 
 interface Props {
-  page;
-  section?;
+  page: any;
+  section?: any;
 }
 
 const { page, section } = Astro.props;
@@ -23,8 +23,9 @@ const { page, section } = Astro.props;
     <Themes />
     <!-- Google tag (gtag.js) -->
     <script
+      type="text/partytown"
       src="https://www.googletagmanager.com/gtag/js?id=G-149E0ZFVZ8"></script>
-    <script>
+    <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);

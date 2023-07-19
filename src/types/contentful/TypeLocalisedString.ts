@@ -2,7 +2,7 @@ import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleC
 
 export interface TypeLocalisedStringFields {
     name: EntryFieldTypes.Symbol;
-    label: EntryFieldTypes.Symbol;
+    translatedText: EntryFieldTypes.Symbol;
 }
 
 export type TypeLocalisedStringSkeleton = EntrySkeletonType<TypeLocalisedStringFields, "localisedString">;

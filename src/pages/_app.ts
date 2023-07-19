@@ -1,9 +1,6 @@
 import type { App } from 'vue';
 import VueLazyload from 'vue-lazyload';
-
-
 import { ContentfulLivePreview } from '@contentful/live-preview';
-
 
 export default (app: App) => {
 	

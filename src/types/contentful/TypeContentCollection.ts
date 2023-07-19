@@ -9,7 +9,7 @@ import type { TypeWidgetLinkimagebuttonSkeleton } from "./TypeWidgetLinkimagebut
 import type { TypeWidgetYouTubeResponsiveSkeleton } from "./TypeWidgetYouTubeResponsive";
 
 export interface TypeContentCollectionFields {
-    name?: EntryFieldTypes.Symbol;
+    slug?: EntryFieldTypes.Symbol;
     behaviour?: EntryFieldTypes.Symbol<"Belt" | "Columns" | "Image Gallery" | "Logo Cloud" | "What's Next">;
     title?: EntryFieldTypes.Symbol;
     heading?: EntryFieldTypes.Symbol;

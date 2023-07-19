@@ -1,6 +1,6 @@
 import * as contentful from "contentful";
 import { EntrySkeletonType } from "contentful";
-import { TypeLocalisedStringSkeleton, TypeMenuGroupSkeleton, TypeMenuItemSkeleton } from "types/contentful";
+import { TypeContentCollectionSkeleton, TypeLocalisedStringSkeleton, TypeMenuGroupSkeleton, TypeMenuItemSkeleton } from "types/contentful";
 
 
 export const DefaultLocale = "en-NZ";
@@ -33,6 +33,16 @@ export function getMenuGroupMenuGroupsByName(
     }).then((response: contentful.EntryCollection<TypeMenuGroupSkeleton, undefined, string>) => response.items[0].fields.menuGroups)
 
 }
+
+export function getContentCollectionBySlug(
+  slug: string, 
+  locale?: string
+): Promise<any> {
+  return contentfulClient
+    .getEntries({ locale: locale, "content_type": "contentCollection", "fields.slug": slug })
+    .then((response: any) => response.items[0].fields.contentBlocks)
+}
+
 
 export function getLocalisedStringByName(
   name: string, 

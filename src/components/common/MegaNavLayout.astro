@@ -8,13 +8,14 @@ import * as contentfulUtils from "lib/contentful.js";
 
 const mainNavDefault = await contentfulUtils.getMenuGroupMenuGroupsByName("main", "en-NZ");
 const mainNavMI = await contentfulUtils.getMenuGroupMenuGroupsByName("main", "mi-NZ" );
+
 ---
 
 <!-- <Alerts /> -->
 <header class="z-50 w-full shadow-md  bg-white text-black">
 	<div class="mx-auto px-5 max-w-7xl">
 		<div
-			class="w-full flex flex-col lg:flex-row justify-around lg:justify-between py-[16px] text-xs lg:text-sm font-bold">
+			class="w-full flex flex-col md:flex-row md:justify-between justify-around py-[16px] text-xs lg:text-sm font-bold">
 			<OpeningHours />
 			<TopNav />
 		</div>
