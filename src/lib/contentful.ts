@@ -3,8 +3,10 @@ import { EntrySkeletonType } from "contentful";
 import { TypeContentCollectionSkeleton, TypeLocalisedStringSkeleton, TypeMenuGroupSkeleton, TypeMenuItemSkeleton } from "types/contentful";
 
 
-export const DefaultLocale = "en-NZ";
+
 export const MaoriLocale = "mi-NZ";
+export const EnglishLocale = "en-NZ"
+export const DefaultLocale = EnglishLocale
 
 export const contentfulClient = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,

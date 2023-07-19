@@ -10,5 +10,7 @@ export default (app: App) => {
 		lazyComponent: true, 
 		lazyImage: true,
 	  });
-
+	  app.provide("EnglishLocale","en-NZ")
+	  app.provide("MaoriLocale","mi-NZ")
+	  app.provide("DefaultLocale","en-NZ")
 }

@@ -4,10 +4,11 @@ import TopNav from "components/vue/TopNav.vue"
 import OpeningHours from "components/vue/OpeningHours.vue"
 import MegaNav from "components/vue/MegaNav.vue";
 import * as contentfulUtils from "lib/contentful.js";
+import LanguageToggle from "components/vue/LanguageToggle.vue";
 
 
-const mainNavDefault = await contentfulUtils.getMenuGroupMenuGroupsByName("main", "en-NZ");
-const mainNavMI = await contentfulUtils.getMenuGroupMenuGroupsByName("main", "mi-NZ" );
+const mainNavDefault = await contentfulUtils.getMenuGroupMenuGroupsByName("main", contentfulUtils.DefaultLocale.includes("en") ? contentfulUtils.EnglishLocale : contentfulUtils.MaoriLocale);
+const mainNavMI = await contentfulUtils.getMenuGroupMenuGroupsByName("main", !contentfulUtils.DefaultLocale.includes("en") ? contentfulUtils.EnglishLocale : contentfulUtils.MaoriLocale );
 
 ---
 
@@ -18,6 +19,7 @@ const mainNavMI = await contentfulUtils.getMenuGroupMenuGroupsByName("main", "mi
 			class="w-full flex flex-col md:flex-row md:justify-between justify-around py-[16px] text-xs lg:text-sm font-bold">
 			<OpeningHours />
 			<TopNav />
+			<!-- <LanguageToggle /> -->
 		</div>
 	</div>
 </header>
