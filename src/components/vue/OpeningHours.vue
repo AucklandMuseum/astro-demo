@@ -7,16 +7,15 @@ import { onMounted, reactive, ref } from "vue";
 import { defineComponent } from "vue";
 
 
-
-		const defaultLocale = useStore(DefaultLocale);
-		const contentItems = await contentfulUtils.getContentCollectionBySlug("opening-hours", defaultLocale.value)
-
+let $DefaultLocale = useStore(DefaultLocale);
+let contentItems = reactive(await fetch("/api/nav/openinghours.json?locale=" + $DefaultLocale).then((response) => response.json()))
+ 
 </script>
 
 
 <template>
-	{{ defaultLocale }}
-	<div
+	{{ $DefaultLocale }}
+	<div :key="$DefaultLocale"
 		class="flex justify-center text-center md:text-left pb-4 md:pb-0 md:justify-start md:self-start md:mr-10 flex-shrink flex-row flex-wrap [&>p]:flex [&>p]:pr-1">
 		<p v-for="item in contentItems">
 			{{ item.fields.translatedText }}

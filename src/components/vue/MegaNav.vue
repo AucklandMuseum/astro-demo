@@ -12,10 +12,7 @@ const $MaoriLocale = useStore(MaoriLocale);
 const $EnglishLocale = useStore(EnglishLocale);
 const $DefaultLocale = useStore(DefaultLocale);
 
-const mainNavDefault = await getMenuGroupMenuGroupsByName("main", $DefaultLocale.value === $EnglishLocale.value ? $EnglishLocale.value : $MaoriLocale.value)
-const mainNavMI = await getMenuGroupMenuGroupsByName("main", $DefaultLocale.value !== $EnglishLocale.value ? $EnglishLocale.value : $MaoriLocale.value)
-
-const navItems = ref({ "default": mainNavDefault, "mi": mainNavMI })
+const navItems = ref(await fetch("/api/nav/menu.json?locale=" + $DefaultLocale).then((response) => response.json()))
 
 //DefaultLocale.set(MaoriLocale.value)
 </script>
