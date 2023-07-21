@@ -17,9 +17,6 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
-    redirects: true,
-  },
   output: 'server',
   vite:{
     server:{headers:{"X-Frame-Options":"ALLOW-FROM https://app.contentful.com",

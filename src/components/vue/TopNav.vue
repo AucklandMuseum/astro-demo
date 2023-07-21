@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import * as contentfulUtils from "lib/contentful.js";
+import { DefaultLocale } from 'lib/store';
+import { useStore } from '@nanostores/vue';
 
-let navItems = await contentfulUtils.getMenuGroupMenuItemsByName("top", contentfulUtils.DefaultLocale);
+const $DefaultLocale = useStore(DefaultLocale);
+
+let navItems = await contentfulUtils.getMenuGroupMenuItemsByName("top", $DefaultLocale.value);
 </script>
 
 

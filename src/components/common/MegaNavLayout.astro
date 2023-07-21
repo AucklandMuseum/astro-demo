@@ -5,10 +5,8 @@ import OpeningHours from "components/vue/OpeningHours.vue"
 import MegaNav from "components/vue/MegaNav.vue";
 import * as contentfulUtils from "lib/contentful.js";
 import LanguageToggle from "components/vue/LanguageToggle.vue";
+import { Suspense } from "vue";
 
-
-const mainNavDefault = await contentfulUtils.getMenuGroupMenuGroupsByName("main", contentfulUtils.DefaultLocale.includes("en") ? contentfulUtils.EnglishLocale : contentfulUtils.MaoriLocale);
-const mainNavMI = await contentfulUtils.getMenuGroupMenuGroupsByName("main", !contentfulUtils.DefaultLocale.includes("en") ? contentfulUtils.EnglishLocale : contentfulUtils.MaoriLocale );
 
 ---
 
@@ -17,9 +15,9 @@ const mainNavMI = await contentfulUtils.getMenuGroupMenuGroupsByName("main", !co
 	<div class="mx-auto px-5 max-w-7xl">
 		<div
 			class="w-full flex flex-col md:flex-row md:justify-between justify-around py-[16px] text-xs lg:text-sm font-bold">
-			<OpeningHours />
-			<TopNav />
-			<!-- <LanguageToggle /> -->
+			<OpeningHours client:load />
+			<TopNav client:load/> 
+			<LanguageToggle client:load />
 		</div>
 	</div>
 </header>
@@ -30,7 +28,7 @@ const mainNavMI = await contentfulUtils.getMenuGroupMenuGroupsByName("main", !co
 				<a class="" href="/"><img class="" src="/images/am-logo.svg" alt="Auckland War Memorial Museum" /></a>
 			</div>
 
-			<MegaNav mainNavDefault={mainNavDefault} mainNavMI={mainNavMI}  client:only="vue"/>
+			<MegaNav client:load/>
 			<div class="lg:text-lg flex flex-grow justify-end self-end ml-1 lg:ml-2 items-baseline pb-8">
 				<SearchIcon />
 			</div>

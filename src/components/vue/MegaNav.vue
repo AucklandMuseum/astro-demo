@@ -4,21 +4,27 @@ import { ref } from "vue";
 import { Popover, PopoverPanel, PopoverButton, PopoverGroup } from '@headlessui/vue'
 import CloudImage from "./CloudImage.vue";
 import { XMarkIcon } from '@heroicons/vue/24/outline'
+import { getMenuGroupMenuGroupsByName } from 'lib/contentful';
+import { MaoriLocale, EnglishLocale, DefaultLocale } from 'lib/store';
+import { useStore } from '@nanostores/vue';
 
-interface Props {
-	mainNavDefault: any,
-	mainNavMI: any
-}
+const $MaoriLocale = useStore(MaoriLocale);
+const $EnglishLocale = useStore(EnglishLocale);
+const $DefaultLocale = useStore(DefaultLocale);
 
-const props = defineProps<Props>()
-const navItems = ref({ "default": props.mainNavDefault, "mi": props.mainNavMI })
+const mainNavDefault = await getMenuGroupMenuGroupsByName("main", $DefaultLocale.value === $EnglishLocale.value ? $EnglishLocale.value : $MaoriLocale.value)
+const mainNavMI = await getMenuGroupMenuGroupsByName("main", $DefaultLocale.value !== $EnglishLocale.value ? $EnglishLocale.value : $MaoriLocale.value)
+
+const navItems = ref({ "default": mainNavDefault, "mi": mainNavMI })
+
+//DefaultLocale.set(MaoriLocale.value)
 </script>
 
 
 <template>
 	<PopoverGroup as="ul" class="flex flex-row font-bold tracking-wide lg:mt-0 space-x-0
-			whitespace-nowrap text-sm md:text-base lg:text-lg place-self-end ">
-		<Popover as="li" class="flex-auto group z-50 shadow" v-for="(item, index) in navItems['default']"
+			whitespace-nowrap text-sm md:text-base lg:text-lg place-self-end " >
+		<Popover as="li" class="flex-auto group z-50 shadow" v-for="(item, index) in navItems['default']" 
 			:key="item.sys.id">
 			<PopoverButton
 				class="text-left hover:border-b-4 hover:-mb-3 hover:pb-2.5 hover:outline-none my-5 lg:mx-1 px-3 lg:px-4 xl:px-5"
@@ -30,7 +36,7 @@ const navItems = ref({ "default": props.mainNavDefault, "mi": props.mainNavMI })
 			<transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 -translate-y-1"
 				enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-100"
 				leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
-				<PopoverPanel v-slot="{ close }"
+				<PopoverPanel v-slot="{ close }" 
 					class="absolute inset-x-0 md:top-[90px] lg:top-[110px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
 					<div class="mx-auto flex w-full">
 
