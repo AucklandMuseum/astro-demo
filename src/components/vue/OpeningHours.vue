@@ -1,23 +1,26 @@
 <script setup lang="ts">
-import * as contentful from "contentful";
-import * as contentfulUtils from "lib/contentful.js";
+import { onMounted, ref, watch } from "vue";
 import { DefaultLocale } from 'lib/store';
 import { useStore } from '@nanostores/vue';
-import { onMounted, reactive, ref } from "vue";
-import { defineComponent } from "vue";
 
+const defaultLocale = useStore(DefaultLocale);
+let content = ref({
+	data: null,
+});
 
-let $DefaultLocale = useStore(DefaultLocale);
-let contentItems = reactive(await fetch("/api/nav/openinghours.json?locale=" + $DefaultLocale).then((response) => response.json()))
- 
+async function  getData(locale:string){
+	const response = await fetch("/api/nav/openinghours.json?locale=" + locale)
+	content.value.data = await response.json();
+}
+
+onMounted(() => {getData(defaultLocale.value)});
+watch(defaultLocale ,() => {getData(defaultLocale.value)} )
 </script>
 
 
 <template>
-	{{ $DefaultLocale }}
-	<div :key="$DefaultLocale"
-		class="flex justify-center text-center md:text-left pb-4 md:pb-0 md:justify-start md:self-start md:mr-10 flex-shrink flex-row flex-wrap [&>p]:flex [&>p]:pr-1">
-		<p v-for="item in contentItems">
+	<div class="flex justify-center text-center md:text-left pb-4 md:pb-0 md:justify-start md:self-start md:mr-10 flex-shrink flex-row flex-wrap [&>p]:flex [&>p]:pr-1">
+		<p v-for="item in content?.data">
 			{{ item.fields.translatedText }}
 		</p>
 	</div>

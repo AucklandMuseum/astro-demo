@@ -1,39 +1,42 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
+import { ref, onMounted, watch } from "vue";
 import { Popover, PopoverPanel, PopoverButton, PopoverGroup } from '@headlessui/vue'
 import CloudImage from "./CloudImage.vue";
 import { XMarkIcon } from '@heroicons/vue/24/outline'
-import { getMenuGroupMenuGroupsByName } from 'lib/contentful';
-import { MaoriLocale, EnglishLocale, DefaultLocale } from 'lib/store';
+import { DefaultLocale } from 'lib/store';
 import { useStore } from '@nanostores/vue';
 
-const $MaoriLocale = useStore(MaoriLocale);
-const $EnglishLocale = useStore(EnglishLocale);
-const $DefaultLocale = useStore(DefaultLocale);
+const defaultLocale = useStore(DefaultLocale);
+let content = ref({
+	data: null,
+});
 
-const navItems = ref(await fetch("/api/nav/menu.json?locale=" + $DefaultLocale).then((response) => response.json()))
+async function  getData(locale:string){
+	const response = await fetch("/api/nav/menu.json?locale=" + locale)
+	content.value.data = await response.json();
+}
 
-//DefaultLocale.set(MaoriLocale.value)
+onMounted(() => {getData(defaultLocale.value)});
+watch(defaultLocale ,() => {getData(defaultLocale.value)} )
+
 </script>
 
 
 <template>
-	<PopoverGroup as="ul" class="flex flex-row font-bold tracking-wide lg:mt-0 space-x-0
-			whitespace-nowrap text-sm md:text-base lg:text-lg place-self-end " >
-		<Popover as="li" class="flex-auto group z-50 shadow" v-for="(item, index) in navItems['default']" 
-			:key="item.sys.id">
+<PopoverGroup as="ul" class="flex flex-row font-bold tracking-wide lg:mt-0 space-x-0
+			whitespace-nowrap text-sm md:text-base lg:text-lg place-self-end ">
+		<Popover as="li" class="flex-auto group z-50 shadow" v-for="(item, index) in content.data?.default">
 			<PopoverButton
 				class="text-left hover:border-b-4 hover:-mb-3 hover:pb-2.5 hover:outline-none my-5 lg:mx-1 px-3 lg:px-4 xl:px-5"
 				role="combobox" :title="item['fields']['title']" aria-controls="header-nav-visit" aria-expanded="false"
 				aria-label="Show Visit subnavigation">
-				<span class="font-light block">{{ navItems['mi'][index]['fields']['title'] }}</span> {{
+				<span class="font-light block">{{ content.data?.alt[index]['fields']['title'] }}</span> {{
 					item['fields']['title'] }}
 			</PopoverButton>
 			<transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 -translate-y-1"
 				enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-100"
 				leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
-				<PopoverPanel v-slot="{ close }" 
+				<PopoverPanel v-slot="{ close }"
 					class="absolute inset-x-0 md:top-[90px] lg:top-[110px] z-50 bg-zinc-800 shadow-lg ring-1 ring-gray-900/5 font-light sm:text-sm lg:text-base">
 					<div class="mx-auto flex w-full">
 
