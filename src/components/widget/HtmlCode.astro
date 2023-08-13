@@ -11,28 +11,37 @@ let { htmlContent, parent, parentStyle } = Astro.props;
   rel="stylesheet"
   href="https://cdn.scaleflex.it/plugins/js-cloudimage-responsive/latest/js-cloudimage-responsive.min.css?vh=a076ef&func=proxy"
 />
-<script is:inline
+<script
+  is:inline
   src="https://cdn.scaleflex.it/plugins/js-cloudimage-responsive/latest/js-cloudimage-responsive.min.js"
 ></script>
-<script  is:inline>
-  const ciResponsive = new window.CIResponsive({
-    token: "ajrctguoxo",
-  });
+<script is:inline>
+const ciResponsive = new window.CIResponsive({
+  token: "ajrctguoxo",
+});
 </script>
-<link rel="stylesheet" href="/src/main.css">
-<link type="text/css" rel="stylesheet" href="/src/lightGallery/css/lightgallery-bundle.css" />
+<!-- <link rel="stylesheet" href="/src/main.css" /> -->
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="/src/lightGallery/css/lightgallery-bundle.css"
+/>
 <script is:inline src="/src/lightGallery/lightgallery.min.js"></script>
-<script is:inline src="/src/lightGallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
+<script is:inline src="/src/lightGallery/plugins/thumbnail/lg-thumbnail.min.js"
+></script>
 <script is:inline src="/src/lightGallery/plugins/zoom/lg-zoom.min.js"></script>
-<script is:inline src="/src/lightGallery/plugins/relativeCaption/lg-relative-caption.min.js"></script>
+<script
+  is:inline
+  src="/src/lightGallery/plugins/relativeCaption/lg-relative-caption.min.js"
+></script>
 
-<script  is:inline>
-var galleries = document.getElementsByClassName('gallery');
+<script is:inline>
+var galleries = document.getElementsByClassName("gallery");
 for (let item of galleries) {
-    lightGallery(item, {
-      plugins: [lgZoom, lgThumbnail, lgRelativeCaption],
+  lightGallery(item, {
+    plugins: [lgZoom, lgThumbnail, lgRelativeCaption],
     subHtmlSelectorRelative: true,
-    })
+  });
 }
 </script>
 
@@ -110,7 +119,7 @@ for (let item of galleries) {
     margin-top: 0 !important;
   }
 
-  .gallery{
+  .gallery {
     display: block;
   }
   .gallery a {
@@ -125,5 +134,7 @@ for (let item of galleries) {
     margin-bottom: 15px;
     vertical-align: top;
   }
-  .gallery .caption {display: none;}
+  .gallery .caption {
+    display: none;
+  }
 </style>
