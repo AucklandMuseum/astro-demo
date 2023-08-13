@@ -6,12 +6,12 @@ import MegaNav from "components/vue/MegaNav.vue";
 import * as contentfulUtils from "lib/contentful.js";
 import LanguageToggle from "components/vue/LanguageToggle.vue";
 import { Suspense } from "vue";
-
+import { ViewTransitions } from 'astro:transitions';
 
 ---
-
+<ViewTransitions />
 <!-- <Alerts /> -->
-<header class="z-50 w-full shadow-md  bg-white text-black">
+<header class="z-50 w-full shadow-md  bg-white text-black" transition:persist>
 	<div class="mx-auto px-5 max-w-7xl">
 		<div
 			class="w-full flex flex-col md:flex-row md:justify-between justify-around py-[16px] text-xs lg:text-sm font-bold">
@@ -20,7 +20,7 @@ import { Suspense } from "vue";
 		</div>
 	</div>
 </header>
-<header class="hidden md:block relative z-50 w-full border-b-[6px] border-white bg-black text-white shadow-md">
+<header class="hidden md:block relative z-50 w-full border-b-[6px] border-white bg-black text-white shadow-md" transition:persist>
 	<div class="mx-auto px-5 max-w-7xl ">
 		<nav class="lg:text-lg w-full flex flex-nowrap flex-row justify-items-stretch items-baseline -mb-1.5 md:h-[90px] lg:h-[110px]">
 			<div class="w-[140px] lg:w-[169px] ml-0 mr-5 -pb-5 align-bottom self-end flex-shrink-0">
